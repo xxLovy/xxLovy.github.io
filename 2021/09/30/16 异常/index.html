@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/9 | xxLovy&#39;s Blog</title>
+  <title>Python异常 | xxLovy&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="xxLovy&#39;s Blog">
-<meta property="og:url" content="http://example.com/archives/2022/09/index.html">
+  <meta name="description" content="异常 捕获异常 else finally 异常传递 自定义异常  1. 异常的写法1.1 用法1234try：    可能发生错误的代码except:    如果出现异常执行的代码  例子 1234try：    open(&amp;#x27;test.txt&amp;#x27;, &amp;#x27;r&amp;#x27;)except:    open(&amp;#x27;test.txt&amp;#x27;, &amp;#x27;w&amp;#x27;)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python异常">
+<meta property="og:url" content="http://example.com/2021/09/30/16%20%E5%BC%82%E5%B8%B8/index.html">
 <meta property="og:site_name" content="xxLovy&#39;s Blog">
+<meta property="og:description" content="异常 捕获异常 else finally 异常传递 自定义异常  1. 异常的写法1.1 用法1234try：    可能发生错误的代码except:    如果出现异常执行的代码  例子 1234try：    open(&amp;#x27;test.txt&amp;#x27;, &amp;#x27;r&amp;#x27;)except:    open(&amp;#x27;test.txt&amp;#x27;, &amp;#x27;w&amp;#x27;)">
 <meta property="og:locale">
+<meta property="article:published_time" content="2021-09-30T09:04:21.000Z">
+<meta property="article:modified_time" content="2022-10-25T03:36:35.406Z">
 <meta property="article:author" content="Xuan Xu">
 <meta name="twitter:card" content="summary">
   
@@ -150,87 +154,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-16 异常" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/30/PythonWeb/" class="archive-article-date">
-  	<time datetime="2022-09-30T09:04:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/30/PythonWeb/">PythonWeb</a>
+    <h1 class="article-title" itemprop="name">
+      Python异常
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2021/09/30/16%20%E5%BC%82%E5%B8%B8/" class="archive-article-date">
+  	<time datetime="2021-09-30T09:04:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><ul>
+<li>捕获异常</li>
+<li>else</li>
+<li>finally</li>
+<li>异常传递</li>
+<li>自定义异常</li>
+</ul>
+<h2 id="1-异常的写法"><a href="#1-异常的写法" class="headerlink" title="1. 异常的写法"></a>1. 异常的写法</h2><h3 id="1-1-用法"><a href="#1-1-用法" class="headerlink" title="1.1 用法"></a>1.1 用法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>：</span><br><span class="line">    可能发生错误的代码</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    如果出现异常执行的代码</span><br></pre></td></tr></table></figure>
+
+<p>例子</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>：</span><br><span class="line">    <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="built_in">open</span>(<span class="string">&#x27;test.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>该程序尝试以只读打开文件，如果文件名称不存在，上面的语句会出现异常。转而会执行下面的语句，创建一个新的文件</p>
+<h2 id="2-捕获指定异常"><a href="#2-捕获指定异常" class="headerlink" title="2. 捕获指定异常"></a>2. 捕获指定异常</h2><h3 id="2-1-用法"><a href="#2-1-用法" class="headerlink" title="2.1 用法"></a>2.1 用法</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>：</span><br><span class="line">    可能发生错误的代码</span><br><span class="line"><span class="keyword">except</span> 异常类型:</span><br><span class="line">    如果出现异常执行的代码</span><br></pre></td></tr></table></figure>
+
+<p>比如</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="number">2</span>/<span class="number">0</span>) <span class="comment"># ZeroDivisionError</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">Traceback (most recent call last):</span></span><br><span class="line"><span class="string">  File &quot;/Users/xuxuan/PycharmProjects/Students/modify.py&quot;, line 1, in &lt;module&gt;</span></span><br><span class="line"><span class="string">    print(2/0)</span></span><br><span class="line"><span class="string">ZeroDivisionError: division by zero</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以这样抛出</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">2</span>/<span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;除数不能为零&quot;</span>)</span><br><span class="line">    </span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">除数不能为零</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样可以抛出指定异常，如果发生了其他异常可以报错后修正</p>
+<h3 id="2-2-捕获多个异常"><a href="#2-2-捕获多个异常" class="headerlink" title="2.2 捕获多个异常"></a>2.2 捕获多个异常</h3><p>当不确定会出什么异常时，使用捕获多个异常来确定。</p>
+<p>except后面用一个元组来储存多个异常</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">2</span>/<span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> (ZeroDivisionError, NameError) <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line">    </span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">division by zero</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-捕获所有异常"><a href="#2-3-捕获所有异常" class="headerlink" title="2.3 捕获所有异常"></a>2.3 捕获所有异常</h3><p>捕获所有异常的父类Exception</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">2</span> / <span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">division by zero</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="3-else"><a href="#3-else" class="headerlink" title="3. else"></a>3. else</h2><p>else表示没有异常实质性的代码</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">2</span> / <span class="number">0</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No error occurred&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">division by zero</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>没有异常时</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">2</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(result)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;No error occurred&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">No error occurred</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-finally"><a href="#4-finally" class="headerlink" title="4. finally"></a>4. finally</h2><p>无论有没有异常都要执行的代码</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;read mode&quot;</span>)</span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;an error occurred: <span class="subst">&#123;result&#125;</span>&quot;</span>)</span><br><span class="line">    f = <span class="built_in">open</span>(<span class="string">&quot;test.txt&quot;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;write mode&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    read = f.read()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;There is no error occurred. read successfully executed&quot;</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    f.close()</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">an error occurred: [Errno 2] No such file or directory: &#x27;test.txt&#x27;</span></span><br><span class="line"><span class="string">write mode</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>先尝试以read模式打开一个文件，如果文件不存在，则输出错误信息并新建一个文件。如果文件存在就读取文件信息。最终关闭文件</p>
+<h2 id="5-自定义异常"><a href="#5-自定义异常" class="headerlink" title="5. 自定义异常"></a>5. 自定义异常</h2><p>将不满足程序逻辑要求的情况定义为错误</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">raise</span> error_object</span><br></pre></td></tr></table></figure>
+
+<p>需求：密码长度不足时，报异常</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ShortInputError</span>(<span class="title class_ inherited__">Exception</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, length</span>):</span><br><span class="line">        self.length = length</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__str__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&#x27;您输入的长度为<span class="subst">&#123;self.length&#125;</span>,密码最小长度为5&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">inputPswd</span>():</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        con = <span class="built_in">input</span>(<span class="string">&quot;请输入密码: &quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(con)&lt;<span class="number">5</span> :</span><br><span class="line">            <span class="keyword">raise</span> ShortInputError(<span class="built_in">len</span>(con))</span><br><span class="line">    <span class="keyword">except</span> ShortInputError <span class="keyword">as</span> sie:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;发生了一个错误,<span class="subst">&#123;sie&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;设置成功&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    inputPswd()</span><br><span class="line">    </span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">请输入密码: 123</span></span><br><span class="line"><span class="string">发生了一个错误,您输入的长度为3, 密码最小长度为5</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/PythonWeb//" class="article-tag-list-link color5">PythonWeb</a>
+        			<a href="/categories/Python基础部分笔记//" class="article-tag-list-link color3">Python基础部分笔记</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Python基础部分笔记/学习笔记//" class="article-tag-list-link color5">学习笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/09/30/16%20%E5%BC%82%E5%B8%B8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/09/27/hello-world/" class="archive-article-date">
-  	<time datetime="2022-09-27T08:37:24.977Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-09-27</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/09/30/17%20%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Python模块和包
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/09/30/08%20%E5%85%83%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Python元组</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/09/27/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -253,8 +394,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

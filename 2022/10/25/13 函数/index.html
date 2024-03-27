@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>13 函数 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="1. 函数基础 函数的作用 函数的使用步骤 函数的参数作用 函数返回值的作用 函数说明文档 函数嵌套  1.1 函数的作用提高代码的复用性 1.2 函数的使用步骤1.2.1 定义函数12def function(参数):  code  1.2.2 调用函数1function(参数)  Python中函数必须先定义再使用 一个简单的add函数: 1234567def add(*value) -&amp;gt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="13 函数">
+<meta property="og:url" content="http://example.com/2022/10/25/13%20%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 函数基础 函数的作用 函数的使用步骤 函数的参数作用 函数返回值的作用 函数说明文档 函数嵌套  1.1 函数的作用提高代码的复用性 1.2 函数的使用步骤1.2.1 定义函数12def function(参数):  code  1.2.2 调用函数1function(参数)  Python中函数必须先定义再使用 一个简单的add函数: 1234567def add(*value) -&amp;gt">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-25T06:31:14.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:18:15.929Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-13 函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/25/13%20%E5%87%BD%E6%95%B0/" class="article-date">
+  <time class="dt-published" datetime="2022-10-25T06:31:14.000Z" itemprop="datePublished">2022-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a>►<a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      13 函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="1-函数基础"><a href="#1-函数基础" class="headerlink" title="1. 函数基础"></a>1. 函数基础</h1><ul>
+<li>函数的作用</li>
+<li>函数的使用步骤</li>
+<li>函数的参数作用</li>
+<li>函数返回值的作用</li>
+<li>函数说明文档</li>
+<li>函数嵌套</li>
+</ul>
+<h2 id="1-1-函数的作用"><a href="#1-1-函数的作用" class="headerlink" title="1.1 函数的作用"></a>1.1 函数的作用</h2><p>提高代码的复用性</p>
+<h2 id="1-2-函数的使用步骤"><a href="#1-2-函数的使用步骤" class="headerlink" title="1.2 函数的使用步骤"></a>1.2 函数的使用步骤</h2><h3 id="1-2-1-定义函数"><a href="#1-2-1-定义函数" class="headerlink" title="1.2.1 定义函数"></a>1.2.1 定义函数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function</span>(<span class="params">参数</span>):</span><br><span class="line">  code</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-2-2-调用函数"><a href="#1-2-2-调用函数" class="headerlink" title="1.2.2 调用函数"></a>1.2.2 调用函数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function(参数)</span><br></pre></td></tr></table></figure>
+
+<p>Python中函数必须先定义再使用</p>
+<p>一个简单的add函数:</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">*value</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> value:</span><br><span class="line">        <span class="built_in">sum</span> += i</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="1-3-函数说明文档"><a href="#1-3-函数说明文档" class="headerlink" title="1.3. 函数说明文档"></a>1.3. 函数说明文档</h2><ul>
+<li>定义函数的说明文档</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">func_name</span>(<span class="params">参数</span>):</span><br><span class="line">  <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">  说明文档</span></span><br><span class="line"><span class="string">  &quot;&quot;&quot;</span></span><br><span class="line">  code</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看函数的说明文档</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(func_name)</span><br></pre></td></tr></table></figure>
+
+<p>查看len的说明</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">help</span>(<span class="built_in">len</span>)</span><br><span class="line"></span><br><span class="line">Help on built-<span class="keyword">in</span> function <span class="built_in">len</span> <span class="keyword">in</span> module builtins:</span><br><span class="line"></span><br><span class="line"><span class="built_in">len</span>(obj, /)</span><br><span class="line">    Return the number of items <span class="keyword">in</span> a container.</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">*value</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    求和函数</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    &quot;&quot;&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> value:</span><br><span class="line"><span class="meta">... </span>        <span class="built_in">sum</span> += i</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">help</span>(add))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Help on function add <span class="keyword">in</span> module __main__:</span><br><span class="line"></span><br><span class="line">add(*value) -&gt; <span class="built_in">int</span></span><br><span class="line">    求和函数</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-函数进阶"><a href="#2-函数进阶" class="headerlink" title="2. 函数进阶"></a>2. 函数进阶</h1><ul>
+<li>变量的作用域</li>
+<li>多函数执行流程</li>
+<li>函数返回值</li>
+<li>函数的参数</li>
+<li>拆包和交换变量的值</li>
+<li>引用</li>
+<li>可变和不可变类型</li>
+</ul>
+<h2 id="2-1-变量的作用域"><a href="#2-1-变量的作用域" class="headerlink" title="2.1 变量的作用域"></a>2.1 变量的作用域</h2><p>按照变量生效的范围来分：可以分为 局部变量 和 全局变量</p>
+<h3 id="2-1-1-局部变量"><a href="#2-1-1-局部变量" class="headerlink" title="2.1.1 局部变量"></a>2.1.1 局部变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">  a = <span class="number">100</span></span><br><span class="line">  <span class="keyword">return</span> a</span><br><span class="line"></span><br><span class="line"><span class="comment">#print(a) 这将报错，因为a值在test()中被定义，是局部变量</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-1-2-全局变量"><a href="#2-1-2-全局变量" class="headerlink" title="2.1.2 全局变量"></a>2.1.2 全局变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">  <span class="built_in">print</span>(a)</span><br><span class="line">  </span><br><span class="line">test()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+
+<p>这里test()和下面的a都将有效</p>
+<h3 id="2-1-3-修改全局变量"><a href="#2-1-3-修改全局变量" class="headerlink" title="2.1.3 修改全局变量"></a>2.1.3 修改全局变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    a = <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    </span><br><span class="line">testA()</span><br><span class="line">testB()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到运行testB()之后，a变量的值事实上并没有被修改</p>
+<p>testB()中的a为局部变量，并不是上面定义的全局变量a</p>
+<p>如果想要修改全局变量</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">testA()</span><br><span class="line">testB()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>借助<code>global</code>关键字可以实现修改全局变量</p>
+<h2 id="2-2-函数有多个返回值"><a href="#2-2-函数有多个返回值" class="headerlink" title="2.2 函数有多个返回值"></a>2.2 函数有多个返回值</h2><p>如果一个函数有多个返回值应该怎么处理?</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>这样可以实现函数返回两个值，返回的类型为元组<code>(1, 2)</code></p>
+<p>可以指定返回的类型</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num1</span>():</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num2</span>():</span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num3</span>():</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="number">1</span>:<span class="number">2</span>, <span class="number">3</span>:<span class="number">4</span>, <span class="number">5</span>:<span class="number">6</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-3-函数的参数"><a href="#2-3-函数的参数" class="headerlink" title="2.3 函数的参数"></a>2.3 函数的参数</h2><h3 id="2-3-1-位置参数"><a href="#2-3-1-位置参数" class="headerlink" title="2.3.1 位置参数"></a>2.3.1 位置参数</h3><p>位置参数：调用函数时根据函数定义的参数位置来传递参数</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;20&#x27;</span>, <span class="string">&#x27;male&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>传递参数的位置和个数必须固定</p>
+<p>如果传入<code>user_info(&#39;male&#39;, &#39;20&#39;, &#39;xx&#39;)</code>会导致数据失去意义或者在一些其他情况报错</p>
+<h3 id="2-3-2-关键字参数"><a href="#2-3-2-关键字参数" class="headerlink" title="2.3.2 关键字参数"></a>2.3.2 关键字参数</h3><p>函数调用，通过”键&#x3D;值”的形式加以指定。可以让函数更加清晰，容易使用。</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.ccompiler <span class="keyword">import</span> gen_lib_options</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">user_info(gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line">user_info(xx, gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>关键字参数之间不分先后顺序，但是位置参数必须在关键字参数前面</p>
+</li>
+<li><p>在传入参数时，如果有关键字参数和位置参数，位置参数必须在关键字参数前面。</p>
+</li>
+</ul>
+<h3 id="2-3-3-缺省参数"><a href="#2-3-3-缺省参数" class="headerlink" title="2.3.3 缺省参数"></a>2.3.3 缺省参数</h3><p>  如果不为缺省参数传入数据，则该参数值自动使用缺省值</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.ccompiler <span class="keyword">import</span> gen_lib_options</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender=<span class="string">&#x27;male&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">user_info(gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line">user_info(age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-4-不定长参数"><a href="#2-3-4-不定长参数" class="headerlink" title="2.3.4 不定长参数"></a>2.3.4 不定长参数</h3><p>用于不确定调用的时候会传递多少参数的场景</p>
+<ol>
+<li>包裹位置传递</li>
+</ol>
+<p>传入元素之后会被value收集，并合并为一个元组，value为元组类型</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">*value</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    求和函数</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    &quot;&quot;&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> value:</span><br><span class="line"><span class="meta">... </span>        <span class="built_in">sum</span> += i</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">help</span>(add))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Help on function add <span class="keyword">in</span> module __main__:</span><br><span class="line"></span><br><span class="line">add(*value) -&gt; <span class="built_in">int</span></span><br><span class="line">    求和函数</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>包裹关键字传递</li>
+</ol>
+<p>传入元素之后会被kwgs收集，并合并为一个字典，value为字典类型</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwgs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwgs)</span><br><span class="line"></span><br><span class="line">user_info(gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line">user_info(age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;&#x27;gender&#x27;: &#x27;male&#x27;, &#x27;age&#x27;: &#x27;20&#x27;, &#x27;name&#x27;: &#x27;xx&#x27;&#125;</span></span><br><span class="line"><span class="string">&#123;&#x27;age&#x27;: &#x27;20&#x27;, &#x27;name&#x27;: &#x27;xx&#x27;&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-4-拆包"><a href="#2-4-拆包" class="headerlink" title="2.4 拆包"></a>2.4 拆包</h2><ol>
+<li>元组拆包</li>
+</ol>
+<p>将一个返回的元组用多个变量接收可以实现拆包</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"></span><br><span class="line">num1, num2 = ret_num()</span><br><span class="line"><span class="built_in">print</span>(num1)</span><br><span class="line"><span class="built_in">print</span>(num2)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>字典拆包</li>
+</ol>
+<p>将一个返回的字典用多个变量接收可以获取字典的key值，再通过key值即可访问其value，实现拆包</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_dict</span>():</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;age&#x27;</span>:<span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line">key1, key2 = ret_dict()</span><br><span class="line"><span class="built_in">print</span>(key1)</span><br><span class="line"><span class="built_in">print</span>(key2)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ret_dict()[key1])</span><br><span class="line"><span class="built_in">print</span>(ret_dict()[key2])</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">name</span></span><br><span class="line"><span class="string">age</span></span><br><span class="line"><span class="string">xx</span></span><br><span class="line"><span class="string">20</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="2-5-交换变量的值"><a href="#2-5-交换变量的值" class="headerlink" title="2.5 交换变量的值"></a>2.5 交换变量的值</h2><ul>
+<li>Python中的方法</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">20</span></span><br><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-6-引用"><a href="#2-6-引用" class="headerlink" title="2.6 引用"></a>2.6 引用</h2><h3 id="2-6-1-引用值的传递"><a href="#2-6-1-引用值的传递" class="headerlink" title="2.6.1 引用值的传递"></a>2.6.1 引用值的传递</h3><p>在python中，值是靠引用来传递的</p>
+<p>可以用<code>id()</code>来判断两个变量是否为同一个值的引用。id可以被理解为那块内存的地址标识</p>
+<ul>
+<li>一个有趣的问题</li>
+</ul>
+<p>int型数据</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">4369088816</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">4369088816</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b) == <span class="built_in">id</span>(a)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>list型数据</p>
+<p>list1和list2为不同引用，list3和list1为相同引用	</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list3 = list1</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list1)</span><br><span class="line"><span class="number">4373695680</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list2)</span><br><span class="line"><span class="number">4373648576</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list3)</span><br><span class="line"><span class="number">4373695680</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list3) == <span class="built_in">id</span>(list1)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>tuple型数据同上</p>
+<h3 id="2-6-2-引用作实参传递"><a href="#2-6-2-引用作实参传递" class="headerlink" title="2.6.2 引用作实参传递"></a>2.6.2 引用作实参传递</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">a</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line">    a += a</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">a = <span class="number">3</span></span><br><span class="line">test(a)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">10</span>)</span><br><span class="line">b = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">test(b)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">10</span>)</span><br><span class="line">c = <span class="number">1.1</span></span><br><span class="line">test(c)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">4310548784</span></span><br><span class="line"><span class="string">6</span></span><br><span class="line"><span class="string">4310548880</span></span><br><span class="line"><span class="string">----------</span></span><br><span class="line"><span class="string">[3, 4, 5]</span></span><br><span class="line"><span class="string">4311299264</span></span><br><span class="line"><span class="string">[3, 4, 5, 3, 4, 5]</span></span><br><span class="line"><span class="string">4311299264</span></span><br><span class="line"><span class="string">----------</span></span><br><span class="line"><span class="string">1.1</span></span><br><span class="line"><span class="string">4311615472</span></span><br><span class="line"><span class="string">2.2</span></span><br><span class="line"><span class="string">4311618800</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="3-递归"><a href="#3-递归" class="headerlink" title="3. 递归"></a>3. 递归</h1><h2 id="3-1-递归的特点"><a href="#3-1-递归的特点" class="headerlink" title="3.1 递归的特点"></a>3.1 递归的特点</h2><ul>
+<li>函数自己调用自己</li>
+<li>必须有一个出口</li>
+</ul>
+<h2 id="3-2-递归返回值"><a href="#3-2-递归返回值" class="headerlink" title="3.2 递归返回值"></a>3.2 递归返回值</h2><p>用递归实现3以内数字累加</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">val :<span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="keyword">if</span> val == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> val + add(val - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(add(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<h1 id="3-lambda表达式-匿名函数"><a href="#3-lambda表达式-匿名函数" class="headerlink" title="3. lambda表达式(匿名函数)"></a>3. lambda表达式(匿名函数)</h1><h2 id="3-1-lambda表达式的应用场景"><a href="#3-1-lambda表达式的应用场景" class="headerlink" title="3.1 lambda表达式的应用场景"></a>3.1 lambda表达式的应用场景</h2><p>如果一个函数比较简单，可以用lambda表达式来进行简化</p>
+<h2 id="3-2-lambda表达式语法"><a href="#3-2-lambda表达式语法" class="headerlink" title="3.2 lambda表达式语法"></a>3.2 lambda表达式语法</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数列表 : 表达式</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>lambda表达式的参数可有可无，函数的参数在lambda表达式中完全适用</li>
+<li>lambda表达式可以接受任何数量的参数但只能返回一个表达式的值</li>
+</ul>
+<h2 id="3-3-lambda表达式快速入门"><a href="#3-3-lambda表达式快速入门" class="headerlink" title="3.3 lambda表达式快速入门"></a>3.3 lambda表达式快速入门</h2><p>一个例子</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fn1</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fn1)</span><br><span class="line"><span class="built_in">print</span>(fn1())</span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda表达式</span></span><br><span class="line">fn2 = <span class="keyword">lambda</span>: <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(fn2)</span><br><span class="line"><span class="built_in">print</span>(fn2())</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;function fn1 at 0x10249feb0&gt;</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">&lt;function &lt;lambda&gt; at 0x1025c7400&gt;</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>实例：计算a+b</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fn1</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fn1)</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda表达式</span></span><br><span class="line">fn2 = <span class="keyword">lambda</span> a, b: a+b</span><br><span class="line"><span class="built_in">print</span>(fn2)</span><br><span class="line"><span class="built_in">print</span>(fn2(<span class="number">2</span>, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-4-lambda参数情况"><a href="#3-4-lambda参数情况" class="headerlink" title="3.4 lambda参数情况"></a>3.4 lambda参数情况</h2><h3 id="3-4-1-无参数"><a href="#3-4-1-无参数" class="headerlink" title="3.4.1 无参数"></a>3.4.1 无参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> : <span class="number">100</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f0a0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn()</span><br><span class="line"><span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-2-一个参数"><a href="#3-4-2-一个参数" class="headerlink" title="3.4.2 一个参数"></a>3.4.2 一个参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> a:a</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f130</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;hi&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-3-两个-多个-参数"><a href="#3-4-3-两个-多个-参数" class="headerlink" title="3.4.3 两个(多个)参数"></a>3.4.3 两个(多个)参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> a, b: a+b</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f0a0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-4-默认参数"><a href="#3-4-4-默认参数" class="headerlink" title="3.4.4 默认参数"></a>3.4.4 默认参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> a, b, c=<span class="number">100</span>: a+b+c</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f130</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">103</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-5-可变参数-args"><a href="#3-4-5-可变参数-args" class="headerlink" title="3.4.5 可变参数: *args"></a>3.4.5 可变参数: <code>*args</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> *args: args</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f0a0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-6-可变参数-kwds"><a href="#3-4-6-可变参数-kwds" class="headerlink" title="3.4.6 可变参数: **kwds"></a>3.4.6 可变参数: <code>**kwds</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> **kwds: kwds</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f130</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(a=<span class="number">2</span>, b=<span class="number">4</span>, c=<span class="number">6</span>)</span><br><span class="line">&#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">4</span>, <span class="string">&#x27;c&#x27;</span>: <span class="number">6</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-5-lambda嵌入在函数中"><a href="#3-5-lambda嵌入在函数中" class="headerlink" title="3.5 lambda嵌入在函数中"></a>3.5 lambda嵌入在函数中</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">myfunc</span>(<span class="params">n</span>):</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">lambda</span> a : a * n</span><br><span class="line"><span class="comment"># 使用函数定义来创建一个总是使您发送的数字增加三倍的函数</span></span><br><span class="line">mytripler = myfunc(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># mytripler是 lambda a : a*3</span></span><br><span class="line"><span class="built_in">print</span>(mytripler(<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-6-将列表的name属性按照字典的key进行排序"><a href="#3-6-将列表的name属性按照字典的key进行排序" class="headerlink" title="3.6 将列表的name属性按照字典的key进行排序"></a>3.6 将列表的<code>name</code>属性按照字典的key进行排序</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">students = [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jerry&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">19</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Alex&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">19</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tim&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">21</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Lee&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">20</span>&#125;</span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;排序前: <span class="subst">&#123;students&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x:x[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;排序后: <span class="subst">&#123;students&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">排序前: [&#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;, &#123;&#x27;name&#x27;: &#x27;Jerry&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Alex&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Tim&#x27;, &#x27;age&#x27;: 21&#125;, &#123;&#x27;name&#x27;: &#x27;Lee&#x27;, &#x27;age&#x27;: 20&#125;]</span></span><br><span class="line"><span class="string">排序后: [&#123;&#x27;name&#x27;: &#x27;Alex&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Jerry&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Lee&#x27;, &#x27;age&#x27;: 20&#125;, &#123;&#x27;name&#x27;: &#x27;Tim&#x27;, &#x27;age&#x27;: 21&#125;, &#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="4-高阶函数"><a href="#4-高阶函数" class="headerlink" title="4. 高阶函数"></a>4. 高阶函数</h1><h2 id="4-1-高阶函数介绍"><a href="#4-1-高阶函数介绍" class="headerlink" title="4.1 高阶函数介绍"></a>4.1 高阶函数介绍</h2><p>把函数作为参数进行参数，这样的函数被称为高阶函数。</p>
+<p>需求：计算两个数字的绝对值之和</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">addabs</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> args:</span><br><span class="line">        <span class="built_in">sum</span> += <span class="built_in">abs</span>(i)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(addabs(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, -<span class="number">4</span>, -<span class="number">5</span>, -<span class="number">6</span>))</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">21</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>或者可以这样来计算</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">addabs</span>(<span class="params">f, *args</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> args:</span><br><span class="line">        <span class="built_in">sum</span> += f(i)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line">  </span><br><span class="line">fn = <span class="keyword">lambda</span> x:(x*-<span class="number">1</span> <span class="keyword">if</span> x&lt;<span class="number">0</span> <span class="keyword">else</span> x)</span><br><span class="line"><span class="built_in">print</span>(addabs(fn, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, -<span class="number">4</span>, -<span class="number">5</span>, -<span class="number">6</span>))</span><br><span class="line"><span class="comment">#print(addabs(abs, 1, 2, 3, -4, -5, -6))</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">21</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="4-2-Python内置的高阶函数"><a href="#4-2-Python内置的高阶函数" class="headerlink" title="4.2 Python内置的高阶函数"></a>4.2 Python内置的高阶函数</h2><h3 id="4-2-1-map"><a href="#4-2-1-map" class="headerlink" title="4.2.1 map()"></a>4.2.1 map()</h3><p>用法：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(func, <span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
+
+<p>作用：将传入的函数变量func作用到list中的每个元素中，并将结果作为一个迭代器返回</p>
+<p>实例：计算一个list中所有数字的平方</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> x:x**<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = <span class="built_in">map</span>(fn, list1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret</span><br><span class="line">&lt;<span class="built_in">map</span> <span class="built_in">object</span> at <span class="number">0x101514a00</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">list</span>(ret))</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-2-reduce"><a href="#4-2-2-reduce" class="headerlink" title="4.2.2 reduce()"></a>4.2.2 reduce()</h3><p>用法：（func必须有且仅有两个参数）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reduce(func, lst)</span><br></pre></td></tr></table></figure>
+
+<p>作用：每次func计算的结果继续和序列的下一个元素作累积计算</p>
+<p>实例：计算<code>list1</code>序列中各个数字的累加和</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> x, y:x+y</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = reduce(fn, list1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(ret)</span><br><span class="line"><span class="number">28</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-3-filter"><a href="#4-2-3-filter" class="headerlink" title="4.2.3 filter()"></a>4.2.3 filter()</h3><p>用法：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">filter</span>(func, <span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
+
+<p>作用：用于过滤序列，过滤掉不符合条件的元素，返回一个filter对象（所以func必须返回bool类型）</p>
+<p>实例：获取<code>list1</code>中的所有偶数</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> x: x%<span class="number">2</span> == <span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = <span class="built_in">filter</span>(fn, list1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret</span><br><span class="line">&lt;<span class="built_in">filter</span> <span class="built_in">object</span> at <span class="number">0x102c68c40</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(ret)</span><br><span class="line">[<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/25/13%20%E5%87%BD%E6%95%B0/" data-id="clu9jd164000n4axp28bj5sux" data-title="13 函数" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/25/11%20%E5%85%AC%E5%85%B1%E6%93%8D%E4%BD%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          11 公共操作
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/25/12%20%E6%8E%A8%E5%AF%BC%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">12 推导式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/27/2nd/">2nd</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/1st-blog/">1st_blog</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/01%20%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">01 变量和数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/03%20%E8%BE%93%E5%87%BA/">03 输出</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

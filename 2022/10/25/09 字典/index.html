@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>09 字典 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="字典 字典的应用场景 创建字典的语法 字典的常见操作 字典的循环遍历  1. 字典的应用场景每个人有多个数据 1listTom &#x3D; [&#x27;Tom&#x27;, &#x27;男&#x27;, 20]  但这样太麻烦而且不合理。可以用字典来解决这个问题 1dicTom &#x3D; &#123;&quot;Name&quot;: &#x27;Tom&#x27;, &quot;Sex&quot;: &amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="09 字典">
+<meta property="og:url" content="http://example.com/2022/10/25/09%20%E5%AD%97%E5%85%B8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="字典 字典的应用场景 创建字典的语法 字典的常见操作 字典的循环遍历  1. 字典的应用场景每个人有多个数据 1listTom &#x3D; [&#x27;Tom&#x27;, &#x27;男&#x27;, 20]  但这样太麻烦而且不合理。可以用字典来解决这个问题 1dicTom &#x3D; &#123;&quot;Name&quot;: &#x27;Tom&#x27;, &quot;Sex&quot;: &amp;#x">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-25T06:31:14.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:16:13.266Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-09 字典" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/25/09%20%E5%AD%97%E5%85%B8/" class="article-date">
+  <time class="dt-published" datetime="2022-10-25T06:31:14.000Z" itemprop="datePublished">2022-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a>►<a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      09 字典
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h1><ol>
+<li>字典的应用场景</li>
+<li>创建字典的语法</li>
+<li>字典的常见操作</li>
+<li>字典的循环遍历</li>
+</ol>
+<h2 id="1-字典的应用场景"><a href="#1-字典的应用场景" class="headerlink" title="1. 字典的应用场景"></a>1. 字典的应用场景</h2><p>每个人有多个数据</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">listTom = [<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">20</span>]</span><br></pre></td></tr></table></figure>
+
+<p>但这样太麻烦而且不合理。可以用字典来解决这个问题</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dicTom = &#123;<span class="string">&quot;Name&quot;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&quot;Sex&quot;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&quot;Age&quot;</span>: <span class="number">20</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>字典不支持下标访问</p>
+</blockquote>
+<h2 id="2-创建字典"><a href="#2-创建字典" class="headerlink" title="2. 创建字典"></a>2. 创建字典</h2><p>特点:</p>
+<ul>
+<li>符号为大括号</li>
+<li>数据为<code>key-value</code>对的形式出现</li>
+<li>每个<code>key-value</code>对用<code>,</code>隔开</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 有数据的字典</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom = &#123;<span class="string">&quot;Name&quot;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&quot;Sex&quot;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&quot;Age&quot;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># 空字典</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dictNone = &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dictNone</span><br><span class="line">&#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dictNull = <span class="built_in">dict</span>()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dictNull </span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-字典的常见操作"><a href="#3-字典的常见操作" class="headerlink" title="3. 字典的常见操作"></a>3. 字典的常见操作</h2><h3 id="3-1-增"><a href="#3-1-增" class="headerlink" title="3.1 增"></a>3.1 增</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>[key] = 值</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>如果key存在则修改这个key对应的值<br>若不存在则新建一个<code>key-value</code>对</p>
+</blockquote>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom[<span class="string">&#x27;Age&#x27;</span>] = <span class="number">21</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">21</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom[<span class="string">&#x27;Sno&#x27;</span>] = <span class="string">&#x27;007&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">21</span>, <span class="string">&#x27;Sno&#x27;</span>: <span class="string">&#x27;007&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-删"><a href="#3-2-删" class="headerlink" title="3.2 删"></a>3.2 删</h3><ol>
+<li>del：可以使用del来删除字典的某个key来实现删除这个键值对</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> <span class="built_in">dict</span>[key]</span><br><span class="line"><span class="keyword">del</span>(<span class="built_in">dict</span>[key])</span><br></pre></td></tr></table></figure>
+
+<p>例子</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">21</span>, <span class="string">&#x27;Sno&#x27;</span>: <span class="string">&#x27;007&#x27;</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> dicTom[<span class="string">&#x27;Sno&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">21</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>clear</li>
+</ol>
+<p>例子</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom = &#123;<span class="string">&quot;Name&quot;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&quot;Sex&quot;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&quot;Age&quot;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom.clear()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-修改"><a href="#3-3-修改" class="headerlink" title="3.3 修改"></a>3.3 修改</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>[key] = 值</span><br></pre></td></tr></table></figure>
+
+<p>当key存在时可以实现修改的操作</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom[<span class="string">&#x27;Age&#x27;</span>] = <span class="number">21</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">21</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-查找"><a href="#3-4-查找" class="headerlink" title="3.4 查找"></a>3.4 查找</h3><h4 id="3-4-1-key值查找"><a href="#3-4-1-key值查找" class="headerlink" title="3.4.1 key值查找"></a>3.4.1 key值查找</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom = &#123;<span class="string">&quot;Name&quot;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&quot;Sex&quot;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&quot;Age&quot;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom[<span class="string">&#x27;Name&#x27;</span>]</span><br><span class="line"><span class="string">&#x27;Tom&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-2-get"><a href="#3-4-2-get" class="headerlink" title="3.4.2 get()"></a>3.4.2 get()</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span>.get(key, 默认值)</span><br></pre></td></tr></table></figure>
+
+<p>如果当前查找的key不存在则返回第二个默认参数，若存在则返回其对应value</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom.get(<span class="string">&#x27;Name&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;Tom&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom.get(<span class="string">&#x27;aaa&#x27;</span>)</span><br><span class="line"><span class="comment">#这里返回了None</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom.get(<span class="string">&#x27;aaa&#x27;</span>, <span class="string">&#x27;不存在&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;不存在&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-3-keys"><a href="#3-4-3-keys" class="headerlink" title="3.4.3 keys()"></a>3.4.3 keys()</h4><p>查找字典中所有的key，返回可迭代对象</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom.keys()</span><br><span class="line">dict_keys([<span class="string">&#x27;Name&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-4-values"><a href="#3-4-4-values" class="headerlink" title="3.4.4 values()"></a>3.4.4 values()</h4><p>查找字典中所有的value，返回可迭代对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom.values()</span><br><span class="line">dict_values([<span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;男&#x27;</span>, <span class="number">20</span>])</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-4-5-items"><a href="#3-4-5-items" class="headerlink" title="3.4.5 items()"></a>3.4.5 items()</h4><p>查找字典中所有的键值对，返回可迭代对象，里面是元组，元组数据1是key，元组数据2是字典key对应的value</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom</span><br><span class="line">&#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dicTom.items()</span><br><span class="line">dict_items([(<span class="string">&#x27;Name&#x27;</span>, <span class="string">&#x27;Tom&#x27;</span>), (<span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;男&#x27;</span>), (<span class="string">&#x27;Age&#x27;</span>, <span class="number">20</span>)])</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-字典的循环遍历"><a href="#4-字典的循环遍历" class="headerlink" title="4 字典的循环遍历"></a>4 字典的循环遍历</h2><h4 id="4-1-遍历字典的key"><a href="#4-1-遍历字典的key" class="headerlink" title="4.1 遍历字典的key"></a>4.1 遍历字典的key</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span> = &#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> <span class="built_in">dict</span>.keys():</span><br><span class="line">  <span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-2-遍历字典的value"><a href="#4-2-遍历字典的value" class="headerlink" title="4.2 遍历字典的value"></a>4.2 遍历字典的value</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span> = &#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> <span class="built_in">dict</span>.values():</span><br><span class="line">  <span class="built_in">print</span>(value)</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-3-遍历字典的元素"><a href="#4-3-遍历字典的元素" class="headerlink" title="4.3 遍历字典的元素"></a>4.3 遍历字典的元素</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span> = &#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> <span class="built_in">dict</span>.items():</span><br><span class="line">  <span class="built_in">print</span>(item)</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-4-遍历字典的key-value"><a href="#4-4-遍历字典的key-value" class="headerlink" title="4.4 遍历字典的key-value"></a>4.4 遍历字典的key-value</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">dict</span> = &#123;<span class="string">&#x27;Name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>: <span class="string">&#x27;男&#x27;</span>, <span class="string">&#x27;Age&#x27;</span>: <span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> <span class="built_in">dict</span>.items():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">f&#x27;key:<span class="subst">&#123;key&#125;</span> value:<span class="subst">&#123;value&#125;</span>&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>这其实是对字典的拆包操作。由于字典返回的item内部为元组，我们可以用这种方法把元组中的元素拆解出来。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/25/09%20%E5%AD%97%E5%85%B8/" data-id="clu9jd162000g4axp7t3f1msc" data-title="09 字典" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/25/08%20%E5%85%83%E7%BB%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          08 元祖
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/25/10%20%E9%9B%86%E5%90%88/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">10 集合</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/27/2nd/">2nd</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/1st-blog/">1st_blog</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/01%20%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">01 变量和数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/03%20%E8%BE%93%E5%87%BA/">03 输出</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

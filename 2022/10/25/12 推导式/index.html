@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>12 推导式 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="推导式 列表推导式 字典推导式 集合推导式  1. 列表推导式1.1 实现列表 while循环建立列表  需求: 创建一个0-9的列表 12345678&gt;&gt;&gt; list &#x3D; []&gt;&gt;&gt; i &#x3D; 0&gt;&gt;&gt; while i&lt;10:...     list.append(i)...     i +&#x3D; 1... &gt;&gt;&gt; list">
+<meta property="og:type" content="article">
+<meta property="og:title" content="12 推导式">
+<meta property="og:url" content="http://example.com/2022/10/25/12%20%E6%8E%A8%E5%AF%BC%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="推导式 列表推导式 字典推导式 集合推导式  1. 列表推导式1.1 实现列表 while循环建立列表  需求: 创建一个0-9的列表 12345678&gt;&gt;&gt; list &#x3D; []&gt;&gt;&gt; i &#x3D; 0&gt;&gt;&gt; while i&lt;10:...     list.append(i)...     i +&#x3D; 1... &gt;&gt;&gt; list">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-25T06:31:14.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:18:05.963Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-12 推导式" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/25/12%20%E6%8E%A8%E5%AF%BC%E5%BC%8F/" class="article-date">
+  <time class="dt-published" datetime="2022-10-25T06:31:14.000Z" itemprop="datePublished">2022-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a>►<a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      12 推导式
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="推导式"><a href="#推导式" class="headerlink" title="推导式"></a>推导式</h1><ul>
+<li>列表推导式</li>
+<li>字典推导式</li>
+<li>集合推导式</li>
+</ul>
+<h2 id="1-列表推导式"><a href="#1-列表推导式" class="headerlink" title="1. 列表推导式"></a>1. 列表推导式</h2><h3 id="1-1-实现列表"><a href="#1-1-实现列表" class="headerlink" title="1.1 实现列表"></a>1.1 实现列表</h3><ul>
+<li>while循环建立列表</li>
+</ul>
+<p>需求: 创建一个0-9的列表</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>i = <span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">while</span> i&lt;<span class="number">10</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">list</span>.append(i)</span><br><span class="line"><span class="meta">... </span>    i += <span class="number">1</span></span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>for循环建立列表</li>
+</ul>
+<p>需求: 创建一个0-9的列表</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="built_in">list</span>.append(i)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>列表推导式实现</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>i为列表推导式中for循环的返回值</li>
+</ul>
+<h3 id="1-2-带if的列表推导式"><a href="#1-2-带if的列表推导式" class="headerlink" title="1.2 带if的列表推导式"></a>1.2 带if的列表推导式</h3><p>需求: 创建一个0-9的偶数的列表</p>
+<ul>
+<li>可以用range的步长来实现</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">10</span>, <span class="number">2</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以用for循环实现</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line"><span class="meta">... </span>        <span class="built_in">list</span>.append(i)</span><br><span class="line"><span class="meta">... </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用推导式实现</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = []</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小技巧：把用for循环实现的代码抄下来，删去<code>:</code>和多余的空行</p>
+</blockquote>
+<h3 id="1-3-用多个for循环实现列表推导式"><a href="#1-3-用多个for循环实现列表推导式" class="headerlink" title="1.3 用多个for循环实现列表推导式"></a>1.3 用多个for循环实现列表推导式</h3><p>需求：创建列表</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[(<span class="number">1</span>, <span class="number">0</span>), (<span class="number">1</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">0</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">2</span>, <span class="number">2</span>)]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用for循环实现</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">3</span>):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">        <span class="built_in">list</span>.append((i, j))</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用推导式实现：</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = []</span><br><span class="line"><span class="built_in">list</span> = [(i, j) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">3</span>) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>小技巧：把用for循环实现的代码抄下来，删去<code>:</code>和多余的空行</p>
+</blockquote>
+<h2 id="2-字典推导式"><a href="#2-字典推导式" class="headerlink" title="2. 字典推导式"></a>2. 字典推导式</h2><p>思考：如果有如下两个列表</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">list1 = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line">list2 = [<span class="string">&#x27;Tom&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;man&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>如何合并为一个字典</p>
+<p>字典推导式作用： 快速合并列   提取字典中的数字</p>
+<h3 id="2-1-实现字典"><a href="#2-1-实现字典" class="headerlink" title="2.1 实现字典"></a>2.1 实现字典</h3><ol>
+<li>创建一个字典, key为1-5，value为1-5的平方</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span> = &#123;&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span> = &#123;i:i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">6</span>)&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span></span><br><span class="line">&#123;<span class="number">1</span>: <span class="number">1</span>, <span class="number">2</span>: <span class="number">4</span>, <span class="number">3</span>: <span class="number">9</span>, <span class="number">4</span>: <span class="number">16</span>, <span class="number">5</span>: <span class="number">25</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ol>
+<li>先让for循环取到想要的数字</li>
+<li>再把需求写在前面</li>
+</ol>
+</blockquote>
+<ol start="2">
+<li>将两个列表合并为一个字典</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;age&#x27;</span>, <span class="string">&#x27;gender&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list2 = [<span class="string">&#x27;Tom&#x27;</span>, <span class="number">20</span>, <span class="string">&#x27;man&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span> = &#123;&#125;</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string"><span class="meta">&gt;&gt;&gt; </span>dict = &#123;l1:l2 for l1, l2 in list1, list2&#125;</span></span><br><span class="line"><span class="string">  File &quot;&lt;stdin&gt;&quot;, line 1</span></span><br><span class="line"><span class="string">    dict = &#123;l1:l2 for l1, l2 in list1, list2&#125;</span></span><br><span class="line"><span class="string">                                     ^</span></span><br><span class="line"><span class="string">SyntaxError: invalid syntax</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span> = &#123;list1[i]:list2[i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">min</span>(<span class="built_in">len</span>(list1), <span class="built_in">len</span>(list2)))&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">dict</span></span><br><span class="line">&#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span>: <span class="number">20</span>, <span class="string">&#x27;gender&#x27;</span>: <span class="string">&#x27;man&#x27;</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>提取字典的目标数据</li>
+</ol>
+<p>需求：提取电脑数量大于200的字典数据</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>counts = &#123;<span class="string">&#x27;Mac&#x27;</span>: <span class="number">211</span>, <span class="string">&#x27;DELL&#x27;</span>: <span class="number">128</span>, <span class="string">&#x27;HP&#x27;</span>: <span class="number">203</span>, <span class="string">&#x27;Mi&#x27;</span>: <span class="number">120</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>count1 = &#123;key: value <span class="keyword">for</span> key, value <span class="keyword">in</span> counts.items() <span class="keyword">if</span> value &gt;= <span class="number">200</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>count1</span><br><span class="line">&#123;<span class="string">&#x27;Mac&#x27;</span>: <span class="number">211</span>, <span class="string">&#x27;HP&#x27;</span>: <span class="number">203</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-集合推导式"><a href="#3-集合推导式" class="headerlink" title="3. 集合推导式"></a>3. 集合推导式</h2><p>需求： 创建一个集合，数据为1， 1， 2的平方</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; set = set()</span><br><span class="line">&gt;&gt;&gt; list = [1, 1, 2]</span><br><span class="line">&gt;&gt;&gt; set = &#123;i**2 for i in list&#125;</span><br><span class="line">&gt;&gt;&gt; set</span><br><span class="line">&#123;1, 4&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/25/12%20%E6%8E%A8%E5%AF%BC%E5%BC%8F/" data-id="clu9jd165000q4axp90ypc0g9" data-title="12 推导式" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/25/13%20%E5%87%BD%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          13 函数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/25/02%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">02 数据类型转换和运算符</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/27/2nd/">2nd</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/1st-blog/">1st_blog</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/01%20%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">01 变量和数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/03%20%E8%BE%93%E5%87%BA/">03 输出</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

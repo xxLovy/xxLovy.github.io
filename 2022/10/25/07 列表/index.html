@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>07 列表 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="列表 列表的应用场景 列表的格式 列表的常用操作 列表的循环遍历 列表的嵌套使用  1. 列表的应用场景存储多个变量 2. 列表的格式列表可以一次性存储多个数据，且可以为不同的数据类型 3. 列表的常用操作3.1 查找3.1.1 下标123456789&gt;&gt;&gt; list &#x3D; [&#x27;xx&#x27;, &#x27;zz&#x27;, &#x27;yy&#x27;]&gt;&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="07 列表">
+<meta property="og:url" content="http://example.com/2022/10/25/07%20%E5%88%97%E8%A1%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="列表 列表的应用场景 列表的格式 列表的常用操作 列表的循环遍历 列表的嵌套使用  1. 列表的应用场景存储多个变量 2. 列表的格式列表可以一次性存储多个数据，且可以为不同的数据类型 3. 列表的常用操作3.1 查找3.1.1 下标123456789&gt;&gt;&gt; list &#x3D; [&#x27;xx&#x27;, &#x27;zz&#x27;, &#x27;yy&#x27;]&gt;&amp;g">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-10-25T06:31:14.000Z">
+<meta property="article:modified_time" content="2024-03-27T08:17:16.215Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-07 列表" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2022/10/25/07%20%E5%88%97%E8%A1%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-10-25T06:31:14.000Z" itemprop="datePublished">2022-10-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a>►<a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      07 列表
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h1><ol>
+<li>列表的应用场景</li>
+<li>列表的格式</li>
+<li>列表的常用操作</li>
+<li>列表的循环遍历</li>
+<li>列表的嵌套使用</li>
+</ol>
+<h2 id="1-列表的应用场景"><a href="#1-列表的应用场景" class="headerlink" title="1. 列表的应用场景"></a>1. 列表的应用场景</h2><p>存储多个变量</p>
+<h2 id="2-列表的格式"><a href="#2-列表的格式" class="headerlink" title="2. 列表的格式"></a>2. 列表的格式</h2><p>列表可以一次性存储多个数据，且可以为不同的数据类型</p>
+<h2 id="3-列表的常用操作"><a href="#3-列表的常用操作" class="headerlink" title="3. 列表的常用操作"></a>3. 列表的常用操作</h2><h3 id="3-1-查找"><a href="#3-1-查找" class="headerlink" title="3.1 查找"></a>3.1 查找</h3><h4 id="3-1-1-下标"><a href="#3-1-1-下标" class="headerlink" title="3.1.1 下标"></a>3.1.1 下标</h4><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">0</span>]</span><br><span class="line"><span class="string">&#x27;xx&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">1</span>]</span><br><span class="line"><span class="string">&#x27;zz&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">2</span>]</span><br><span class="line"><span class="string">&#x27;yy&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-1-2-函数"><a href="#3-1-2-函数" class="headerlink" title="3.1.2 函数"></a>3.1.2 函数</h4><ol>
+<li>index()</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.index(数据, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+
+<p>和字符串中的用法一样</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.index(<span class="string">&#x27;zz&#x27;</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>count()</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.count(数据, 开始位置下标, 结束位置下标)</span><br></pre></td></tr></table></figure>
+
+<p>和字符串中的用法一样</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.count(<span class="string">&#x27;zz&#x27;</span>)</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>len()</li>
+</ol>
+<p>获取列表的长度</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">len</span>(<span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">len</span>(<span class="built_in">list</span>)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3-1-3-判断是否存在"><a href="#3-1-3-判断是否存在" class="headerlink" title="3.1.3 判断是否存在"></a>3.1.3 判断是否存在</h4><ol>
+<li>in: 判断制定数据是否存在于列表，存在True, 不存在False</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;yy&#x27;</span> <span class="keyword">in</span> <span class="built_in">list</span></span><br><span class="line"><span class="literal">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;zy&#x27;</span> <span class="keyword">in</span> <span class="built_in">list</span></span><br><span class="line"><span class="literal">False</span></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>not in:判断制定数据是否存在于列表，不存在True, 存在False</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;yy&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="built_in">list</span></span><br><span class="line"><span class="literal">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;zy&#x27;</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="built_in">list</span></span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p> 一个小案例（判断用户能否注册）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">name_list = [<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zy&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    name = <span class="built_in">input</span>(<span class="string">&quot;请输入加入名单的名字(输入q退出):\n&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> name == <span class="string">&#x27;q&#x27;</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;注册完成后的名单为<span class="subst">&#123;name_list&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> name <span class="keyword">in</span> name_list:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;用户名已存在，不允许注册&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;允许注册&quot;</span>)</span><br><span class="line">        name_list.append(name)</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-增加"><a href="#3-2-增加" class="headerlink" title="3.2 增加"></a>3.2 增加</h3><ol>
+<li>append(): 列表追加数据</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.append(数据)</span><br></pre></td></tr></table></figure>
+
+<p>追加数据的时候，如果这个数据是个序列（字符串 列表 etc），则追加整个序列到列表的结尾</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.append(<span class="string">&#x27;zy&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>, <span class="string">&#x27;zy&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.append([<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>, [<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>]]</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>extend():列表追加数据</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.extend(数据)</span><br></pre></td></tr></table></figure>
+
+<p>追加数据的时候，如果这个数据是个序列（字符串 列表 etc），则拆分成一个个单元追加在结尾</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.extend(<span class="string">&#x27;zy&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>, <span class="string">&#x27;z&#x27;</span>, <span class="string">&#x27;y&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.extend([<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>, <span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+
+
+<ol start="3">
+<li>insert(): 指定位置列表追加数据</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.insert(下标, 数据)</span><br></pre></td></tr></table></figure>
+
+<p>追加数据的时候，如果这个数据是个序列（字符串 列表 etc），则追加整个序列到列表的结尾</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.insert(<span class="number">1</span>, <span class="string">&#x27;zy&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;zy&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<p>相当于把下标位置元素变成<code>数据</code>然后再把后面的数据依次往后移一位</p>
+<h3 id="3-3-删除"><a href="#3-3-删除" class="headerlink" title="3.3 删除"></a>3.3 删除</h3><ol>
+<li>del</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">del</span> 目标</span><br><span class="line"><span class="keyword">del</span>(目标)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>可以删除list的指定元素</li>
+<li>可以删除这个list对象</li>
+</ul>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> <span class="built_in">list</span>[<span class="number">2</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">del</span> <span class="built_in">list</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">&lt;<span class="keyword">class</span> <span class="string">&#x27;list&#x27;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>pop: 删除置顶下标的数据，如果不指定下标则默认删除最后一个数据。并返回被删除的数据</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.pop(下标)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>, <span class="string">&#x27;zz&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.pop()</span><br><span class="line"><span class="string">&#x27;zz&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;yy&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.pop(<span class="number">0</span>)</span><br><span class="line"><span class="string">&#x27;xx&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;yy&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>remove: 删除指定数据（只删除第一个）</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.remove(数据)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;5&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.remove(<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;5&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>clear: 清空列表</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.clear()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;5&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.clear()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[]</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-修改"><a href="#3-4-修改" class="headerlink" title="3.4 修改"></a>3.4 修改</h3><ol>
+<li>修改指定下标的数据</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;5&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">1</span>] = <span class="string">&#x27;6&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;5&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>reverse(): 将原列表倒转</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;5&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.reverse()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>sort(): 将列表以指定方式排序</li>
+</ol>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>.sort(key=<span class="literal">None</span>, reverse=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>reverse=Ture</code>为降序<br><code>reverse=False</code>为升序</p>
+</blockquote>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;5&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>.sort(reverse=<span class="literal">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;1&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-复制"><a href="#3-5-复制" class="headerlink" title="3.5 复制"></a>3.5 复制</h3><p>函数: copy</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;1&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cplist = <span class="built_in">list</span>.copy()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cplist</span><br><span class="line">[<span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;1&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cplist.pop()</span><br><span class="line"><span class="string">&#x27;1&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>cplist</span><br><span class="line">[<span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[<span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;1&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意！<code>cplist = list</code>只是做了引用，实际上并没有复制</p>
+<p> <code>cplist = list[:]</code>或<code>cplist = list.copy()</code> 可以实现复制</p>
+</blockquote>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">my_foods = [<span class="string">&#x27;pizza&#x27;</span>, <span class="string">&#x27;falafel&#x27;</span>, <span class="string">&#x27;carrot cake&#x27;</span>] </span><br><span class="line"><span class="comment"># 这种方式来复制列表时，再改变my_foods的值后friend_foods不会被改变</span></span><br><span class="line">friend_foods = my_foods[:]</span><br><span class="line"><span class="comment"># 如果采用friend_foods = my_foods，那么相当于friend_foods在引用my_foods，my_foods改变后它也会变</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;My favorite foods are:&quot;</span>) </span><br><span class="line"><span class="built_in">print</span>(my_foods)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nMy friend&#x27;s favorite foods are:&quot;</span>) </span><br><span class="line"><span class="built_in">print</span>(friend_foods)</span><br></pre></td></tr></table></figure>
+
+<h2 id="4-列表的循环遍历"><a href="#4-列表的循环遍历" class="headerlink" title="4. 列表的循环遍历"></a>4. 列表的循环遍历</h2><h3 id="4-1-用while循环遍历"><a href="#4-1-用while循环遍历" class="headerlink" title="4.1 用while循环遍历"></a>4.1 用while循环遍历</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> i&lt;<span class="built_in">len</span>(<span class="built_in">list</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">list</span>[i])</span><br><span class="line">    i += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-用for循环遍历"><a href="#4-2-用for循环遍历" class="headerlink" title="4.2 用for循环遍历"></a>4.2 用for循环遍历</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">list</span>:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-列表嵌套"><a href="#5-列表嵌套" class="headerlink" title="5. 列表嵌套"></a>5. 列表嵌套</h2><p>相当于其他语言的二维数组</p>
+<h3 id="5-1-查找"><a href="#5-1-查找" class="headerlink" title="5.1 查找"></a>5.1 查找</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span> = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span></span><br><span class="line">[[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>], [<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">0</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">1</span>]</span><br><span class="line">[<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">2</span>]</span><br><span class="line">[<span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>[<span class="number">0</span>][<span class="number">2</span>]</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="案例：八个老师分配三个办公室"><a href="#案例：八个老师分配三个办公室" class="headerlink" title="案例：八个老师分配三个办公室"></a>案例：八个老师分配三个办公室</h3><p>（办公室可以为空，完全随机但不平均分配）</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line">Tname = [<span class="string">&#x27;张三&#x27;</span>, <span class="string">&#x27;李四&#x27;</span>, <span class="string">&#x27;王五&#x27;</span>, <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;Jerry&#x27;</span>, <span class="string">&#x27;Alex&#x27;</span>]</span><br><span class="line">assigned_office = [[], [], []]</span><br><span class="line">cpTname = Tname.copy()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> cpTname:</span><br><span class="line">    jud = random.randint(<span class="number">0</span>, <span class="number">2</span>)</span><br><span class="line">    assigned_office[jud].append(cpTname.pop())</span><br><span class="line"></span><br><span class="line">n = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> assigned_office:</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> i:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;办公室<span class="subst">&#123;n&#125;</span>没有被分配老师&quot;</span>)</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;办公室<span class="subst">&#123;n&#125;</span>的人数为<span class="subst">&#123;<span class="built_in">len</span>(i)&#125;</span>，成员分别为:&quot;</span>)</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> i:</span><br><span class="line">        <span class="built_in">print</span>(j, end=<span class="string">&#x27; &#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>()</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"><span class="comment">#某次运行的结果</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">办公室1的人数为3，成员分别为:</span></span><br><span class="line"><span class="string">Tom 王五 张三 </span></span><br><span class="line"><span class="string">办公室2没有被分配老师</span></span><br><span class="line"><span class="string">办公室3的人数为3，成员分别为:</span></span><br><span class="line"><span class="string">Alex Jerry 李四 </span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/10/25/07%20%E5%88%97%E8%A1%A8/" data-id="clu9jd15z000a4axpho6h9v91" data-title="07 列表" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/10/25/06%20%E5%AD%97%E7%AC%A6%E4%B8%B2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          06 字符串
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/10/25/08%20%E5%85%83%E7%BB%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">08 元祖</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/python/" style="font-size: 10px;">python</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2024/03/27/2nd/">2nd</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/1st-blog/">1st_blog</a>
+          </li>
+        
+          <li>
+            <a href="/2024/03/27/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/01%20%E5%8F%98%E9%87%8F%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">01 变量和数据类型</a>
+          </li>
+        
+          <li>
+            <a href="/2022/10/25/03%20%E8%BE%93%E5%87%BA/">03 输出</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2024 John Doe<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

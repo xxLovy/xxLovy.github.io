@@ -1,12 +1,22 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
   
-  <title>13 函数 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="1. 函数基础 函数的作用 函数的使用步骤 函数的参数作用 函数返回值的作用 函数说明文档 函数嵌套  1.1 函数的作用提高代码的复用性 1.2 函数的使用步骤1.2.1 定义函数12def function(参数):  code  1.2.2 调用函数1function(参数)  Python中函数必须先定义再使用 一个简单的add函数: 1234567def add(*value) -&amp;gt">
+    <meta name="description" content="1. 函数基础 函数的作用 函数的使用步骤 函数的参数作用 函数返回值的作用 函数说明文档 函数嵌套  1.1 函数的作用提高代码的复用性 1.2 函数的使用步骤1.2.1 定义函数12def function(参数):  code  1.2.2 调用函数1function(参数)  Python中函数必须先定义再使用 一个简单的add函数: 1234567def add(*value) -&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="13 函数">
 <meta property="og:url" content="http://example.com/2022/10/25/13%20%E5%87%BD%E6%95%B0/index.html">
@@ -17,88 +27,253 @@
 <meta property="article:modified_time" content="2024-03-27T08:56:05.107Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="python">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
+<meta name="twitter:card" content="summary_large_image">
   
   
   
-<link rel="stylesheet" href="/css/style.css">
+  <title>13 函数 - Hexo</title>
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
   
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
   
 <meta name="generator" content="Hexo 7.1.1"></head>
 
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="13 函数"></span>
+          
+        </div>
+
         
-          <a class="main-nav-link" href="/">Home</a>
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-10-25 14:31" pubdate>
+          October 25, 2022 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          2.6k words
         
-      </nav>
-      <nav id="sub-nav">
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
         
         
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
         
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+          22 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
   </div>
-</header>
+</div>
 
-      <div class="outer">
-        <section id="main"><article id="post-13 函数" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/10/25/13%20%E5%87%BD%E6%95%B0/" class="article-date">
-  <time class="dt-published" datetime="2022-10-25T06:31:26.000Z" itemprop="datePublished">2022-10-25</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a>►<a class="article-category-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a>
-  </div>
+</div>
 
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="p-name article-title" itemprop="headline name">
-      13 函数
-    </h1>
-  
+  </header>
 
-      </header>
+  <main>
     
-    <div class="e-content article-entry" itemprop="articleBody">
       
-        <h1 id="1-函数基础"><a href="#1-函数基础" class="headerlink" title="1. 函数基础"></a>1. 函数基础</h1><ul>
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">13 函数</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="1-函数基础"><a href="#1-函数基础" class="headerlink" title="1. 函数基础"></a>1. 函数基础</h1><ul>
 <li>函数的作用</li>
 <li>函数的使用步骤</li>
 <li>函数的参数作用</li>
@@ -107,28 +282,28 @@
 <li>函数嵌套</li>
 </ul>
 <h2 id="1-1-函数的作用"><a href="#1-1-函数的作用" class="headerlink" title="1.1 函数的作用"></a>1.1 函数的作用</h2><p>提高代码的复用性</p>
-<h2 id="1-2-函数的使用步骤"><a href="#1-2-函数的使用步骤" class="headerlink" title="1.2 函数的使用步骤"></a>1.2 函数的使用步骤</h2><h3 id="1-2-1-定义函数"><a href="#1-2-1-定义函数" class="headerlink" title="1.2.1 定义函数"></a>1.2.1 定义函数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">function</span>(<span class="params">参数</span>):</span><br><span class="line">  code</span><br></pre></td></tr></table></figure>
+<h2 id="1-2-函数的使用步骤"><a href="#1-2-函数的使用步骤" class="headerlink" title="1.2 函数的使用步骤"></a>1.2 函数的使用步骤</h2><h3 id="1-2-1-定义函数"><a href="#1-2-1-定义函数" class="headerlink" title="1.2.1 定义函数"></a>1.2.1 定义函数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">function</span>(<span class="hljs-params">参数</span>):<br>  code<br></code></pre></td></tr></table></figure>
 
-<h3 id="1-2-2-调用函数"><a href="#1-2-2-调用函数" class="headerlink" title="1.2.2 调用函数"></a>1.2.2 调用函数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function(参数)</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-2-调用函数"><a href="#1-2-2-调用函数" class="headerlink" title="1.2.2 调用函数"></a>1.2.2 调用函数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py">function(参数)<br></code></pre></td></tr></table></figure>
 
 <p>Python中函数必须先定义再使用</p>
 <p>一个简单的add函数:</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">*value</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> value:</span><br><span class="line">        <span class="built_in">sum</span> += i</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ,<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">*value</span>) -&gt; <span class="hljs-built_in">int</span>:<br>    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> value:<br>        <span class="hljs-built_in">sum</span> += i<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span><br><br><span class="hljs-built_in">print</span>(add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span> ,<span class="hljs-number">5</span>))<br></code></pre></td></tr></table></figure>
 
 <h2 id="1-3-函数说明文档"><a href="#1-3-函数说明文档" class="headerlink" title="1.3. 函数说明文档"></a>1.3. 函数说明文档</h2><ul>
 <li>定义函数的说明文档</li>
 </ul>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">func_name</span>(<span class="params">参数</span>):</span><br><span class="line">  <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">  说明文档</span></span><br><span class="line"><span class="string">  &quot;&quot;&quot;</span></span><br><span class="line">  code</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">func_name</span>(<span class="hljs-params">参数</span>):<br>  <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">  说明文档</span><br><span class="hljs-string">  &quot;&quot;&quot;</span><br>  code<br>  ...<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>查看函数的说明文档</li>
 </ul>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">help</span>(func_name)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-built_in">help</span>(func_name)<br></code></pre></td></tr></table></figure>
 
 <p>查看len的说明</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">help</span>(<span class="built_in">len</span>)</span><br><span class="line"></span><br><span class="line">Help on built-<span class="keyword">in</span> function <span class="built_in">len</span> <span class="keyword">in</span> module builtins:</span><br><span class="line"></span><br><span class="line"><span class="built_in">len</span>(obj, /)</span><br><span class="line">    Return the number of items <span class="keyword">in</span> a container.</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">help</span>(<span class="hljs-built_in">len</span>)<br><br>Help on built-<span class="hljs-keyword">in</span> function <span class="hljs-built_in">len</span> <span class="hljs-keyword">in</span> module builtins:<br><br><span class="hljs-built_in">len</span>(obj, /)<br>    Return the number of items <span class="hljs-keyword">in</span> a container.<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">*value</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    求和函数</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    &quot;&quot;&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> value:</span><br><span class="line"><span class="meta">... </span>        <span class="built_in">sum</span> += i</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">help</span>(add))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Help on function add <span class="keyword">in</span> module __main__:</span><br><span class="line"></span><br><span class="line">add(*value) -&gt; <span class="built_in">int</span></span><br><span class="line">    求和函数</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs py"><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">*value</span>) -&gt; <span class="hljs-built_in">int</span>:<br><span class="hljs-meta">... </span>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string"><span class="hljs-meta">... </span>    求和函数</span><br><span class="hljs-string"><span class="hljs-meta">... </span>    &quot;&quot;&quot;</span><br><span class="hljs-meta">... </span>    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span><br><span class="hljs-meta">... </span>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> value:<br><span class="hljs-meta">... </span>        <span class="hljs-built_in">sum</span> += i<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-built_in">help</span>(add))<br><br><br>Help on function add <span class="hljs-keyword">in</span> module __main__:<br><br>add(*value) -&gt; <span class="hljs-built_in">int</span><br>    求和函数<br></code></pre></td></tr></table></figure>
 
 <h1 id="2-函数进阶"><a href="#2-函数进阶" class="headerlink" title="2. 函数进阶"></a>2. 函数进阶</h1><ul>
 <li>变量的作用域</li>
@@ -140,33 +315,33 @@
 <li>可变和不可变类型</li>
 </ul>
 <h2 id="2-1-变量的作用域"><a href="#2-1-变量的作用域" class="headerlink" title="2.1 变量的作用域"></a>2.1 变量的作用域</h2><p>按照变量生效的范围来分：可以分为 局部变量 和 全局变量</p>
-<h3 id="2-1-1-局部变量"><a href="#2-1-1-局部变量" class="headerlink" title="2.1.1 局部变量"></a>2.1.1 局部变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">  a = <span class="number">100</span></span><br><span class="line">  <span class="keyword">return</span> a</span><br><span class="line"></span><br><span class="line"><span class="comment">#print(a) 这将报错，因为a值在test()中被定义，是局部变量</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-1-1-局部变量"><a href="#2-1-1-局部变量" class="headerlink" title="2.1.1 局部变量"></a>2.1.1 局部变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">test</span>():<br>  a = <span class="hljs-number">100</span><br>  <span class="hljs-keyword">return</span> a<br><br><span class="hljs-comment">#print(a) 这将报错，因为a值在test()中被定义，是局部变量</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="2-1-2-全局变量"><a href="#2-1-2-全局变量" class="headerlink" title="2.1.2 全局变量"></a>2.1.2 全局变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>():</span><br><span class="line">  <span class="built_in">print</span>(a)</span><br><span class="line">  </span><br><span class="line">test()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+<h3 id="2-1-2-全局变量"><a href="#2-1-2-全局变量" class="headerlink" title="2.1.2 全局变量"></a>2.1.2 全局变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py">a = <span class="hljs-number">100</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">test</span>():<br>  <span class="hljs-built_in">print</span>(a)<br>  <br>test()<br><span class="hljs-built_in">print</span>(a)<br></code></pre></td></tr></table></figure>
 
 <p>这里test()和下面的a都将有效</p>
-<h3 id="2-1-3-修改全局变量"><a href="#2-1-3-修改全局变量" class="headerlink" title="2.1.3 修改全局变量"></a>2.1.3 修改全局变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    a = <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    </span><br><span class="line">testA()</span><br><span class="line">testB()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-1-3-修改全局变量"><a href="#2-1-3-修改全局变量" class="headerlink" title="2.1.3 修改全局变量"></a>2.1.3 修改全局变量</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs py">a = <span class="hljs-number">100</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">testA</span>():<br>    <span class="hljs-built_in">print</span>(a)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">testB</span>():<br>    a = <span class="hljs-number">200</span><br>    <span class="hljs-built_in">print</span>(a)<br>    <br>testA()<br>testB()<br><span class="hljs-built_in">print</span>(a)<br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">100</span><br><span class="hljs-string">200</span><br><span class="hljs-string">100</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>可以看到运行testB()之后，a变量的值事实上并没有被修改</p>
 <p>testB()中的a为局部变量，并不是上面定义的全局变量a</p>
 <p>如果想要修改全局变量</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testA</span>():</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">testB</span>():</span><br><span class="line">    <span class="keyword">global</span> a</span><br><span class="line">    a = <span class="number">200</span></span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line">testA()</span><br><span class="line">testB()</span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs py">a = <span class="hljs-number">100</span><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">testA</span>():<br>    <span class="hljs-built_in">print</span>(a)<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">testB</span>():<br>    <span class="hljs-keyword">global</span> a<br>    a = <span class="hljs-number">200</span><br>    <span class="hljs-built_in">print</span>(a)<br><br>testA()<br>testB()<br><span class="hljs-built_in">print</span>(a)<br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">100</span><br><span class="hljs-string">200</span><br><span class="hljs-string">200</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>借助<code>global</code>关键字可以实现修改全局变量</p>
 <h2 id="2-2-函数有多个返回值"><a href="#2-2-函数有多个返回值" class="headerlink" title="2.2 函数有多个返回值"></a>2.2 函数有多个返回值</h2><p>如果一个函数有多个返回值应该怎么处理?</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">ret_num</span>():<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>, <span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
 
 <p>这样可以实现函数返回两个值，返回的类型为元组<code>(1, 2)</code></p>
 <p>可以指定返回的类型</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num1</span>():</span><br><span class="line">    <span class="keyword">return</span> [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num2</span>():</span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num3</span>():</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="number">1</span>:<span class="number">2</span>, <span class="number">3</span>:<span class="number">4</span>, <span class="number">5</span>:<span class="number">6</span>&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">ret_num1</span>():<br>    <span class="hljs-keyword">return</span> [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">ret_num2</span>():<br>    <span class="hljs-keyword">return</span> (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br><span class="hljs-keyword">def</span> <span class="hljs-title function_">ret_num3</span>():<br>    <span class="hljs-keyword">return</span> &#123;<span class="hljs-number">1</span>:<span class="hljs-number">2</span>, <span class="hljs-number">3</span>:<span class="hljs-number">4</span>, <span class="hljs-number">5</span>:<span class="hljs-number">6</span>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="2-3-函数的参数"><a href="#2-3-函数的参数" class="headerlink" title="2.3 函数的参数"></a>2.3 函数的参数</h2><h3 id="2-3-1-位置参数"><a href="#2-3-1-位置参数" class="headerlink" title="2.3.1 位置参数"></a>2.3.1 位置参数</h3><p>位置参数：调用函数时根据函数定义的参数位置来传递参数</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">user_info(<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;20&#x27;</span>, <span class="string">&#x27;male&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">user_info</span>(<span class="hljs-params">name, age, gender</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;您的名字是<span class="hljs-subst">&#123;name&#125;</span>,年龄是<span class="hljs-subst">&#123;age&#125;</span>,性别是<span class="hljs-subst">&#123;gender&#125;</span>&#x27;</span>)<br><br>user_info(<span class="hljs-string">&#x27;xx&#x27;</span>, <span class="hljs-string">&#x27;20&#x27;</span>, <span class="hljs-string">&#x27;male&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
 <p>传递参数的位置和个数必须固定</p>
 <p>如果传入<code>user_info(&#39;male&#39;, &#39;20&#39;, &#39;xx&#39;)</code>会导致数据失去意义或者在一些其他情况报错</p>
 <h3 id="2-3-2-关键字参数"><a href="#2-3-2-关键字参数" class="headerlink" title="2.3.2 关键字参数"></a>2.3.2 关键字参数</h3><p>函数调用，通过”键&#x3D;值”的形式加以指定。可以让函数更加清晰，容易使用。</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.ccompiler <span class="keyword">import</span> gen_lib_options</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">user_info(gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line">user_info(xx, gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> distutils.ccompiler <span class="hljs-keyword">import</span> gen_lib_options<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">user_info</span>(<span class="hljs-params">name, age, gender</span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;您的名字是<span class="hljs-subst">&#123;name&#125;</span>,年龄是<span class="hljs-subst">&#123;age&#125;</span>,性别是<span class="hljs-subst">&#123;gender&#125;</span>&#x27;</span>)<br><br>user_info(gender=<span class="hljs-string">&#x27;male&#x27;</span>, age=<span class="hljs-string">&#x27;20&#x27;</span>, name=<span class="hljs-string">&#x27;xx&#x27;</span>)<br>user_info(xx, gender=<span class="hljs-string">&#x27;male&#x27;</span>, age=<span class="hljs-string">&#x27;20&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>关键字参数之间不分先后顺序，但是位置参数必须在关键字参数前面</p>
@@ -175,37 +350,37 @@
 </li>
 </ul>
 <h3 id="2-3-3-缺省参数"><a href="#2-3-3-缺省参数" class="headerlink" title="2.3.3 缺省参数"></a>2.3.3 缺省参数</h3><p>  如果不为缺省参数传入数据，则该参数值自动使用缺省值</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> distutils.ccompiler <span class="keyword">import</span> gen_lib_options</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">name, age, gender=<span class="string">&#x27;male&#x27;</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;您的名字是<span class="subst">&#123;name&#125;</span>,年龄是<span class="subst">&#123;age&#125;</span>,性别是<span class="subst">&#123;gender&#125;</span>&#x27;</span>)</span><br><span class="line"></span><br><span class="line">user_info(gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line">user_info(age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">from</span> distutils.ccompiler <span class="hljs-keyword">import</span> gen_lib_options<br><br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">user_info</span>(<span class="hljs-params">name, age, gender=<span class="hljs-string">&#x27;male&#x27;</span></span>):<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;您的名字是<span class="hljs-subst">&#123;name&#125;</span>,年龄是<span class="hljs-subst">&#123;age&#125;</span>,性别是<span class="hljs-subst">&#123;gender&#125;</span>&#x27;</span>)<br><br>user_info(gender=<span class="hljs-string">&#x27;male&#x27;</span>, age=<span class="hljs-string">&#x27;20&#x27;</span>, name=<span class="hljs-string">&#x27;xx&#x27;</span>)<br>user_info(age=<span class="hljs-string">&#x27;20&#x27;</span>, name=<span class="hljs-string">&#x27;xx&#x27;</span>)<br></code></pre></td></tr></table></figure>
 
 <h3 id="2-3-4-不定长参数"><a href="#2-3-4-不定长参数" class="headerlink" title="2.3.4 不定长参数"></a>2.3.4 不定长参数</h3><p>用于不确定调用的时候会传递多少参数的场景</p>
 <ol>
 <li>包裹位置传递</li>
 </ol>
 <p>传入元素之后会被value收集，并合并为一个元组，value为元组类型</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">*value</span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line"><span class="meta">... </span>    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    求和函数</span></span><br><span class="line"><span class="string"><span class="meta">... </span>    &quot;&quot;&quot;</span></span><br><span class="line"><span class="meta">... </span>    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="meta">... </span>    <span class="keyword">for</span> i <span class="keyword">in</span> value:</span><br><span class="line"><span class="meta">... </span>        <span class="built_in">sum</span> += i</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">help</span>(add))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Help on function add <span class="keyword">in</span> module __main__:</span><br><span class="line"></span><br><span class="line">add(*value) -&gt; <span class="built_in">int</span></span><br><span class="line">    求和函数</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">*value</span>) -&gt; <span class="hljs-built_in">int</span>:<br><span class="hljs-meta">... </span>    <span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string"><span class="hljs-meta">... </span>    求和函数</span><br><span class="hljs-string"><span class="hljs-meta">... </span>    &quot;&quot;&quot;</span><br><span class="hljs-meta">... </span>    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span><br><span class="hljs-meta">... </span>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> value:<br><span class="hljs-meta">... </span>        <span class="hljs-built_in">sum</span> += i<br><span class="hljs-meta">... </span>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-built_in">help</span>(add))<br><br><br>Help on function add <span class="hljs-keyword">in</span> module __main__:<br><br>add(*value) -&gt; <span class="hljs-built_in">int</span><br>    求和函数<br></code></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>包裹关键字传递</li>
 </ol>
 <p>传入元素之后会被kwgs收集，并合并为一个字典，value为字典类型</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">user_info</span>(<span class="params">**kwgs</span>):</span><br><span class="line">    <span class="built_in">print</span>(kwgs)</span><br><span class="line"></span><br><span class="line">user_info(gender=<span class="string">&#x27;male&#x27;</span>, age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line">user_info(age=<span class="string">&#x27;20&#x27;</span>, name=<span class="string">&#x27;xx&#x27;</span>)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;&#x27;gender&#x27;: &#x27;male&#x27;, &#x27;age&#x27;: &#x27;20&#x27;, &#x27;name&#x27;: &#x27;xx&#x27;&#125;</span></span><br><span class="line"><span class="string">&#123;&#x27;age&#x27;: &#x27;20&#x27;, &#x27;name&#x27;: &#x27;xx&#x27;&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">user_info</span>(<span class="hljs-params">**kwgs</span>):<br>    <span class="hljs-built_in">print</span>(kwgs)<br><br>user_info(gender=<span class="hljs-string">&#x27;male&#x27;</span>, age=<span class="hljs-string">&#x27;20&#x27;</span>, name=<span class="hljs-string">&#x27;xx&#x27;</span>)<br>user_info(age=<span class="hljs-string">&#x27;20&#x27;</span>, name=<span class="hljs-string">&#x27;xx&#x27;</span>)<br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">&#123;&#x27;gender&#x27;: &#x27;male&#x27;, &#x27;age&#x27;: &#x27;20&#x27;, &#x27;name&#x27;: &#x27;xx&#x27;&#125;</span><br><span class="hljs-string">&#123;&#x27;age&#x27;: &#x27;20&#x27;, &#x27;name&#x27;: &#x27;xx&#x27;&#125;</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="2-4-拆包"><a href="#2-4-拆包" class="headerlink" title="2.4 拆包"></a>2.4 拆包</h2><ol>
 <li>元组拆包</li>
 </ol>
 <p>将一个返回的元组用多个变量接收可以实现拆包</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_num</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>, <span class="number">2</span></span><br><span class="line"></span><br><span class="line">num1, num2 = ret_num()</span><br><span class="line"><span class="built_in">print</span>(num1)</span><br><span class="line"><span class="built_in">print</span>(num2)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">1</span></span><br><span class="line"><span class="string">2</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">ret_num</span>():<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>, <span class="hljs-number">2</span><br><br>num1, num2 = ret_num()<br><span class="hljs-built_in">print</span>(num1)<br><span class="hljs-built_in">print</span>(num2)<br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">1</span><br><span class="hljs-string">2</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>字典拆包</li>
 </ol>
 <p>将一个返回的字典用多个变量接收可以获取字典的key值，再通过key值即可访问其value，实现拆包</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">ret_dict</span>():</span><br><span class="line">    <span class="keyword">return</span> &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;xx&#x27;</span>, <span class="string">&#x27;age&#x27;</span>:<span class="number">20</span>&#125;</span><br><span class="line"></span><br><span class="line">key1, key2 = ret_dict()</span><br><span class="line"><span class="built_in">print</span>(key1)</span><br><span class="line"><span class="built_in">print</span>(key2)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ret_dict()[key1])</span><br><span class="line"><span class="built_in">print</span>(ret_dict()[key2])</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">name</span></span><br><span class="line"><span class="string">age</span></span><br><span class="line"><span class="string">xx</span></span><br><span class="line"><span class="string">20</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">ret_dict</span>():<br>    <span class="hljs-keyword">return</span> &#123;<span class="hljs-string">&#x27;name&#x27;</span>:<span class="hljs-string">&#x27;xx&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span>:<span class="hljs-number">20</span>&#125;<br><br>key1, key2 = ret_dict()<br><span class="hljs-built_in">print</span>(key1)<br><span class="hljs-built_in">print</span>(key2)<br><br><span class="hljs-built_in">print</span>(ret_dict()[key1])<br><span class="hljs-built_in">print</span>(ret_dict()[key2])<br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">name</span><br><span class="hljs-string">age</span><br><span class="hljs-string">xx</span><br><span class="hljs-string">20</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="2-5-交换变量的值"><a href="#2-5-交换变量的值" class="headerlink" title="2.5 交换变量的值"></a>2.5 交换变量的值</h2><ul>
 <li>Python中的方法</li>
 </ul>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">20</span></span><br><span class="line">a, b = b, a</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs py">a = <span class="hljs-number">10</span><br>b = <span class="hljs-number">20</span><br>a, b = b, a<br></code></pre></td></tr></table></figure>
 
 <h2 id="2-6-引用"><a href="#2-6-引用" class="headerlink" title="2.6 引用"></a>2.6 引用</h2><h3 id="2-6-1-引用值的传递"><a href="#2-6-1-引用值的传递" class="headerlink" title="2.6.1 引用值的传递"></a>2.6.1 引用值的传递</h3><p>在python中，值是靠引用来传递的</p>
 <p>可以用<code>id()</code>来判断两个变量是否为同一个值的引用。id可以被理解为那块内存的地址标识</p>
@@ -213,14 +388,14 @@
 <li>一个有趣的问题</li>
 </ul>
 <p>int型数据</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b = <span class="number">3</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(a)</span><br><span class="line"><span class="number">4369088816</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b)</span><br><span class="line"><span class="number">4369088816</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(b) == <span class="built_in">id</span>(a)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>a = <span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>b = <span class="hljs-number">3</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">id</span>(a)<br><span class="hljs-number">4369088816</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">id</span>(b)<br><span class="hljs-number">4369088816</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">id</span>(b) == <span class="hljs-built_in">id</span>(a)<br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
 
 <p>list型数据</p>
 <p>list1和list2为不同引用，list3和list1为相同引用	</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list2 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list3 = list1</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list1)</span><br><span class="line"><span class="number">4373695680</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list2)</span><br><span class="line"><span class="number">4373648576</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list3)</span><br><span class="line"><span class="number">4373695680</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">id</span>(list3) == <span class="built_in">id</span>(list1)</span><br><span class="line"><span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>list1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>list2 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>list3 = list1<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">id</span>(list1)<br><span class="hljs-number">4373695680</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">id</span>(list2)<br><span class="hljs-number">4373648576</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">id</span>(list3)<br><span class="hljs-number">4373695680</span><br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">id</span>(list3) == <span class="hljs-built_in">id</span>(list1)<br><span class="hljs-literal">True</span><br></code></pre></td></tr></table></figure>
 
 <p>tuple型数据同上</p>
-<h3 id="2-6-2-引用作实参传递"><a href="#2-6-2-引用作实参传递" class="headerlink" title="2.6.2 引用作实参传递"></a>2.6.2 引用作实参传递</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">a</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line">    a += a</span><br><span class="line">    <span class="built_in">print</span>(a)</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">id</span>(a))</span><br><span class="line"></span><br><span class="line">a = <span class="number">3</span></span><br><span class="line">test(a)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">10</span>)</span><br><span class="line">b = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">test(b)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;-&#x27;</span> * <span class="number">10</span>)</span><br><span class="line">c = <span class="number">1.1</span></span><br><span class="line">test(c)</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">3</span></span><br><span class="line"><span class="string">4310548784</span></span><br><span class="line"><span class="string">6</span></span><br><span class="line"><span class="string">4310548880</span></span><br><span class="line"><span class="string">----------</span></span><br><span class="line"><span class="string">[3, 4, 5]</span></span><br><span class="line"><span class="string">4311299264</span></span><br><span class="line"><span class="string">[3, 4, 5, 3, 4, 5]</span></span><br><span class="line"><span class="string">4311299264</span></span><br><span class="line"><span class="string">----------</span></span><br><span class="line"><span class="string">1.1</span></span><br><span class="line"><span class="string">4311615472</span></span><br><span class="line"><span class="string">2.2</span></span><br><span class="line"><span class="string">4311618800</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-6-2-引用作实参传递"><a href="#2-6-2-引用作实参传递" class="headerlink" title="2.6.2 引用作实参传递"></a>2.6.2 引用作实参传递</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">a</span>) -&gt; <span class="hljs-literal">None</span>:<br>    <span class="hljs-built_in">print</span>(a)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(a))<br>    a += a<br>    <span class="hljs-built_in">print</span>(a)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">id</span>(a))<br><br>a = <span class="hljs-number">3</span><br>test(a)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;-&#x27;</span> * <span class="hljs-number">10</span>)<br>b = [<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>]<br>test(b)<br><br><span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;-&#x27;</span> * <span class="hljs-number">10</span>)<br>c = <span class="hljs-number">1.1</span><br>test(c)<br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">3</span><br><span class="hljs-string">4310548784</span><br><span class="hljs-string">6</span><br><span class="hljs-string">4310548880</span><br><span class="hljs-string">----------</span><br><span class="hljs-string">[3, 4, 5]</span><br><span class="hljs-string">4311299264</span><br><span class="hljs-string">[3, 4, 5, 3, 4, 5]</span><br><span class="hljs-string">4311299264</span><br><span class="hljs-string">----------</span><br><span class="hljs-string">1.1</span><br><span class="hljs-string">4311615472</span><br><span class="hljs-string">2.2</span><br><span class="hljs-string">4311618800</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 
 
@@ -229,217 +404,439 @@
 <li>必须有一个出口</li>
 </ul>
 <h2 id="3-2-递归返回值"><a href="#3-2-递归返回值" class="headerlink" title="3.2 递归返回值"></a>3.2 递归返回值</h2><p>用递归实现3以内数字累加</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">val :<span class="built_in">int</span></span>) -&gt; <span class="built_in">int</span>:</span><br><span class="line">    <span class="keyword">if</span> val == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> val + add(val - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(add(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">add</span>(<span class="hljs-params">val :<span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-built_in">int</span>:<br>    <span class="hljs-keyword">if</span> val == <span class="hljs-number">1</span>:<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">1</span><br>    <span class="hljs-keyword">else</span>:<br>        <span class="hljs-keyword">return</span> val + add(val - <span class="hljs-number">1</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-built_in">print</span>(add(<span class="hljs-number">3</span>))<br></code></pre></td></tr></table></figure>
 
 <h1 id="3-lambda表达式-匿名函数"><a href="#3-lambda表达式-匿名函数" class="headerlink" title="3. lambda表达式(匿名函数)"></a>3. lambda表达式(匿名函数)</h1><h2 id="3-1-lambda表达式的应用场景"><a href="#3-1-lambda表达式的应用场景" class="headerlink" title="3.1 lambda表达式的应用场景"></a>3.1 lambda表达式的应用场景</h2><p>如果一个函数比较简单，可以用lambda表达式来进行简化</p>
-<h2 id="3-2-lambda表达式语法"><a href="#3-2-lambda表达式语法" class="headerlink" title="3.2 lambda表达式语法"></a>3.2 lambda表达式语法</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> 参数列表 : 表达式</span><br></pre></td></tr></table></figure>
+<h2 id="3-2-lambda表达式语法"><a href="#3-2-lambda表达式语法" class="headerlink" title="3.2 lambda表达式语法"></a>3.2 lambda表达式语法</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">lambda</span> 参数列表 : 表达式<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>lambda表达式的参数可有可无，函数的参数在lambda表达式中完全适用</li>
 <li>lambda表达式可以接受任何数量的参数但只能返回一个表达式的值</li>
 </ul>
 <h2 id="3-3-lambda表达式快速入门"><a href="#3-3-lambda表达式快速入门" class="headerlink" title="3.3 lambda表达式快速入门"></a>3.3 lambda表达式快速入门</h2><p>一个例子</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fn1</span>():</span><br><span class="line">    <span class="keyword">return</span> <span class="number">200</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fn1)</span><br><span class="line"><span class="built_in">print</span>(fn1())</span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda表达式</span></span><br><span class="line">fn2 = <span class="keyword">lambda</span>: <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(fn2)</span><br><span class="line"><span class="built_in">print</span>(fn2())</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&lt;function fn1 at 0x10249feb0&gt;</span></span><br><span class="line"><span class="string">200</span></span><br><span class="line"><span class="string">&lt;function &lt;lambda&gt; at 0x1025c7400&gt;</span></span><br><span class="line"><span class="string">100</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment"># 函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fn1</span>():<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">200</span><br><br><span class="hljs-built_in">print</span>(fn1)<br><span class="hljs-built_in">print</span>(fn1())<br><br><span class="hljs-comment"># lambda表达式</span><br>fn2 = <span class="hljs-keyword">lambda</span>: <span class="hljs-number">100</span><br><span class="hljs-built_in">print</span>(fn2)<br><span class="hljs-built_in">print</span>(fn2())<br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">&lt;function fn1 at 0x10249feb0&gt;</span><br><span class="hljs-string">200</span><br><span class="hljs-string">&lt;function &lt;lambda&gt; at 0x1025c7400&gt;</span><br><span class="hljs-string">100</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>实例：计算a+b</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 函数</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fn1</span>(<span class="params">a, b</span>):</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(fn1)</span><br><span class="line"><span class="built_in">print</span>(fn1(<span class="number">2</span>, <span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># lambda表达式</span></span><br><span class="line">fn2 = <span class="keyword">lambda</span> a, b: a+b</span><br><span class="line"><span class="built_in">print</span>(fn2)</span><br><span class="line"><span class="built_in">print</span>(fn2(<span class="number">2</span>, <span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-comment"># 函数</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">fn1</span>(<span class="hljs-params">a, b</span>):<br>    <span class="hljs-keyword">return</span> a+b<br><br><span class="hljs-built_in">print</span>(fn1)<br><span class="hljs-built_in">print</span>(fn1(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))<br><br><span class="hljs-comment"># lambda表达式</span><br>fn2 = <span class="hljs-keyword">lambda</span> a, b: a+b<br><span class="hljs-built_in">print</span>(fn2)<br><span class="hljs-built_in">print</span>(fn2(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>))<br></code></pre></td></tr></table></figure>
 
-<h2 id="3-4-lambda参数情况"><a href="#3-4-lambda参数情况" class="headerlink" title="3.4 lambda参数情况"></a>3.4 lambda参数情况</h2><h3 id="3-4-1-无参数"><a href="#3-4-1-无参数" class="headerlink" title="3.4.1 无参数"></a>3.4.1 无参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> : <span class="number">100</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f0a0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn()</span><br><span class="line"><span class="number">100</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-4-lambda参数情况"><a href="#3-4-lambda参数情况" class="headerlink" title="3.4 lambda参数情况"></a>3.4 lambda参数情况</h2><h3 id="3-4-1-无参数"><a href="#3-4-1-无参数" class="headerlink" title="3.4.1 无参数"></a>3.4.1 无参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> : <span class="hljs-number">100</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>fn<br>&lt;function &lt;<span class="hljs-keyword">lambda</span>&gt; at <span class="hljs-number">0x102e5f0a0</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn()<br><span class="hljs-number">100</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-4-2-一个参数"><a href="#3-4-2-一个参数" class="headerlink" title="3.4.2 一个参数"></a>3.4.2 一个参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> a:a</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f130</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;hi&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-4-2-一个参数"><a href="#3-4-2-一个参数" class="headerlink" title="3.4.2 一个参数"></a>3.4.2 一个参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> a:a<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn<br>&lt;function &lt;<span class="hljs-keyword">lambda</span>&gt; at <span class="hljs-number">0x102e5f130</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn(<span class="hljs-string">&#x27;hi&#x27;</span>)<br><span class="hljs-string">&#x27;hi&#x27;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-4-3-两个-多个-参数"><a href="#3-4-3-两个-多个-参数" class="headerlink" title="3.4.3 两个(多个)参数"></a>3.4.3 两个(多个)参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> a, b: a+b</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f0a0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-4-3-两个-多个-参数"><a href="#3-4-3-两个-多个-参数" class="headerlink" title="3.4.3 两个(多个)参数"></a>3.4.3 两个(多个)参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> a, b: a+b<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn<br>&lt;function &lt;<span class="hljs-keyword">lambda</span>&gt; at <span class="hljs-number">0x102e5f0a0</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br><span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-4-4-默认参数"><a href="#3-4-4-默认参数" class="headerlink" title="3.4.4 默认参数"></a>3.4.4 默认参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> a, b, c=<span class="number">100</span>: a+b+c</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f130</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="number">103</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-4-4-默认参数"><a href="#3-4-4-默认参数" class="headerlink" title="3.4.4 默认参数"></a>3.4.4 默认参数</h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> a, b, c=<span class="hljs-number">100</span>: a+b+c<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn<br>&lt;function &lt;<span class="hljs-keyword">lambda</span>&gt; at <span class="hljs-number">0x102e5f130</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>)<br><span class="hljs-number">6</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>fn(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)<br><span class="hljs-number">103</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-4-5-可变参数-args"><a href="#3-4-5-可变参数-args" class="headerlink" title="3.4.5 可变参数: *args"></a>3.4.5 可变参数: <code>*args</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> *args: args</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f0a0</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-5-可变参数-args"><a href="#3-4-5-可变参数-args" class="headerlink" title="3.4.5 可变参数: *args"></a>3.4.5 可变参数: <code>*args</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> *args: args<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn<br>&lt;function &lt;<span class="hljs-keyword">lambda</span>&gt; at <span class="hljs-number">0x102e5f0a0</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>)<br></code></pre></td></tr></table></figure>
 
-<h3 id="3-4-6-可变参数-kwds"><a href="#3-4-6-可变参数-kwds" class="headerlink" title="3.4.6 可变参数: **kwds"></a>3.4.6 可变参数: <code>**kwds</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> **kwds: kwds</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn</span><br><span class="line">&lt;function &lt;<span class="keyword">lambda</span>&gt; at <span class="number">0x102e5f130</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn(a=<span class="number">2</span>, b=<span class="number">4</span>, c=<span class="number">6</span>)</span><br><span class="line">&#123;<span class="string">&#x27;a&#x27;</span>: <span class="number">2</span>, <span class="string">&#x27;b&#x27;</span>: <span class="number">4</span>, <span class="string">&#x27;c&#x27;</span>: <span class="number">6</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-6-可变参数-kwds"><a href="#3-4-6-可变参数-kwds" class="headerlink" title="3.4.6 可变参数: **kwds"></a>3.4.6 可变参数: <code>**kwds</code></h3><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> **kwds: kwds<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn<br>&lt;function &lt;<span class="hljs-keyword">lambda</span>&gt; at <span class="hljs-number">0x102e5f130</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn(a=<span class="hljs-number">2</span>, b=<span class="hljs-number">4</span>, c=<span class="hljs-number">6</span>)<br>&#123;<span class="hljs-string">&#x27;a&#x27;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;b&#x27;</span>: <span class="hljs-number">4</span>, <span class="hljs-string">&#x27;c&#x27;</span>: <span class="hljs-number">6</span>&#125;<br></code></pre></td></tr></table></figure>
 
-<h2 id="3-5-lambda嵌入在函数中"><a href="#3-5-lambda嵌入在函数中" class="headerlink" title="3.5 lambda嵌入在函数中"></a>3.5 lambda嵌入在函数中</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">myfunc</span>(<span class="params">n</span>):</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">lambda</span> a : a * n</span><br><span class="line"><span class="comment"># 使用函数定义来创建一个总是使您发送的数字增加三倍的函数</span></span><br><span class="line">mytripler = myfunc(<span class="number">3</span>)</span><br><span class="line"><span class="comment"># mytripler是 lambda a : a*3</span></span><br><span class="line"><span class="built_in">print</span>(mytripler(<span class="number">11</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="3-5-lambda嵌入在函数中"><a href="#3-5-lambda嵌入在函数中" class="headerlink" title="3.5 lambda嵌入在函数中"></a>3.5 lambda嵌入在函数中</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">myfunc</span>(<span class="hljs-params">n</span>):<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">lambda</span> a : a * n<br><span class="hljs-comment"># 使用函数定义来创建一个总是使您发送的数字增加三倍的函数</span><br>mytripler = myfunc(<span class="hljs-number">3</span>)<br><span class="hljs-comment"># mytripler是 lambda a : a*3</span><br><span class="hljs-built_in">print</span>(mytripler(<span class="hljs-number">11</span>))<br></code></pre></td></tr></table></figure>
 
-<h2 id="3-6-将列表的name属性按照字典的key进行排序"><a href="#3-6-将列表的name属性按照字典的key进行排序" class="headerlink" title="3.6 将列表的name属性按照字典的key进行排序"></a>3.6 将列表的<code>name</code>属性按照字典的key进行排序</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">students = [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tom&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">20</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Jerry&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">19</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Alex&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">19</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Tim&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">21</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>: <span class="string">&#x27;Lee&#x27;</span>, <span class="string">&#x27;age&#x27;</span> : <span class="number">20</span>&#125;</span><br><span class="line">]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;排序前: <span class="subst">&#123;students&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">students.sort(key=<span class="keyword">lambda</span> x:x[<span class="string">&#x27;name&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;排序后: <span class="subst">&#123;students&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">排序前: [&#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;, &#123;&#x27;name&#x27;: &#x27;Jerry&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Alex&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Tim&#x27;, &#x27;age&#x27;: 21&#125;, &#123;&#x27;name&#x27;: &#x27;Lee&#x27;, &#x27;age&#x27;: 20&#125;]</span></span><br><span class="line"><span class="string">排序后: [&#123;&#x27;name&#x27;: &#x27;Alex&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Jerry&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Lee&#x27;, &#x27;age&#x27;: 20&#125;, &#123;&#x27;name&#x27;: &#x27;Tim&#x27;, &#x27;age&#x27;: 21&#125;, &#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-6-将列表的name属性按照字典的key进行排序"><a href="#3-6-将列表的name属性按照字典的key进行排序" class="headerlink" title="3.6 将列表的name属性按照字典的key进行排序"></a>3.6 将列表的<code>name</code>属性按照字典的key进行排序</h2><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs py">students = [<br>    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Tom&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span> : <span class="hljs-number">20</span>&#125;,<br>    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Jerry&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span> : <span class="hljs-number">19</span>&#125;,<br>    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Alex&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span> : <span class="hljs-number">19</span>&#125;,<br>    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Tim&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span> : <span class="hljs-number">21</span>&#125;,<br>    &#123;<span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Lee&#x27;</span>, <span class="hljs-string">&#x27;age&#x27;</span> : <span class="hljs-number">20</span>&#125;<br>]<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;排序前: <span class="hljs-subst">&#123;students&#125;</span>&quot;</span>)<br><br>students.sort(key=<span class="hljs-keyword">lambda</span> x:x[<span class="hljs-string">&#x27;name&#x27;</span>])<br><span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;排序后: <span class="hljs-subst">&#123;students&#125;</span>&quot;</span>)<br><br><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">排序前: [&#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;, &#123;&#x27;name&#x27;: &#x27;Jerry&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Alex&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Tim&#x27;, &#x27;age&#x27;: 21&#125;, &#123;&#x27;name&#x27;: &#x27;Lee&#x27;, &#x27;age&#x27;: 20&#125;]</span><br><span class="hljs-string">排序后: [&#123;&#x27;name&#x27;: &#x27;Alex&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Jerry&#x27;, &#x27;age&#x27;: 19&#125;, &#123;&#x27;name&#x27;: &#x27;Lee&#x27;, &#x27;age&#x27;: 20&#125;, &#123;&#x27;name&#x27;: &#x27;Tim&#x27;, &#x27;age&#x27;: 21&#125;, &#123;&#x27;name&#x27;: &#x27;Tom&#x27;, &#x27;age&#x27;: 20&#125;]</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h1 id="4-高阶函数"><a href="#4-高阶函数" class="headerlink" title="4. 高阶函数"></a>4. 高阶函数</h1><h2 id="4-1-高阶函数介绍"><a href="#4-1-高阶函数介绍" class="headerlink" title="4.1 高阶函数介绍"></a>4.1 高阶函数介绍</h2><p>把函数作为参数进行参数，这样的函数被称为高阶函数。</p>
 <p>需求：计算两个数字的绝对值之和</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">addabs</span>(<span class="params">*args</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> args:</span><br><span class="line">        <span class="built_in">sum</span> += <span class="built_in">abs</span>(i)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(addabs(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, -<span class="number">4</span>, -<span class="number">5</span>, -<span class="number">6</span>))</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">21</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">addabs</span>(<span class="hljs-params">*args</span>):<br>    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> args:<br>        <span class="hljs-built_in">sum</span> += <span class="hljs-built_in">abs</span>(i)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span><br><br><span class="hljs-built_in">print</span>(addabs(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">5</span>, -<span class="hljs-number">6</span>))<br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">21</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <p>或者可以这样来计算</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">addabs</span>(<span class="params">f, *args</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> args:</span><br><span class="line">        <span class="built_in">sum</span> += f(i)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span></span><br><span class="line">  </span><br><span class="line">fn = <span class="keyword">lambda</span> x:(x*-<span class="number">1</span> <span class="keyword">if</span> x&lt;<span class="number">0</span> <span class="keyword">else</span> x)</span><br><span class="line"><span class="built_in">print</span>(addabs(fn, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, -<span class="number">4</span>, -<span class="number">5</span>, -<span class="number">6</span>))</span><br><span class="line"><span class="comment">#print(addabs(abs, 1, 2, 3, -4, -5, -6))</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">21</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-keyword">def</span> <span class="hljs-title function_">addabs</span>(<span class="hljs-params">f, *args</span>):<br>    <span class="hljs-built_in">sum</span> = <span class="hljs-number">0</span><br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> args:<br>        <span class="hljs-built_in">sum</span> += f(i)<br>    <span class="hljs-keyword">return</span> <span class="hljs-built_in">sum</span><br>  <br>fn = <span class="hljs-keyword">lambda</span> x:(x*-<span class="hljs-number">1</span> <span class="hljs-keyword">if</span> x&lt;<span class="hljs-number">0</span> <span class="hljs-keyword">else</span> x)<br><span class="hljs-built_in">print</span>(addabs(fn, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, -<span class="hljs-number">4</span>, -<span class="hljs-number">5</span>, -<span class="hljs-number">6</span>))<br><span class="hljs-comment">#print(addabs(abs, 1, 2, 3, -4, -5, -6))</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">21</span><br><span class="hljs-string">&quot;&quot;&quot;</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="4-2-Python内置的高阶函数"><a href="#4-2-Python内置的高阶函数" class="headerlink" title="4.2 Python内置的高阶函数"></a>4.2 Python内置的高阶函数</h2><h3 id="4-2-1-map"><a href="#4-2-1-map" class="headerlink" title="4.2.1 map()"></a>4.2.1 map()</h3><p>用法：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>(func, <span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-built_in">map</span>(func, <span class="hljs-built_in">list</span>)<br></code></pre></td></tr></table></figure>
 
 <p>作用：将传入的函数变量func作用到list中的每个元素中，并将结果作为一个迭代器返回</p>
 <p>实例：计算一个list中所有数字的平方</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> x:x**<span class="number">2</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = <span class="built_in">map</span>(fn, list1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret</span><br><span class="line">&lt;<span class="built_in">map</span> <span class="built_in">object</span> at <span class="number">0x101514a00</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(<span class="built_in">list</span>(ret))</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>, <span class="number">25</span>, <span class="number">36</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>list1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> x:x**<span class="hljs-number">2</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>ret = <span class="hljs-built_in">map</span>(fn, list1)<br><span class="hljs-meta">&gt;&gt;&gt; </span>ret<br>&lt;<span class="hljs-built_in">map</span> <span class="hljs-built_in">object</span> at <span class="hljs-number">0x101514a00</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(<span class="hljs-built_in">list</span>(ret))<br>[<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>, <span class="hljs-number">36</span>]<br></code></pre></td></tr></table></figure>
 
 <h3 id="4-2-2-reduce"><a href="#4-2-2-reduce" class="headerlink" title="4.2.2 reduce()"></a>4.2.2 reduce()</h3><p>用法：（func必须有且仅有两个参数）</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reduce(func, lst)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py">reduce(func, lst)<br></code></pre></td></tr></table></figure>
 
 <p>作用：每次func计算的结果继续和序列的下一个元素作累积计算</p>
 <p>实例：计算<code>list1</code>序列中各个数字的累加和</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> x, y:x+y</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = reduce(fn, list1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(ret)</span><br><span class="line"><span class="number">28</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-keyword">from</span> functools <span class="hljs-keyword">import</span> reduce<br><span class="hljs-meta">&gt;&gt;&gt; </span><br><span class="hljs-meta">&gt;&gt;&gt; </span>list1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> x, y:x+y<br><span class="hljs-meta">&gt;&gt;&gt; </span>ret = reduce(fn, list1)<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">print</span>(ret)<br><span class="hljs-number">28</span><br></code></pre></td></tr></table></figure>
 
 <h3 id="4-2-3-filter"><a href="#4-2-3-filter" class="headerlink" title="4.2.3 filter()"></a>4.2.3 filter()</h3><p>用法：</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">filter</span>(func, <span class="built_in">list</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-built_in">filter</span>(func, <span class="hljs-built_in">list</span>)<br></code></pre></td></tr></table></figure>
 
 <p>作用：用于过滤序列，过滤掉不符合条件的元素，返回一个filter对象（所以func必须返回bool类型）</p>
 <p>实例：获取<code>list1</code>中的所有偶数</p>
-<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>list1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>fn = <span class="keyword">lambda</span> x: x%<span class="number">2</span> == <span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret = <span class="built_in">filter</span>(fn, list1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ret</span><br><span class="line">&lt;<span class="built_in">filter</span> <span class="built_in">object</span> at <span class="number">0x102c68c40</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">list</span>(ret)</span><br><span class="line">[<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs py"><span class="hljs-meta">&gt;&gt;&gt; </span>list1 = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>]<br><span class="hljs-meta">&gt;&gt;&gt; </span>fn = <span class="hljs-keyword">lambda</span> x: x%<span class="hljs-number">2</span> == <span class="hljs-number">0</span><br><span class="hljs-meta">&gt;&gt;&gt; </span>ret = <span class="hljs-built_in">filter</span>(fn, list1)<br><span class="hljs-meta">&gt;&gt;&gt; </span>ret<br>&lt;<span class="hljs-built_in">filter</span> <span class="hljs-built_in">object</span> at <span class="hljs-number">0x102c68c40</span>&gt;<br><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">list</span>(ret)<br>[<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>]<br></code></pre></td></tr></table></figure>
 
 
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/10/25/13%20%E5%87%BD%E6%95%B0/" data-id="clu9knqzq000snrxp03w8hucl" data-title="13 函数" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
 
-    </footer>
-  </div>
+<span class="category-chains">
+  
   
     
-<nav id="article-nav">
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="category-chain-item">古老的学习笔记</a>
   
-    <a href="/2022/10/25/14%20%E6%96%87%E4%BB%B6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          14 文件
-        
+  
+    <span>></span>
+    
+  <a href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/" class="category-chain-item">Basic</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/python/" class="print-no-link">#python</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>13 函数</div>
+      <div>http://example.com/2022/10/25/13 函数/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>October 25, 2022</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/10/25/14%20%E6%96%87%E4%BB%B6/" title="14 文件">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">14 文件</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/25/12%20%E6%8E%A8%E5%AF%BC%E5%BC%8F/" title="12 推导式">
+                        <span class="hidden-mobile">12 推导式</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/2022/10/25/12%20%E6%8E%A8%E5%AF%BC%E5%BC%8F/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">12 推导式</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">古老的学习笔记</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%8F%A4%E8%80%81%E7%9A%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/Basic/">Basic</a></li></ul></li></ul>
     </div>
-  </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Computer-Network/" rel="tag">Computer Network</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Database/" rel="tag">Database</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IP/" rel="tag">IP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL-server/" rel="tag">SQL server</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/" rel="tag">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Computer-Network/" style="font-size: 10px;">Computer Network</a> <a href="/tags/Database/" style="font-size: 10px;">Database</a> <a href="/tags/IP/" style="font-size: 10px;">IP</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/SQL-server/" style="font-size: 10px;">SQL server</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2023/06/11/ComputerNetwork/">Computer Network</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/25/17%20%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/">17 模块和包</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/25/16%20%E5%BC%82%E5%B8%B8/">16 异常</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/25/15%20%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">15 面向对象</a>
-          </li>
-        
-          <li>
-            <a href="/2022/10/25/14%20%E6%96%87%E4%BB%B6/">14 文件</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-      &copy; 2024 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
 
     </div>
-    <nav id="mobile-nav">
+  </div>
+</div>
+
+
+
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
+
+
+
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+
+
+
   
-</nav>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
     
 
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-<script src="/js/jquery-3.6.4.min.js"></script>
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
+    <script  src="/js/img-lazyload.js" ></script>
+  
 
 
 
 
-<script src="/js/script.js"></script>
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
 
 
 
 
 
-  </div>
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
 </body>
 </html>

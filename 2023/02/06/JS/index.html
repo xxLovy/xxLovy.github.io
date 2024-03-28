@@ -1,0 +1,1338 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="1. Use JS in HTML1.1 Use  ‘&#39; JS   1.2 with external reference(path)  1.3 with URL  2. How to output Writing into an HTML element, using innerHTML. Writing into the HTML output using document.write().">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript">
+<meta property="og:url" content="http://example.com/2023/02/06/JS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. Use JS in HTML1.1 Use  ‘&#39; JS   1.2 with external reference(path)  1.3 with URL  2. How to output Writing into an HTML element, using innerHTML. Writing into the HTML output using document.write().">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-02-06T03:28:14.000Z">
+<meta property="article:modified_time" content="2024-03-27T12:57:50.306Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Frontend">
+<meta property="article:tag" content="Node">
+<meta property="article:tag" content="Backend">
+<meta property="article:tag" content="Javascript">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>JavaScript - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="JavaScript"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-06 11:28" pubdate>
+          February 6, 2023 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          179 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          2 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">JavaScript</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="1-Use-JS-in-HTML"><a href="#1-Use-JS-in-HTML" class="headerlink" title="1. Use JS in HTML"></a>1. Use JS in HTML</h2><h3 id="1-1-Use-‘"><a href="#1-1-Use-‘" class="headerlink" title="1.1 Use  ‘'"></a>1.1 Use  ‘<script>'</h3><script> JS </script>
+
+<h3 id="1-2-with-external-reference-path"><a href="#1-2-with-external-reference-path" class="headerlink" title="1.2 with external reference(path)"></a>1.2 with external reference(path)</h3><script src="myScript.js"></script>
+
+<h3 id="1-3-with-URL"><a href="#1-3-with-URL" class="headerlink" title="1.3 with URL"></a>1.3 with URL</h3><script src="https://www.w3schools.com/js/myScript.js"></script>
+
+<h2 id="2-How-to-output"><a href="#2-How-to-output" class="headerlink" title="2. How to output"></a>2. How to output</h2><ul>
+<li>Writing into an HTML element, using <code>innerHTML</code>.</li>
+<li>Writing into the HTML output using <code>document.write()</code>.</li>
+<li>Writing into an alert box, using <code>window.alert()</code>.</li>
+<li>Writing into the browser console, using <code>console.log()</code>.</li>
+</ul>
+<h2 id="3-Key-words"><a href="#3-Key-words" class="headerlink" title="3. Key words"></a>3. Key words</h2><table>
+<thead>
+<tr>
+<th align="left">Keyword</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">var</td>
+<td align="left">Declares a variable</td>
+</tr>
+<tr>
+<td align="left">let</td>
+<td align="left">Declares a block variable</td>
+</tr>
+<tr>
+<td align="left">const</td>
+<td align="left">Declares a block constant</td>
+</tr>
+<tr>
+<td align="left">if</td>
+<td align="left">Marks a block of statements to be executed on a condition</td>
+</tr>
+<tr>
+<td align="left">switch</td>
+<td align="left">Marks a block of statements to be executed in different cases</td>
+</tr>
+<tr>
+<td align="left">for</td>
+<td align="left">Marks a block of statements to be executed in a loop</td>
+</tr>
+<tr>
+<td align="left">function</td>
+<td align="left">Declares a function</td>
+</tr>
+<tr>
+<td align="left">return</td>
+<td align="left">Exits a function</td>
+</tr>
+<tr>
+<td align="left">try</td>
+<td align="left">Implements error handling to a block of statements</td>
+</tr>
+</tbody></table>
+<h3 id="3-1-When-to-Use-var-let-or-const"><a href="#3-1-When-to-Use-var-let-or-const" class="headerlink" title="3.1  When to Use var, let, or const?"></a>3.1  When to Use var, let, or const?</h3><ol>
+<li><p>Always declare variables</p>
+</li>
+<li><p>Always use <code>const</code> if the value should not be changed</p>
+</li>
+<li><p>Always use <code>const</code> if the type should not be changed (Arrays and Objects)</p>
+</li>
+<li><p>Only use <code>let</code> if you can't use <code>const</code></p>
+</li>
+<li><p>Only use <code>var</code> if you MUST support old browsers.</p>
+</li>
+</ol>
+<p>Note: A variable declared with <code>let</code> or <code>const</code> cannot  be re-declared.</p>
+<h3 id="3-2-Let"><a href="#3-2-Let" class="headerlink" title="3.2 Let"></a>3.2 Let</h3><ul>
+<li><p>Variables declared with <code>let</code> have <strong>Block Scope</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-title class_">Variables</span> declared inside a &#123; &#125; block cannot be accessed <span class="hljs-keyword">from</span> outside the <span class="hljs-attr">block</span>:<br><br>&#123;<br> <span class="hljs-keyword">let</span> x = <span class="hljs-number">2</span>;<br>&#125;<br><span class="hljs-comment">// x can NOT be used here</span><br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Variables declared with <code>let</code> must be <strong>Declared</strong> before use</p>
+</li>
+<li><p>Variables declared with <code>let</code> cannot be <strong>Redeclared</strong> in the same scope</p>
+</li>
+</ul>
+<h3 id="3-3-Const"><a href="#3-3-Const" class="headerlink" title="3.3  Const"></a>3.3  Const</h3><h4 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use"></a>How to use</h4><p><code>const</code> variables must be assigned a value when they are declared</p>
+<p>Correct</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PI</span> = <span class="hljs-number">3.14159265359</span>;<br></code></pre></td></tr></table></figure>
+
+<p>Incorrect</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PI</span>;<br><span class="hljs-variable constant_">PI</span> = <span class="hljs-number">3.14159265359</span>;<br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="When-to-use-JavaScript-const"><a href="#When-to-use-JavaScript-const" class="headerlink" title="When to use JavaScript const?"></a>When to use JavaScript const?</h4><p><strong>Always declare a variable with <code>const</code> when you know that the value should not be changed.</strong></p>
+<p>Use <code>const</code> when you declare:</p>
+<ul>
+<li>A new Array</li>
+<li>A new Object</li>
+<li>A new Function</li>
+<li>A new RegExp</li>
+</ul>
+<h4 id="Constant-Objects-and-Arrays"><a href="#Constant-Objects-and-Arrays" class="headerlink" title="Constant Objects and Arrays"></a>Constant Objects and Arrays</h4><p>The keyword <code>const</code> is a little misleading.</p>
+<p>It does not define a constant value. It defines a constant reference to a value.</p>
+<p>Because of this you can NOT:</p>
+<ul>
+<li><p>Reassign a constant value</p>
+</li>
+<li><p>Reassign a constant array</p>
+</li>
+<li><p>Reassign a constant object</p>
+</li>
+<li><p>But you CAN:</p>
+</li>
+<li><p>Change the elements of constant array</p>
+</li>
+<li><p>Change the properties of constant object</p>
+</li>
+</ul>
+<p>Correct</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// You can create a constant array:</span><br><span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;Saab&quot;</span>, <span class="hljs-string">&quot;Volvo&quot;</span>, <span class="hljs-string">&quot;BMW&quot;</span>];<br><br><span class="hljs-comment">// You can change an element:</span><br>cars[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;Toyota&quot;</span>;<br><br><span class="hljs-comment">// You can add an element:</span><br>cars.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Audi&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// You can create a const object:</span><br><span class="hljs-keyword">const</span> car = &#123;<span class="hljs-attr">type</span>:<span class="hljs-string">&quot;Fiat&quot;</span>, <span class="hljs-attr">model</span>:<span class="hljs-string">&quot;500&quot;</span>, <span class="hljs-attr">color</span>:<span class="hljs-string">&quot;white&quot;</span>&#125;;<br><br><span class="hljs-comment">// You can change a property:</span><br>car.<span class="hljs-property">color</span> = <span class="hljs-string">&quot;red&quot;</span>;<br><br><span class="hljs-comment">// You can add a property:</span><br>car.<span class="hljs-property">owner</span> = <span class="hljs-string">&quot;Johnson&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>Incorrect</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">// You can create a constant array:</span><br><span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;Saab&quot;</span>, <span class="hljs-string">&quot;Volvo&quot;</span>, <span class="hljs-string">&quot;BMW&quot;</span>];<br><br><span class="hljs-comment">// You can change an element:</span><br>cars[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;Toyota&quot;</span>;<br><br><span class="hljs-comment">// You can add an element:</span><br>cars.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Audi&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<h2 id="4-Operators"><a href="#4-Operators" class="headerlink" title="4. Operators"></a>4. Operators</h2><h3 id="4-1-Arithmetic-Operators"><a href="#4-1-Arithmetic-Operators" class="headerlink" title="4.1 Arithmetic Operators"></a>4.1 Arithmetic Operators</h3><table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">+</td>
+<td align="left">Addition</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">Subtraction</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td align="left">Multiplication</td>
+</tr>
+<tr>
+<td align="left">**</td>
+<td align="left">Exponentiation</td>
+</tr>
+<tr>
+<td align="left">/</td>
+<td align="left">Division</td>
+</tr>
+<tr>
+<td align="left">%</td>
+<td align="left">Modulus (Division Remainder)</td>
+</tr>
+<tr>
+<td align="left">++</td>
+<td align="left">Increment</td>
+</tr>
+<tr>
+<td align="left">--</td>
+<td align="left">Decrement</td>
+</tr>
+</tbody></table>
+<h3 id="4-2-Assignment-Operators"><a href="#4-2-Assignment-Operators" class="headerlink" title="4.2 Assignment Operators"></a>4.2 Assignment Operators</h3><table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Example</th>
+<th align="left">Same As</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">=</td>
+<td align="left">x = y</td>
+<td align="left">x = y</td>
+</tr>
+<tr>
+<td align="left">+=</td>
+<td align="left">x += y</td>
+<td align="left">x = x + y</td>
+</tr>
+<tr>
+<td align="left">-=</td>
+<td align="left">x -= y</td>
+<td align="left">x = x - y</td>
+</tr>
+<tr>
+<td align="left">*=</td>
+<td align="left">x *= y</td>
+<td align="left">x = x * y</td>
+</tr>
+<tr>
+<td align="left">/=</td>
+<td align="left">x /= y</td>
+<td align="left">x = x / y</td>
+</tr>
+<tr>
+<td align="left">%=</td>
+<td align="left">x %= y</td>
+<td align="left">x = x % y</td>
+</tr>
+<tr>
+<td align="left">**=</td>
+<td align="left">x **= y</td>
+<td align="left">x = x ** y</td>
+</tr>
+</tbody></table>
+<h3 id="4-3-Comparison-Operators"><a href="#4-3-Comparison-Operators" class="headerlink" title="4.3 Comparison Operators"></a>4.3 Comparison Operators</h3><table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">==</td>
+<td align="left">equal to</td>
+</tr>
+<tr>
+<td align="left">===</td>
+<td align="left">equal value and equal type</td>
+</tr>
+<tr>
+<td align="left">!=</td>
+<td align="left">not equal</td>
+</tr>
+<tr>
+<td align="left">!==</td>
+<td align="left">not equal value or not equal type</td>
+</tr>
+<tr>
+<td align="left">></td>
+<td align="left">greater than</td>
+</tr>
+<tr>
+<td align="left"><</td>
+<td align="left">less than</td>
+</tr>
+<tr>
+<td align="left">>=</td>
+<td align="left">greater than or equal to</td>
+</tr>
+<tr>
+<td align="left"><=</td>
+<td align="left">less than or equal to</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td align="left">ternary operator</td>
+</tr>
+</tbody></table>
+<h3 id="4-4-Logical-Operators"><a href="#4-4-Logical-Operators" class="headerlink" title="4.4 Logical Operators"></a>4.4 Logical Operators</h3><table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">&&</td>
+<td align="left">logical and</td>
+</tr>
+<tr>
+<td align="left">||</td>
+<td align="left">logical or</td>
+</tr>
+<tr>
+<td align="left">!</td>
+<td align="left">logical not</td>
+</tr>
+</tbody></table>
+<h3 id="4-5-Type-Operators"><a href="#4-5-Type-Operators" class="headerlink" title="4.5 Type Operators"></a>4.5 Type Operators</h3><table>
+<thead>
+<tr>
+<th align="left">Operator</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">typeof</td>
+<td align="left">Returns the type of a variable</td>
+</tr>
+<tr>
+<td align="left">instanceof</td>
+<td align="left">Returns true if an object is an instance of an object type</td>
+</tr>
+</tbody></table>
+<h2 id="5-Data-Types"><a href="#5-Data-Types" class="headerlink" title="5.  Data Types"></a>5.  Data Types</h2><h3 id="JavaScript-has-8-Datatypes"><a href="#JavaScript-has-8-Datatypes" class="headerlink" title="JavaScript has 8 Datatypes"></a>JavaScript has 8 Datatypes</h3><ol>
+<li>String</li>
+<li>Number</li>
+<li>Bigint</li>
+<li>Boolean</li>
+<li>Undefined</li>
+<li>Null</li>
+<li>Symbol</li>
+<li>Object</li>
+</ol>
+<h3 id="The-Object-Datatype"><a href="#The-Object-Datatype" class="headerlink" title="The Object Datatype"></a>The Object Datatype</h3><p>The object data type can contain:</p>
+<ol>
+<li>An object  ( <code>dict</code> in Python)</li>
+<li>An array</li>
+<li>A date</li>
+</ol>
+<h2 id="6-Functions"><a href="#6-Functions" class="headerlink" title="6. Functions"></a>6. Functions</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">name</span>(<span class="hljs-params">parameter1, parameter2, parameter3</span>) &#123;<br>  <span class="hljs-comment">// code to be executed</span><br>&#125;<br><br><span class="hljs-keyword">let</span> result = <span class="hljs-title function_">name</span>(p1, p2, p3);<br></code></pre></td></tr></table></figure>
+
+<h2 id="7-Object"><a href="#7-Object" class="headerlink" title="7. Object"></a>7. Object</h2><h3 id="7-1-Create-an-object"><a href="#7-1-Create-an-object" class="headerlink" title="7.1 Create an object"></a>7.1 Create an object</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> person = &#123;<br>  <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;John&quot;</span>,<br>  <span class="hljs-attr">lastName</span>: <span class="hljs-string">&quot;Doe&quot;</span>,<br>  <span class="hljs-attr">age</span>: <span class="hljs-number">50</span>,<br>  <span class="hljs-attr">eyeColor</span>: <span class="hljs-string">&quot;blue&quot;</span><br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="7-2-Accessing-Object-Properties"><a href="#7-2-Accessing-Object-Properties" class="headerlink" title="7.2 Accessing Object Properties"></a>7.2 Accessing Object Properties</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js">person.<span class="hljs-property">lastName</span>;<br><br>person[<span class="hljs-string">&quot;lastName&quot;</span>];<br></code></pre></td></tr></table></figure>
+
+<h3 id="7-3-Object-Methods"><a href="#7-3-Object-Methods" class="headerlink" title="7.3 Object Methods"></a>7.3 Object Methods</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> person = &#123;<br>  <span class="hljs-attr">firstName</span>: <span class="hljs-string">&quot;John&quot;</span>,<br>  lastName : <span class="hljs-string">&quot;Doe&quot;</span>,<br>  id       : <span class="hljs-number">5566</span>,<br>  fullName : <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">firstName</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-variable language_">this</span>.<span class="hljs-property">lastName</span>;<br>  &#125;<br>&#125;;<br><br>name = person.<span class="hljs-title function_">fullName</span>();<br><span class="hljs-comment">//name = person.fullName; !! it will return the function definition NOT the return value</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="8-Events"><a href="#8-Events" class="headerlink" title="8. Events"></a>8. Events</h2><h3 id="HTML-Events"><a href="#HTML-Events" class="headerlink" title="HTML Events"></a>HTML Events</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">element</span> <span class="hljs-attr">event</span>=<span class="hljs-string">&#x27;some JavaScript&#x27;</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Event</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">onchange</td>
+<td align="left">An HTML element has been changed</td>
+</tr>
+<tr>
+<td align="left">onclick</td>
+<td align="left">The user clicks an HTML element</td>
+</tr>
+<tr>
+<td align="left">onmouseover</td>
+<td align="left">The user moves the mouse over an HTML element</td>
+</tr>
+<tr>
+<td align="left">onmouseout</td>
+<td align="left">The user moves the mouse away from an HTML element</td>
+</tr>
+<tr>
+<td align="left">onkeydown</td>
+<td align="left">The user pushes a keyboard key</td>
+</tr>
+<tr>
+<td align="left">onload</td>
+<td align="left">The browser has finished loading the page</td>
+</tr>
+</tbody></table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;document.getElementById(&#x27;demo&#x27;).innerHTML = Date()&quot;</span>&gt;</span>The time is?<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;this.innerHTML = Date()&quot;</span>&gt;</span>The time is?<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;displayDate()&quot;</span>&gt;</span>The time is?<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>JavaScript HTML Events<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>The onclick Attribute<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;document.getElementById(&#x27;demo&#x27;).innerHTML=Date()&quot;</span>&gt;</span>The time is?<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demo&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><br><br><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="9-Strings"><a href="#9-Strings" class="headerlink" title="9. Strings"></a>9. Strings</h2><h3 id="9-1-escape-sequences"><a href="#9-1-escape-sequences" class="headerlink" title="9.1 escape sequences"></a>9.1 escape sequences</h3><table>
+<thead>
+<tr>
+<th align="left">Code</th>
+<th align="left">Result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">\b</td>
+<td align="left">Backspace</td>
+</tr>
+<tr>
+<td align="left">\f</td>
+<td align="left">Form Feed</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="left">New Line</td>
+</tr>
+<tr>
+<td align="left">\r</td>
+<td align="left">Carriage Return</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="left">Horizontal Tabulator</td>
+</tr>
+<tr>
+<td align="left">\v</td>
+<td align="left">Vertical Tabulator</td>
+</tr>
+</tbody></table>
+<h3 id="9-2-Methods"><a href="#9-2-Methods" class="headerlink" title="9.2 Methods"></a>9.2 <a target="_blank" rel="noopener" href="https://www.w3schools.com/js/js_string_methods.asp">Methods</a></h3><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">String</span> <span class="hljs-variable">length</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">charAt</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">charCodeAt</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">at</span>()</span><br><span class="hljs-variable">String</span> [ ]<br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">slice</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title"><span class="hljs-built_in">substring</span></span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">substr</span>()</span><br><span class="hljs-variable">See</span> <span class="hljs-variable">Also</span>:<br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">toUpperCase</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">toLowerCase</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">concat</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title"><span class="hljs-built_in">trim</span></span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">trimStart</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">trimEnd</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">padStart</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">padEnd</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">repeat</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title"><span class="hljs-built_in">replace</span></span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">replaceAll</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title"><span class="hljs-built_in">split</span></span>()</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="9-2-1-length"><a href="#9-2-1-length" class="headerlink" title="9.2.1 length"></a>9.2.1 length</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;<br><span class="hljs-keyword">let</span> length = text.<span class="hljs-property">length</span>;<br></code></pre></td></tr></table></figure>
+
+<h4 id="9-2-2-Extracting-String-Characters"><a href="#9-2-2-Extracting-String-Characters" class="headerlink" title="9.2.2 Extracting String Characters"></a>9.2.2 Extracting String Characters</h4><h5 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;HELLO WORLD&quot;</span>;<br><span class="hljs-keyword">let</span> char = text.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">//returns H</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="charCodeAt"><a href="#charCodeAt" class="headerlink" title="charCodeAt()"></a>charCodeAt()</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;HELLO WORLD&quot;</span>;<br><span class="hljs-keyword">let</span> char = text.<span class="hljs-title function_">charCodeAt</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">//returns 72</span><br></code></pre></td></tr></table></figure>
+
+<h5 id="at"><a href="#at" class="headerlink" title="at()"></a>at()</h5><p>The <code>at()</code> method is a new addition to JavaScript.</p>
+<p>It allows the use of negative indexes while <code>charAt()</code> do not.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;W3Schools&quot;</span>;<br><span class="hljs-keyword">let</span> letter = name.<span class="hljs-title function_">at</span>(<span class="hljs-number">2</span>);<br></code></pre></td></tr></table></figure>
+
+<p><strong>Now you can use <code>myString.at(-2)</code> instead of <code>charAt(myString.length-2)</code>.</strong>(Python list)</p>
+<h5 id="Property-Access"><a href="#Property-Access" class="headerlink" title="Property Access [ ]"></a>Property Access [ ]</h5><p>Property access might be a little <strong>unpredictable:</strong></p>
+<ul>
+<li>It makes strings look like arrays (but they are not)</li>
+<li>If no character is found, [ ] returns undefined, while charAt() returns an empty string.</li>
+<li>It is read only. str[0] = "A" gives no error (but does not work!)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> name = <span class="hljs-string">&quot;W3Schools&quot;</span>;<br><span class="hljs-keyword">let</span> letter = name[<span class="hljs-number">2</span>];<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;HELLO WORLD&quot;</span>;<br>text[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;A&quot;</span>;    <span class="hljs-comment">// Gives no error, but does not work</span><br><br>text.<span class="hljs-title function_">at</span>(<span class="hljs-number">0</span>) = <span class="hljs-string">&quot;A&quot;</span>  <span class="hljs-comment">// Gives error</span><br><br>text.<span class="hljs-title function_">charAt</span>(<span class="hljs-number">0</span>) = <span class="hljs-string">&quot;A&quot;</span> <span class="hljs-comment">// Gives error</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="9-2-3-Extracting-String-Parts"><a href="#9-2-3-Extracting-String-Parts" class="headerlink" title="9.2.3 Extracting String Parts"></a>9.2.3 Extracting String Parts</h4><p>There are 3 methods for extracting a part of a string:</p>
+<ul>
+<li><code>slice(start, end)</code></li>
+<li><code>substring(start, end)</code></li>
+<li><code>substr(start, length)</code></li>
+</ul>
+<h5 id="slice"><a href="#slice" class="headerlink" title="slice"></a>slice</h5><p>[start, end)  (it's left-closed right-opened)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-comment">//Slice out a portion of a string from position 7 to position 13:</span><br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br><span class="hljs-keyword">let</span> part = text.<span class="hljs-title function_">slice</span>(<span class="hljs-number">7</span>, <span class="hljs-number">13</span>);  <span class="hljs-comment">//Banana</span><br><br><span class="hljs-comment">//If you omit the second parameter, the method will slice out the rest of the string:</span><br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br><span class="hljs-keyword">let</span> part = text.<span class="hljs-title function_">slice</span>(<span class="hljs-number">7</span>);<br><br><span class="hljs-comment">//If a parameter is negative, the position is counted from the end of the string:</span><br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br><span class="hljs-keyword">let</span> part = text.<span class="hljs-title function_">slice</span>(-<span class="hljs-number">12</span>);   <span class="hljs-comment">//Banana, Kiwi</span><br><br><span class="hljs-comment">//This example slices out a portion of a string from position -12 to position -6:</span><br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br><span class="hljs-keyword">let</span> part = text.<span class="hljs-title function_">slice</span>(-<span class="hljs-number">12</span>, -<span class="hljs-number">6</span>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="substring"><a href="#substring" class="headerlink" title="substring"></a>substring</h5><p><code>substring()</code> is similar to <code>slice()</code>.</p>
+<p>The difference is that start and end values less than 0 are treated as 0 in <code>substring()</code>.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br><span class="hljs-keyword">let</span> part = str.<span class="hljs-title function_">substring</span>(<span class="hljs-number">7</span>, <span class="hljs-number">13</span>);<br></code></pre></td></tr></table></figure>
+
+<h5 id="substr"><a href="#substr" class="headerlink" title="substr"></a>substr</h5><p><code>substr()</code> is similar to <code>slice()</code>.</p>
+<p>The difference is that the second parameter specifies the <strong>length</strong> of the extracted part.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs JS"><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br><span class="hljs-keyword">let</span> part = str.<span class="hljs-title function_">substr</span>(<span class="hljs-number">7</span>, <span class="hljs-number">6</span>);<br><br><span class="hljs-comment">//If you omit the second parameter, substr() will slice out the rest of the string.</span><br><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br><span class="hljs-keyword">let</span> part = str.<span class="hljs-title function_">substr</span>(<span class="hljs-number">7</span>);<br><br><span class="hljs-comment">//If the first parameter is negative, the position counts from the end of the string.</span><br><span class="hljs-keyword">let</span> str = <span class="hljs-string">&quot;Apple, Banana, Kiwi&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<h4 id="9-2-4-concat"><a href="#9-2-4-concat" class="headerlink" title="9.2.4 concat"></a>9.2.4 concat</h4><p><code>concat()</code> joins two or more strings</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs JS">text = <span class="hljs-string">&quot;Hello&quot;</span> + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-string">&quot;World!&quot;</span>;<br>text = <span class="hljs-string">&quot;Hello&quot;</span>.<span class="hljs-title function_">concat</span>(<span class="hljs-string">&quot; &quot;</span>, <span class="hljs-string">&quot;World!&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<h4 id="9-2-5-trim"><a href="#9-2-5-trim" class="headerlink" title="9.2.5 trim"></a>9.2.5 trim</h4><p>The <code>trim()</code> method removes whitespace from both sides of a string</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text1 = <span class="hljs-string">&quot;      Hello World!      &quot;</span>;<br><span class="hljs-keyword">let</span> text2 = text1.<span class="hljs-title function_">trim</span>();<br></code></pre></td></tr></table></figure>
+
+<h5 id="trimStart"><a href="#trimStart" class="headerlink" title="trimStart"></a>trimStart</h5><p>The <code>trimStart()</code> method works like <code>trim()</code>, but removes whitespace only from the start of a string</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text1 = <span class="hljs-string">&quot;     Hello World!     &quot;</span>;<br><span class="hljs-keyword">let</span> text2 = text1.<span class="hljs-title function_">trimStart</span>();<br></code></pre></td></tr></table></figure>
+
+<h5 id="trimEnd"><a href="#trimEnd" class="headerlink" title="trimEnd"></a>trimEnd</h5><p>The <code>trimEnd()</code> method works like <code>trim()</code>, but removes whitespace only from the end of a string</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text1 = <span class="hljs-string">&quot;     Hello World!     &quot;</span>;<br><span class="hljs-keyword">let</span> text2 = text1.<span class="hljs-title function_">trimEnd</span>();<br></code></pre></td></tr></table></figure>
+
+<h3 id="9-3-String-Search"><a href="#9-3-String-Search" class="headerlink" title="9.3 String Search"></a>9.3 <a target="_blank" rel="noopener" href="https://www.w3schools.com/js/js_string_search.asp">String Search</a></h3><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title"><span class="hljs-built_in">indexOf</span></span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">lastIndexOf</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">search</span>()</span><br><span class="hljs-variable">See</span> <span class="hljs-variable">Also</span>:<br><span class="hljs-variable">Basic</span> <span class="hljs-variable">String</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">String</span> <span class="hljs-variable">Templates</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">match</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">matchAll</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">includes</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">startsWith</span>()</span><br><span class="hljs-variable">String</span> <span class="hljs-function"><span class="hljs-title">endsWith</span>()</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf"></a>indexOf</h4><p>The <code>indexOf()</code> method returns the <strong>index</strong> (position) of the <strong>first</strong> occurrence of a string in a string, or it returns -1 if the string is not found</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Please locate where &#x27;locate&#x27; occurs!&quot;</span>;<br><span class="hljs-keyword">let</span> index = text.<span class="hljs-title function_">indexOf</span>(<span class="hljs-string">&quot;locate&quot;</span>);            <span class="hljs-comment">//7</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf"></a>lastIndexOf</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Please locate where &#x27;locate&#x27; occurs!&quot;</span>;<br><span class="hljs-keyword">let</span> index = text.<span class="hljs-title function_">lastIndexOf</span>(<span class="hljs-string">&quot;locate&quot;</span>);        <span class="hljs-comment">//21</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>Both <code>indexOf()</code>, and <code>lastIndexOf()</code> return -1 if the text is not found</li>
+<li>Both methods accept a second parameter as the starting position for the search</li>
+</ul>
+<h4 id="search"><a href="#search" class="headerlink" title="search"></a>search</h4><p>The <code>search()</code> method searches a string for a string (or a regular expression) and returns the position of the match</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;Please locate where &#x27;locate&#x27; occurs!&quot;</span>;<br>text.<span class="hljs-title function_">search</span>(<span class="hljs-string">&quot;locate&quot;</span>);					<span class="hljs-comment">//7</span><br>text.<span class="hljs-title function_">search</span>(<span class="hljs-regexp">/locate/</span>);					<span class="hljs-comment">//7</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>The <code>search()</code> method cannot take a second start position argument.</li>
+<li>The <code>indexOf()</code> method cannot take powerful search values (regular expressions).</li>
+</ul>
+<h3 id="9-4-Template-Strings"><a href="#9-4-Template-Strings" class="headerlink" title="9.4 Template Strings"></a>9.4 Template Strings</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">`Hello World!`</span>;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Interpolation"><a href="#Interpolation" class="headerlink" title="Interpolation"></a>Interpolation</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> firstName = <span class="hljs-string">&quot;John&quot;</span>;<br><span class="hljs-keyword">let</span> lastName = <span class="hljs-string">&quot;Doe&quot;</span>;<br><br><span class="hljs-keyword">let</span> text = <span class="hljs-string">`Welcome <span class="hljs-subst">$&#123;firstName&#125;</span>, <span class="hljs-subst">$&#123;lastName&#125;</span>!`</span>;<br></code></pre></td></tr></table></figure>
+
+<h2 id="10-Numbers"><a href="#10-Numbers" class="headerlink" title="10. Numbers"></a>10. Numbers</h2><p>JavaScript strings can have numeric content</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs js">&#123;<br>    <span class="hljs-keyword">let</span> x = <span class="hljs-number">100</span>;         <span class="hljs-comment">// x is a number</span><br>	<span class="hljs-keyword">let</span> y = <span class="hljs-string">&quot;100&quot;</span>;       <span class="hljs-comment">// y is a string</span><br>	<span class="hljs-keyword">var</span> z =  (x == y);   <span class="hljs-comment">// z is true</span><br>	<span class="hljs-keyword">var</span> z =  (x === y);  <span class="hljs-comment">// z is false</span><br>&#125;<br>&#123;<br>    <span class="hljs-keyword">let</span> x = <span class="hljs-string">&quot;100&quot;</span>;<br>    <span class="hljs-keyword">let</span> y = <span class="hljs-string">&quot;10&quot;</span>;<br>    <span class="hljs-keyword">let</span> z = x / y;       <span class="hljs-comment">// this will work</span><br>&#125;<br>&#123;<br>    <span class="hljs-keyword">let</span> x = <span class="hljs-string">&quot;100&quot;</span>;<br>	<span class="hljs-keyword">let</span> y = <span class="hljs-string">&quot;10&quot;</span>;<br>	<span class="hljs-keyword">let</span> z = x - y;		<span class="hljs-comment">// this will work</span><br>&#125;<br>&#123;<br>    <span class="hljs-keyword">let</span> x = <span class="hljs-string">&quot;100&quot;</span>;<br>	<span class="hljs-keyword">let</span> y = <span class="hljs-string">&quot;10&quot;</span>;<br>	<span class="hljs-keyword">let</span> z = x + y;		<span class="hljs-comment">// this will NOT work</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="NaN-Not-a-Number"><a href="#NaN-Not-a-Number" class="headerlink" title="NaN - Not a Number"></a>NaN - Not a Number</h4><p><code>NaN</code> is a JavaScript reserved word indicating that a number is not a legal number.</p>
+<p>Trying to do arithmetic with a non-numeric string will result in <code>NaN</code> (Not a Number)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> x = <span class="hljs-number">100</span> / <span class="hljs-string">&quot;Apple&quot;</span>;<br><span class="hljs-built_in">isNaN</span>(x);<br></code></pre></td></tr></table></figure>
+
+<h4 id="Infinity"><a href="#Infinity" class="headerlink" title="Infinity"></a>Infinity</h4><p><code>Infinity</code> (or <code>-Infinity</code>) is the value JavaScript will return if you calculate a number outside the largest possible number.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> x =  <span class="hljs-number">2</span> / <span class="hljs-number">0</span>;<br><span class="hljs-keyword">let</span> y = -<span class="hljs-number">2</span> / <span class="hljs-number">0</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="10-1-Methods"><a href="#10-1-Methods" class="headerlink" title="10.1 Methods"></a>10.1 Methods</h3><table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">toString()</td>
+<td align="left">Returns a number as a string</td>
+</tr>
+<tr>
+<td align="left">toExponential()</td>
+<td align="left">Returns a number written in exponential notation</td>
+</tr>
+<tr>
+<td align="left">toFixed()</td>
+<td align="left">Returns a number written with a number of decimals</td>
+</tr>
+<tr>
+<td align="left">toPrecision()</td>
+<td align="left">Returns a number written with a specified length</td>
+</tr>
+<tr>
+<td align="left">ValueOf()</td>
+<td align="left">Returns a number as a number</td>
+</tr>
+</tbody></table>
+<p><strong>Converting Variables to Numbers</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Number()</td>
+<td align="left">Returns a number converted from its argument.</td>
+</tr>
+<tr>
+<td align="left">parseFloat()</td>
+<td align="left">Parses its argument and returns a floating point number</td>
+</tr>
+<tr>
+<td align="left">parseInt()</td>
+<td align="left">Parses its argument and returns a whole number</td>
+</tr>
+</tbody></table>
+<h3 id="10-2-Number-Properties"><a href="#10-2-Number-Properties" class="headerlink" title="10.2 Number Properties"></a>10.2 Number Properties</h3><table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">EPSILON</td>
+<td align="left">The difference between 1 and the smallest number > 1.</td>
+</tr>
+<tr>
+<td align="left">MAX_VALUE</td>
+<td align="left">The largest number possible in JavaScript</td>
+</tr>
+<tr>
+<td align="left">MIN_VALUE</td>
+<td align="left">The smallest number possible in JavaScript</td>
+</tr>
+<tr>
+<td align="left">MAX_SAFE_INTEGER</td>
+<td align="left">The maximum safe integer (253 - 1)</td>
+</tr>
+<tr>
+<td align="left">MIN_SAFE_INTEGER</td>
+<td align="left">The minimum safe integer -(253 - 1)</td>
+</tr>
+<tr>
+<td align="left">POSITIVE_INFINITY</td>
+<td align="left">Infinity (returned on overflow)</td>
+</tr>
+<tr>
+<td align="left">NEGATIVE_INFINITY</td>
+<td align="left">Negative infinity (returned on overflow)</td>
+</tr>
+<tr>
+<td align="left">NaN</td>
+<td align="left">A "Not-a-Number" value</td>
+</tr>
+</tbody></table>
+<p><strong>Number Properties Cannot be Used on Variables</strong></p>
+<p>Number properties belong to the JavaScript <strong>Number Object</strong>.</p>
+<p>These properties can only be accessed as <code>Number.MAX_VALUE</code>.</p>
+<p>Using x.MAX_VALUE, where x is a variable or a value, will return <code>undefined</code>:</p>
+<h2 id="11-Array"><a href="#11-Array" class="headerlink" title="11. Array"></a>11. Array</h2><p>Create Access Chang toString Accessfullstring  Methods</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;Saab&quot;</span>, <span class="hljs-string">&quot;Volvo&quot;</span>, <span class="hljs-string">&quot;BMW&quot;</span>];<br><br>cars[<span class="hljs-number">0</span>]= <span class="hljs-string">&quot;Saab&quot;</span>;<br>cars[<span class="hljs-number">1</span>]= <span class="hljs-string">&quot;Volvo&quot;</span>;<br>cars[<span class="hljs-number">2</span>]= <span class="hljs-string">&quot;BMW&quot;</span>;<br><br>cars[<span class="hljs-number">0</span>] = <span class="hljs-string">&quot;Opel&quot;</span>;<br><br><span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;demo&quot;</span>).<span class="hljs-property">innerHTML</span> = fruits.<span class="hljs-title function_">toString</span>(); <span class="hljs-comment">//Banana,Orange,Apple,Mango</span><br><br><span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;Saab&quot;</span>, <span class="hljs-string">&quot;Volvo&quot;</span>, <span class="hljs-string">&quot;BMW&quot;</span>];<br><span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;demo&quot;</span>).<span class="hljs-property">innerHTML</span> = cars; <span class="hljs-comment">//Saab,Volvo,BMW</span><br><br>cars.<span class="hljs-property">length</span>   <span class="hljs-comment">// Returns the number of elements</span><br>cars.<span class="hljs-title function_">sort</span>()   <span class="hljs-comment">// Sorts the array</span><br><br><span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br><span class="hljs-keyword">let</span> fLen = fruits.<span class="hljs-property">length</span>;<br></code></pre></td></tr></table></figure>
+
+<p> looping</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;&lt;ul&gt;&quot;</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; fLen; i++) &#123;<br>  text += <span class="hljs-string">&quot;&lt;li&gt;&quot;</span> + fruits[i] + <span class="hljs-string">&quot;&lt;/li&gt;&quot;</span>;<br>&#125;<br>text += <span class="hljs-string">&quot;&lt;/ul&gt;&quot;</span>;<br><span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>, <span class="hljs-string">&quot;Mango&quot;</span>];<br><br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;&lt;ul&gt;&quot;</span>;<br>fruits.<span class="hljs-title function_">forEach</span>(myFunction);<br>text += <span class="hljs-string">&quot;&lt;/ul&gt;&quot;</span>;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params">value</span>) &#123;<br>  text += <span class="hljs-string">&quot;&lt;li&gt;&quot;</span> + value + <span class="hljs-string">&quot;&lt;/li&gt;&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p> Adding (push)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> fruits = [<span class="hljs-string">&quot;Banana&quot;</span>, <span class="hljs-string">&quot;Orange&quot;</span>, <span class="hljs-string">&quot;Apple&quot;</span>];<br>fruits.<span class="hljs-title function_">push</span>(<span class="hljs-string">&quot;Lemon&quot;</span>);  <span class="hljs-comment">// Adds a new element (Lemon) to fruits</span><br></code></pre></td></tr></table></figure>
+
+<p><strong>WARNING !</strong></p>
+<p>Adding elements with high indexes can create undefined "holes" in an array</p>
+<h3 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h3><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">Basic</span> <span class="hljs-variable">Array</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Array</span> <span class="hljs-variable">length</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">toString</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">at</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">join</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">pop</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">push</span>()</span><br><span class="hljs-variable">See</span> <span class="hljs-variable">Also</span>:<br><span class="hljs-variable">Search</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Sort</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Iteration</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">shift</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">unshift</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">delete</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">concat</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">copyWithin</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">flat</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">splice</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">toSpliced</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">slice</span>()</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Array-Search"><a href="#Array-Search" class="headerlink" title="Array Search"></a>Array Search</h3><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title"><span class="hljs-built_in">indexOf</span></span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">lastIndexOf</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">includes</span>()</span><br><span class="hljs-variable">See</span> <span class="hljs-variable">Also</span>:<br><span class="hljs-variable">Basic</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Sort</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Iteration</span> <span class="hljs-variable">Methods</span>	<span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">find</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">findIndex</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">findLast</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">findLastIndex</span>()</span><br></code></pre></td></tr></table></figure>
+
+<p><em>array</em>.indexOf(<em>item</em>, <em>start</em>)</p>
+<table>
+<thead>
+<tr>
+<th><em>item</em></th>
+<th>Required. The item to search for.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>start</em></td>
+<td>Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the end.</td>
+</tr>
+</tbody></table>
+<p><code>Array.indexOf()</code> returns -1 if the item is not found.</p>
+<p>If the item is present more than once, it returns the position of the <strong>first occurrence</strong>.</p>
+<p><em>array</em>.lastIndexOf(<em>item</em>, <em>start</em>)</p>
+<table>
+<thead>
+<tr>
+<th><em>item</em></th>
+<th>Required. The item to search for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>start</em></td>
+<td>Optional. Where to start the search. Negative values will start at the given position counting from the end, and search to the beginning</td>
+</tr>
+</tbody></table>
+<p>includes</p>
+<p> <code>Array.includes()</code> to arrays. This allows us to <strong>check</strong> if an element is present in an array (including NaN, unlike indexOf).</p>
+<h3 id="Sorting-Arrays"><a href="#Sorting-Arrays" class="headerlink" title="Sorting Arrays"></a>Sorting Arrays</h3><figure class="highlight arcade"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs arcade">Alpabetic <span class="hljs-built_in">Sort</span><br><span class="hljs-built_in">Array</span> <span class="hljs-built_in">sort</span>()<br><span class="hljs-built_in">Array</span> <span class="hljs-built_in">reverse</span>()<br><span class="hljs-built_in">Array</span> toSorted()<br><span class="hljs-built_in">Array</span> toReversed()<br><br>Numeric <span class="hljs-built_in">Sort</span><br><span class="hljs-built_in">Random</span> <span class="hljs-built_in">Sort</span><br>Math.<span class="hljs-built_in">min</span>()<br>Math.<span class="hljs-built_in">max</span>()<br>Home made <span class="hljs-built_in">Min</span>()<br>Home made <span class="hljs-built_in">Max</span>()<br></code></pre></td></tr></table></figure>
+
+<p>The <code>sort()</code> method sorts an array alphabetically</p>
+<p> <code>toSorted()</code> method is a safe way to sort an array <strong>without altering the original array</strong>.</p>
+<p>The difference between <code>toSorted()</code> and <code>sort()</code> is that the first method creates a new array, keeping the original array unchanged, while the last method alters the original array.</p>
+<p>By default, the <code>sort()</code> function sorts values as <strong>strings</strong>.</p>
+<p>If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".</p>
+<p>Because of this, the <code>sort()</code> method will produce incorrect result when sorting numbers.</p>
+<p>Provide a <strong>compare function</strong> to sort numbers:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> points = [<span class="hljs-number">40</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">25</span>, <span class="hljs-number">10</span>];<br>points.<span class="hljs-title function_">sort</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params">a, b</span>)&#123;<span class="hljs-keyword">return</span> a - b&#125;);<br></code></pre></td></tr></table></figure>
+
+<p>Sorting an Array in Random Order:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> points = [<span class="hljs-number">40</span>, <span class="hljs-number">100</span>, <span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">25</span>, <span class="hljs-number">10</span>];<br>points.<span class="hljs-title function_">sort</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)&#123;<span class="hljs-keyword">return</span> <span class="hljs-number">0.5</span> - <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>()&#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="Max-Min-value-of-array"><a href="#Max-Min-value-of-array" class="headerlink" title="Max/Min value of array"></a>Max/Min value of array</h3><h4 id="Using-Math-min-on-an-Array"><a href="#Using-Math-min-on-an-Array" class="headerlink" title="Using Math.min() on an Array"></a>Using Math.min() on an Array</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">myArrayMin</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">min</span>.<span class="hljs-title function_">apply</span>(<span class="hljs-literal">null</span>, arr);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Using-Math-max-on-an-Array"><a href="#Using-Math-max-on-an-Array" class="headerlink" title="Using Math.max() on an Array"></a>Using Math.max() on an Array</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">myArrayMax</span>(<span class="hljs-params">arr</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Math</span>.<span class="hljs-property">max</span>.<span class="hljs-title function_">apply</span>(<span class="hljs-literal">null</span>, arr);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h3><figure class="highlight isbl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs isbl"><span class="hljs-variable">Array</span> <span class="hljs-variable"><span class="hljs-keyword">forEach</span></span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">map</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">flatMap</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">filter</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">reduce</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">reduceRigth</span>()</span><br><span class="hljs-variable">See</span> <span class="hljs-variable">Also</span>:<br><span class="hljs-variable">Basic</span> <span class="hljs-variable">Array</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Array</span> <span class="hljs-variable">Search</span> <span class="hljs-variable">Methods</span><br><span class="hljs-variable">Array</span> <span class="hljs-variable">Sort</span> <span class="hljs-variable">Methods</span>	<span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">every</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">some</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">from</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">keys</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">entries</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-function"><span class="hljs-title">with</span>()</span><br><span class="hljs-variable">Array</span> <span class="hljs-variable">Spread</span> (...)<br></code></pre></td></tr></table></figure>
+
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>The <code>map()</code> method <strong>creates a new array</strong> by performing a function on each array element.</p>
+<p>The <code>map()</code> method does not execute the function for array elements without values.</p>
+<p>The <code>map()</code> method does not change the original array.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> numbers1 = [<span class="hljs-number">45</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>];<br><span class="hljs-keyword">const</span> numbers2 = numbers1.<span class="hljs-title function_">map</span>(myFunction);<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params">value, index, array</span>) &#123;<br>  <span class="hljs-keyword">return</span> value * <span class="hljs-number">2</span>;<br>&#125;<br><span class="hljs-comment">/*or function myFunction(value) &#123;</span><br><span class="hljs-comment">  return value * 2;</span><br><span class="hljs-comment">&#125;*/</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>The <code>filter()</code> method creates a new array with array elements that pass a test.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">45</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>];<br><span class="hljs-keyword">const</span> over18 = numbers.<span class="hljs-title function_">filter</span>(myFunction);<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params">value, index, array</span>) &#123;<br>  <span class="hljs-keyword">return</span> value &gt; <span class="hljs-number">18</span>;<br>&#125;<br><br><span class="hljs-comment">/*or function myFunction(value) &#123;</span><br><span class="hljs-comment">  return value &gt; 18;</span><br><span class="hljs-comment">&#125;*/</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h4><p>The <code>reduce()</code> method runs a function on each array element to produce (reduce it to) a single value.</p>
+<p>The <code>reduce()</code> method works from left-to-right in the array. See also <code>reduceRight()</code>.</p>
+<p>The <code>reduce()</code> method does not reduce the original array.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">45</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>];<br><span class="hljs-keyword">let</span> sum = numbers.<span class="hljs-title function_">reduce</span>(myFunction);<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params">total, value, index, array</span>) &#123;<br>  <span class="hljs-keyword">return</span> total + value;<br>&#125;<br><span class="hljs-comment">/*or function myFunction(total, value) &#123;</span><br><span class="hljs-comment">  return total + value;</span><br><span class="hljs-comment">&#125;*/</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="12-if-else-switch-statement"><a href="#12-if-else-switch-statement" class="headerlink" title="12. if else switch statement"></a>12. if else switch statement</h2><ul>
+<li>Use <code>if</code> to specify a block of code to be executed, if a specified condition is true</li>
+<li>Use <code>else</code> to specify a block of code to be executed, if the same condition is false</li>
+<li>Use <code>else if</code> to specify a new condition to test, if the first condition is false</li>
+<li>Use <code>switch</code> to specify many alternative blocks of code to be executed</li>
+<li>Same as C  Java Cpp</li>
+</ul>
+<p>Switch</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">switch</span>(expression) &#123;<br>  <span class="hljs-keyword">case</span> <span class="hljs-attr">x</span>:<br>    <span class="hljs-comment">// code block</span><br>    <span class="hljs-keyword">break</span>;<br>  <span class="hljs-keyword">case</span> <span class="hljs-attr">y</span>:<br>    <span class="hljs-comment">// code block</span><br>    <span class="hljs-keyword">break</span>;<br>  <span class="hljs-attr">default</span>:<br>    <span class="hljs-comment">// code block</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Same as C</p>
+<h2 id="13-Loop"><a href="#13-Loop" class="headerlink" title="13. Loop"></a>13. Loop</h2><ul>
+<li><code>for</code> - loops through a block of code a number of times</li>
+<li><code>for/in</code> - loops through the properties of an object</li>
+<li><code>for/of</code> - loops through the values of an iterable object</li>
+<li><code>while</code> - loops through a block of code while a specified condition is true</li>
+<li><code>do/while</code> - also loops through a block of code while a specified condition is true</li>
+</ul>
+<h3 id="For-loop-like-C"><a href="#For-loop-like-C" class="headerlink" title="For loop (like C)"></a>For loop (like C)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (expression <span class="hljs-number">1</span>; expression <span class="hljs-number">2</span>; expression <span class="hljs-number">3</span>) &#123;<br>  <span class="hljs-comment">// code block to be executed</span><br>&#125;<br><br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++) &#123;<br>  text += <span class="hljs-string">&quot;The number is &quot;</span> + i + <span class="hljs-string">&quot;&lt;br&gt;&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="For-in-like-Python"><a href="#For-in-like-Python" class="headerlink" title="For in (like Python)"></a>For in (like Python)</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (key <span class="hljs-keyword">in</span> object) &#123;<br>  <span class="hljs-comment">// code block to be executed</span><br>&#125;<br><br><span class="hljs-keyword">const</span> person = &#123;<span class="hljs-attr">fname</span>:<span class="hljs-string">&quot;John&quot;</span>, <span class="hljs-attr">lname</span>:<span class="hljs-string">&quot;Doe&quot;</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">25</span>&#125;;<br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">in</span> person) &#123;<br>  text += person[x];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (variable <span class="hljs-keyword">in</span> array) &#123;<br>  code<br>&#125;<br><br><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">45</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>];<br><span class="hljs-keyword">let</span> txt = <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">in</span> numbers) &#123;<br>  txt += numbers[x];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Array-forEach"><a href="#Array-forEach" class="headerlink" title="Array.forEach()"></a>Array.forEach()</h3><p>The <code>forEach()</code> method calls a function (a callback function) once for each array element.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">const</span> numbers = [<span class="hljs-number">45</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">16</span>, <span class="hljs-number">25</span>];<br><br><span class="hljs-keyword">let</span> txt = <span class="hljs-string">&quot;&quot;</span>;<br>numbers.<span class="hljs-title function_">forEach</span>(myFunction);<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunction</span>(<span class="hljs-params">value, index, array</span>) &#123;<br>  txt += value;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="For-of"><a href="#For-of" class="headerlink" title="For of"></a>For of</h3><p>The JavaScript <code>for of</code> statement loops through the values of an iterable object.</p>
+<p>It lets you loop over iterable data structures such as Arrays, Strings, Maps, NodeLists, and more:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">for</span> (variable <span class="hljs-keyword">of</span> iterable) &#123;<br>  <span class="hljs-comment">// code block to be executed</span><br>&#125;<br><br><span class="hljs-keyword">const</span> cars = [<span class="hljs-string">&quot;BMW&quot;</span>, <span class="hljs-string">&quot;Volvo&quot;</span>, <span class="hljs-string">&quot;Mini&quot;</span>];<br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">of</span> cars) &#123;<br>  text += x;<br>&#125;<br><br><span class="hljs-keyword">let</span> language = <span class="hljs-string">&quot;JavaScript&quot;</span>;<br><span class="hljs-keyword">let</span> text = <span class="hljs-string">&quot;&quot;</span>;<br><span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x <span class="hljs-keyword">of</span> language) &#123;<br>text += x;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="While-loop"><a href="#While-loop" class="headerlink" title="While loop"></a>While loop</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">while</span> (condition) &#123;<br>  <span class="hljs-comment">// code block to be executed</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">do</span> &#123;<br>  <span class="hljs-comment">// code block to be executed</span><br>&#125;<br><span class="hljs-keyword">while</span> (condition);<br></code></pre></td></tr></table></figure>
+
+<h2 id="14-HTML-DOM"><a href="#14-HTML-DOM" class="headerlink" title="14.  HTML DOM"></a>14.  HTML DOM</h2><ul>
+<li>JavaScript can change all the HTML elements in the page</li>
+<li>JavaScript can change all the HTML attributes in the page</li>
+<li>JavaScript can change all the CSS styles in the page</li>
+<li>JavaScript can remove existing HTML elements and attributes</li>
+<li>JavaScript can add new HTML elements and attributes</li>
+<li>JavaScript can react to all existing HTML events in the page</li>
+<li>JavaScript can create new HTML events in the page</li>
+</ul>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Develop/" class="category-chain-item">Develop</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Develop/Basic/" class="category-chain-item">Basic</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Frontend/" class="print-no-link">#Frontend</a>
+      
+        <a href="/tags/Node/" class="print-no-link">#Node</a>
+      
+        <a href="/tags/Backend/" class="print-no-link">#Backend</a>
+      
+        <a href="/tags/Javascript/" class="print-no-link">#Javascript</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>JavaScript</div>
+      <div>http://example.com/2023/02/06/JS/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>February 6, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2023/02/19/Node/" title="Node">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Node</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/10/25/17%20%E6%A8%A1%E5%9D%97%E5%92%8C%E5%8C%85/" title="17 模块和包">
+                        <span class="hidden-mobile">17 模块和包</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

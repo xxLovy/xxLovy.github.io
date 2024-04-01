@@ -1,0 +1,746 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="Now all the basic features of this app are fully developed. Here are some instructions on how to use this app. Basic UI  FeaturesPANIC! — Find the Nearest ToiletBy clicking this button at the bottom,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="IBSLover1.0">
+<meta property="og:url" content="http://example.com/2024/04/01/IBSLover1-0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Now all the basic features of this app are fully developed. Here are some instructions on how to use this app. Basic UI  FeaturesPANIC! — Find the Nearest ToiletBy clicking this button at the bottom,">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2024/04/01/img/simulator_screenshot_C229F6C0-7C25-4E9E-8B58-0CECC126A0AA.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401201458130.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401201525864.png">
+<meta property="og:image" content="http://example.com/img/ToiletMarker0.png">
+<meta property="og:image" content="http://example.com/img/ToiletByUser.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401201130130.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401201150359.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401200256391.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401200314839.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401200607890.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401200629314.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401202551791.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401202857205.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401203035773.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401203229720.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401203309545.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401203326784.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401203356523.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401203600125.png">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401203616666.png">
+<meta property="og:image" content="http://example.com/Users/xuxuan/Downloads/IMG_7165.PNG">
+<meta property="og:image" content="http://example.com/2024/04/01/img/image-20240401204820793.png">
+<meta property="article:published_time" content="2024-04-01T11:56:46.000Z">
+<meta property="article:modified_time" content="2024-04-01T13:18:44.779Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="React">
+<meta property="article:tag" content="React Native">
+<meta property="article:tag" content="Google Maps API">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2024/04/01/img/simulator_screenshot_C229F6C0-7C25-4E9E-8B58-0CECC126A0AA.png">
+  
+  
+  
+  <title>IBSLover1.0 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="IBSLover1.0"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-04-01 19:56" pubdate>
+          April 1, 2024 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          81 words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          1 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">IBSLover1.0</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>Now all the basic features of this app are fully developed. Here are some instructions on how to use this app.</p>
+<h2 id="Basic-UI"><a href="#Basic-UI" class="headerlink" title="Basic UI"></a>Basic UI</h2><img src="../img/simulator_screenshot_C229F6C0-7C25-4E9E-8B58-0CECC126A0AA.png" srcset="/img/loading.gif" lazyload alt="simulator_screenshot_C229F6C0-7C25-4E9E-8B58-0CECC126A0AA" style="zoom:25%;" />
+
+<h2 id="Features"><a href="#Features" class="headerlink" title="Features"></a>Features</h2><h3 id="PANIC-—-Find-the-Nearest-Toilet"><a href="#PANIC-—-Find-the-Nearest-Toilet" class="headerlink" title="PANIC! — Find the Nearest Toilet"></a>PANIC! — Find the Nearest Toilet</h3><p>By clicking this button at the bottom, your map will quickly navigate you to the nearest toilet (currently only searched by the Google Maps API, without user-created positions).</p>
+<img src="../img/image-20240401201458130.png" srcset="/img/loading.gif" lazyload alt="image-20240401201458130" style="zoom:33%;" />
+
+<p>After clicking:</p>
+<img src="../img/image-20240401201525864.png" srcset="/img/loading.gif" lazyload alt="image-20240401201525864" style="zoom:33%;" />
+
+<h3 id="All-Places-with-Toilets-Shown-on-Map"><a href="#All-Places-with-Toilets-Shown-on-Map" class="headerlink" title="All Places with Toilets Shown on Map"></a>All Places with Toilets Shown on Map</h3><p>All of the places with toilets nearby will be displayed on the map.</p>
+<ul>
+<li><p>A red marker indicates the location has been queried by the Google Maps API, which is usually more precise.<br><img src="/../img/ToiletMarker0.png" srcset="/img/loading.gif" lazyload alt="ToiletMarker0"></p>
+</li>
+<li><p>A blue marker indicates the location has been added by a user with an associated vote count.<br> <img src="/../img/ToiletByUser.png" srcset="/img/loading.gif" lazyload alt="ToiletByUser"></p>
+</li>
+</ul>
+<p>Clicking on these markers will provide detailed information about the location.</p>
+<img src="../img/image-20240401201130130.png" srcset="/img/loading.gif" lazyload alt="image-20240401201130130" style="zoom:33%;" />
+
+<img src="../img/image-20240401201150359.png" srcset="/img/loading.gif" lazyload alt="image-20240401201150359" style="zoom:33%;" />
+
+<p>You can select <code>Click to navigate</code> to get directions to the chosen location, similar to using the <code>PANIC!</code> feature.</p>
+<h3 id="ListView"><a href="#ListView" class="headerlink" title="ListView"></a>ListView</h3><p>Users can opt for a list view to see places with toilets. The list can be hidden if not needed. The places are sorted in ascending order of their distance from the user.</p>
+<p>Showing the list -&gt; Hiding the list:</p>
+<img src="../img/image-20240401200256391.png" srcset="/img/loading.gif" lazyload alt="image-20240401200256391" style="zoom: 33%;" />
+
+<p>Hiding the list -&gt; Showing the list:</p>
+<img src="../img/image-20240401200314839.png" srcset="/img/loading.gif" lazyload alt="image-20240401200314839" style="zoom:33%;" />
+
+<p>Clicking an item in <code>ListView</code> will yield the same result as selecting the location directly.</p>
+<h3 id="Current-Location"><a href="#Current-Location" class="headerlink" title="Current Location"></a>Current Location</h3><p>This feature allows users to return to their current location on the map if they lose track of where they are.</p>
+<img src="../img/image-20240401200607890.png" srcset="/img/loading.gif" lazyload alt="image-20240401200607890" style="zoom:33%;" />
+
+<p>After clicking:</p>
+<img src="../img/image-20240401200629314.png" srcset="/img/loading.gif" lazyload alt="image-20240401200629314" style="zoom:33%;" />
+
+<h3 id="Add-Toilet"><a href="#Add-Toilet" class="headerlink" title="Add Toilet"></a>Add Toilet</h3><p>Users can add a new toilet location, making it public to all users. Some measures have been taken to ensure accuracy. When adding a new location, if it’s close to an existing one on the toilet list, it will be considered the same location, and the vote count will increase by one. The user’s position is added to the toilet list, and the location is updated to the <strong>average position</strong> of all contributors. Currently, <code>Name</code> and <code>Description</code> are not being utilized effectively (That’s probably not a good solution, I’m still figuring how to make this better, maybe adding that to DB as well and even voting for the Name??? that’s a little bit insane).</p>
+<p>Adding a toilet that is already on the list:</p>
+<img src="../img/image-20240401202551791.png" srcset="/img/loading.gif" lazyload alt="image-20240401202551791" style="zoom:33%;" />
+
+<p>Before adding:</p>
+<img src="../img/image-20240401202857205.png" srcset="/img/loading.gif" lazyload alt="image-20240401202857205" style="zoom: 50%;" />
+
+<p>After adding (voting):</p>
+<img src="../img/image-20240401203035773.png" srcset="/img/loading.gif" lazyload alt="image-20240401203035773" style="zoom:33%;" />
+
+<h3 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a>Filters</h3><p>Users can apply two types of filters to streamline their search:</p>
+<h4 id="General-Filter"><a href="#General-Filter" class="headerlink" title="General Filter"></a>General Filter</h4><ul>
+<li>Exclude specific locations from the map display by selecting them in the filter settings.</li>
+</ul>
+<h4 id="Voting-Count-Filter"><a href="#Voting-Count-Filter" class="headerlink" title="Voting Count Filter"></a>Voting Count Filter</h4><ul>
+<li>Set a minimum vote count threshold to assess the reliability of a toilet location.</li>
+<li>Locations with a vote count below the threshold will not appear in the search results.</li>
+</ul>
+<img src="../img/image-20240401203229720.png" srcset="/img/loading.gif" lazyload alt="image-20240401203229720" style="zoom:33%;" />
+
+<p>Before filtering:</p>
+<img src="../img/image-20240401203309545.png" srcset="/img/loading.gif" lazyload alt="image-20240401203309545" style="zoom:33%;" />
+
+<img src="../img/image-20240401203326784.png" srcset="/img/loading.gif" lazyload alt="image-20240401203326784" style="zoom:33%;" />
+
+<p>After filtering:</p>
+<img src="../img/image-20240401203356523.png" srcset="/img/loading.gif" lazyload alt="image-20240401203356523" style="zoom:33%;" />
+
+<h3 id="Refresher"><a href="#Refresher" class="headerlink" title="Refresher"></a>Refresher</h3><p>A simple refresh function—nothing special to mention here.</p>
+<h3 id="Toggle-Bar"><a href="#Toggle-Bar" class="headerlink" title="Toggle Bar"></a>Toggle Bar</h3><p>A toggle bar contains all the features listed above for easy access.</p>
+<img src="../img/image-20240401203600125.png" srcset="/img/loading.gif" lazyload alt="image-20240401203600125" style="zoom:50%;" />
+
+<img src="../img/image-20240401203616666.png" srcset="/img/loading.gif" lazyload alt="image-20240401203616666" style="zoom:50%;" />
+
+<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><h3 id="Location-accuracy"><a href="#Location-accuracy" class="headerlink" title="Location accuracy"></a>Location accuracy</h3><p>Location accuracy issues have been noted on real iPhones, particularly with Expo’s location services in China. Various platforms, including StackOverflow and GitHub, have not provided solutions that address this issue. It appears that Expo’s location services may not be reliable in China, which has hindered testing on an actual iPhone.</p>
+<p>On my iPhone 11 (not accurate):</p>
+<img src="/Users/xuxuan/Downloads/IMG_7165.PNG" srcset="/img/loading.gif" lazyload alt="IMG_7165" style="zoom:33%;" />
+
+<p>On a simulator iPhone 15 (accurate):</p>
+<img src="../img/image-20240401204820793.png" srcset="/img/loading.gif" lazyload alt="image-20240401204820793" style="zoom:33%;" />
+
+<h3 id="Incomplete-Keyword-Range"><a href="#Incomplete-Keyword-Range" class="headerlink" title="Incomplete Keyword Range"></a>Incomplete Keyword Range</h3><p>The current compendium of keywords is somewhat limited, only enabling the query of certain likely toilet locations. This decision was taken to conserve the number of queries made to the Google Maps API, with an eye to efficiency and cost-effectiveness. Future updates are expected to broaden this keyword list.</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/App-Develop/" class="category-chain-item">App Develop</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/React/" class="print-no-link">#React</a>
+      
+        <a href="/tags/React-Native/" class="print-no-link">#React Native</a>
+      
+        <a href="/tags/Google-Maps-API/" class="print-no-link">#Google Maps API</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>IBSLover1.0</div>
+      <div>http://example.com/2024/04/01/IBSLover1-0/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 1, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2023/06/11/ComputerNetwork/" title="Computer Network">
+                        <span class="hidden-mobile">Computer Network</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>

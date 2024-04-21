@@ -1,0 +1,859 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="BeginCompile Typescript to Javascript1tsc test.ts  Even if there are any error in the .ts file, a javascript file will still be generated. with --noEmitOnError option, the .js file will not be generat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript">
+<meta property="og:url" content="http://example.com/2024/04/18/TS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="BeginCompile Typescript to Javascript1tsc test.ts  Even if there are any error in the .ts file, a javascript file will still be generated. with --noEmitOnError option, the .js file will not be generat">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-04-18T02:44:00.000Z">
+<meta property="article:modified_time" content="2024-04-21T01:48:04.994Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Typescript">
+<meta property="article:tag" content="Web dev">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>TypeScript - Hexo</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.1.1"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>Home</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>Archives</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>Categories</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>Tags</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>About</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="TypeScript"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-04-18 10:44" pubdate>
+          April 18, 2024 am
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.1k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          18 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">TypeScript</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="Begin"><a href="#Begin" class="headerlink" title="Begin"></a>Begin</h2><h3 id="Compile-Typescript-to-Javascript"><a href="#Compile-Typescript-to-Javascript" class="headerlink" title="Compile Typescript to Javascript"></a>Compile Typescript to Javascript</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">tsc test.ts<br></code></pre></td></tr></table></figure>
+
+<p>Even if there are any error in the <code>.ts</code> file, a javascript file will still be generated. with <code>--noEmitOnError</code> option, the <code>.js</code> file will not be generated.</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">tsc</span> --<span class="hljs-literal">no</span>EmitOnError test.ts<br></code></pre></td></tr></table></figure>
+
+<h3 id="Explicit-Types"><a href="#Explicit-Types" class="headerlink" title="Explicit Types"></a>Explicit Types</h3><p>use <code>:</code> to write explicit type annotations </p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">person: <span class="hljs-built_in">string</span>, date: <span class="hljs-built_in">Date</span></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">$&#123;person&#125;</span>, today is <span class="hljs-subst">$&#123;date.toDateString()&#125;</span>!`</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Erased-Types-When-Compile"><a href="#Erased-Types-When-Compile" class="headerlink" title="Erased Types When Compile"></a>Erased Types When Compile</h3><p>Most TypeScript-specific code gets erased away after comliling.</p>
+<p><strong>test.ts</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">person: <span class="hljs-built_in">string</span>, date: <span class="hljs-built_in">Date</span></span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Hello <span class="hljs-subst">$&#123;person&#125;</span>, today is <span class="hljs-subst">$&#123;date.toDateString()&#125;</span>!`</span>);<br>&#125;<br><br><span class="hljs-title function_">greet</span>(<span class="hljs-string">&quot;Maddison&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>());<br></code></pre></td></tr></table></figure>
+
+<p><strong>compile</strong></p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cmake">tsc <span class="hljs-keyword">test</span>.ts<br></code></pre></td></tr></table></figure>
+
+<p><strong>test.js</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">person, date</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello &quot;</span>.<span class="hljs-title function_">concat</span>(person, <span class="hljs-string">&quot;, today is &quot;</span>).<span class="hljs-title function_">concat</span>(date.<span class="hljs-title function_">toDateString</span>(), <span class="hljs-string">&quot;!&quot;</span>));<br>&#125;<br><span class="hljs-title function_">greet</span>(<span class="hljs-string">&quot;Maddison&quot;</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>());<br></code></pre></td></tr></table></figure>
+
+<h3 id="Strictness"><a href="#Strictness" class="headerlink" title="Strictness"></a>Strictness</h3><h4 id="noImplicitAny"><a href="#noImplicitAny" class="headerlink" title="noImplicitAny"></a><code>noImplicitAny</code></h4><p>Recall that in some places, TypeScript doesn’t try to infer types for us and instead falls back to the most lenient type: <code>any</code>. This isn’t the worst thing that can happen - after all, falling back to <code>any</code> is just the plain JavaScript experience anyway.</p>
+<p>However, using <code>any</code> often defeats the purpose of using TypeScript in the first place. The more typed your program is, the more validation and tooling you’ll get, meaning you’ll run into fewer bugs as you code. Turning on the <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#noImplicitAny"><code>noImplicitAny</code></a> flag will issue an error on any variables whose type is implicitly inferred as <code>any</code>.</p>
+<h4 id="strictNullChecks"><a href="#strictNullChecks" class="headerlink" title="strictNullChecks"></a><code>strictNullChecks</code></h4><p>By default, values like <code>null</code> and <code>undefined</code> are assignable to any other type. This can make writing some code easier, but forgetting to handle <code>null</code> and <code>undefined</code> is the cause of countless bugs in the world - some consider it a <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ybrQvs4x0Ps">billion dollar mistake</a>! The <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#strictNullChecks"><code>strictNullChecks</code></a> flag makes handling <code>null</code> and <code>undefined</code> more explicit, and <em>spares</em> us from worrying about whether we <em>forgot</em> to handle <code>null</code> and <code>undefined</code>.</p>
+<h2 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h2><h3 id="Common-types-in-ts"><a href="#Common-types-in-ts" class="headerlink" title="Common types in ts"></a>Common types in ts</h3><p>The primitives: <code>string</code>, <code>number</code>, and <code>boolean</code></p>
+<p>Arrays: Array<number> number[]</p>
+<p>any: for skipping type-check(use <code>noImplicitAny</code> to avoid this)</p>
+<h3 id="Type-Annotations"><a href="#Type-Annotations" class="headerlink" title="Type Annotations"></a>Type Annotations</h3><p>Explicit type:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">myName</span>: <span class="hljs-built_in">string</span> = <span class="hljs-string">&quot;Alice&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>Implicit type:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// No type annotation needed -- &#x27;myName&#x27; inferred as type &#x27;string&#x27;</span><br><span class="hljs-keyword">let</span> myName = <span class="hljs-string">&quot;Alice&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Functions"><a href="#Functions" class="headerlink" title="Functions"></a>Functions</h3><h4 id="Parameter-Type-Annotations"><a href="#Parameter-Type-Annotations" class="headerlink" title="Parameter Type Annotations"></a>Parameter Type Annotations</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// Parameter type annotation</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">name: <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello, &quot;</span> + name.<span class="hljs-title function_">toUpperCase</span>() + <span class="hljs-string">&quot;!!&quot;</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>The arguments will be checked</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// Would be a runtime error if executed!</span><br><span class="hljs-title function_">greet</span>(<span class="hljs-number">42</span>);<br></code></pre></td></tr></table></figure>
+
+<p><em>Argument of type ‘number’ is not assignable to parameter of type ‘string’.</em></p>
+<h4 id="Return-Type-Annotations"><a href="#Return-Type-Annotations" class="headerlink" title="Return Type Annotations"></a>Return Type Annotations</h4><p>You usually don’t need a return type annotation because TypeScript will infer the function’s return type based on its <code>return</code> statements.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getFavoriteNumber</span>(<span class="hljs-params"></span>): <span class="hljs-built_in">number</span> &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">26</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Functions-Which-Return-Promises"><a href="#Functions-Which-Return-Promises" class="headerlink" title="Functions Which Return Promises"></a>Functions Which Return Promises</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">getFavoriteNumber</span>(<span class="hljs-params"></span>): <span class="hljs-title class_">Promise</span>&lt;<span class="hljs-built_in">number</span>&gt; &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-number">26</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Anonymous-Functions"><a href="#Anonymous-Functions" class="headerlink" title="Anonymous Functions"></a>Anonymous Functions</h4><p>Even though the parameter <code>s</code> didn’t have a type annotation, TypeScript used the types of the <code>forEach</code> function, along with the inferred type of the array, to determine the type <code>s</code> will have.</p>
+<p>Similar to the inference rules, you don’t need to explicitly learn how this happens.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> names = [<span class="hljs-string">&quot;Alice&quot;</span>, <span class="hljs-string">&quot;Bob&quot;</span>, <span class="hljs-string">&quot;Eve&quot;</span>];<br> <br><span class="hljs-comment">// Contextual typing for function - parameter s inferred to have type string</span><br>names.<span class="hljs-title function_">forEach</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params">s</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s.<span class="hljs-title function_">toUpperCase</span>());<br>&#125;);<br> <br><span class="hljs-comment">// Contextual typing also applies to arrow functions</span><br>names.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">s</span>) =&gt;</span> &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s.<span class="hljs-title function_">toUpperCase</span>());<br>&#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="Object-Types"><a href="#Object-Types" class="headerlink" title="Object Types"></a>Object Types</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// The parameter&#x27;s type annotation is an object type</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">printCoord</span>(<span class="hljs-params">pt: &#123; x: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span>, z?: <span class="hljs-built_in">number</span>&#125;</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;The coordinate&#x27;s x value is &quot;</span> + pt.<span class="hljs-property">x</span>);<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;The coordinate&#x27;s y value is &quot;</span> + pt.<span class="hljs-property">y</span>);<br>&#125;<br><span class="hljs-title function_">printCoord</span>(&#123; <span class="hljs-attr">x</span>: <span class="hljs-number">3</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">7</span> &#125;);<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>z is optional</p>
+</li>
+<li><p><code>pt: &#123; x: number; y: number; z?: number&#125;</code> and <code>pt: &#123; x: number, y: number, z?: number&#125;</code> are equivalent.</p>
+</li>
+</ul>
+<h3 id="Union-Types"><a href="#Union-Types" class="headerlink" title="Union Types"></a>Union Types</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">printId</span>(<span class="hljs-params">id: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Your ID is: &quot;</span> + id);<br>&#125;<br><span class="hljs-comment">// OK</span><br><span class="hljs-title function_">printId</span>(<span class="hljs-number">101</span>);<br><span class="hljs-comment">// OK</span><br><span class="hljs-title function_">printId</span>(<span class="hljs-string">&quot;202&quot;</span>);<br><span class="hljs-comment">// Error</span><br><span class="hljs-title function_">printId</span>(&#123; <span class="hljs-attr">myID</span>: <span class="hljs-number">22342</span> &#125;);<br></code></pre></td></tr></table></figure>
+
+<p><em>Argument of type ‘{ myID: number; }’ is not assignable to parameter of type ‘string | number’.</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">printId</span>(<span class="hljs-params">id: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(id.<span class="hljs-title function_">toUpperCase</span>());<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><em>Property ‘toUpperCase’ does not exist on type ‘string | number’.</em><br><em>Property ‘toUpperCase’ does not exist on type ‘number’.</em></p>
+<p>solution:</p>
+<p>add a if statement to check the type of <code>id</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">printId</span>(<span class="hljs-params">id: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> id === <span class="hljs-string">&quot;string&quot;</span>) &#123;<br>    <span class="hljs-comment">// In this branch, id is of type &#x27;string&#x27;</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(id.<span class="hljs-title function_">toUpperCase</span>());<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-comment">// Here, id is of type &#x27;number&#x27;</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(id);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Type-Aliases"><a href="#Type-Aliases" class="headerlink" title="Type Aliases"></a>Type Aliases</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">Point</span> = &#123;<br>  <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>;<br>&#125;;<br><br><span class="hljs-comment">// Exactly the same as the earlier example</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">printCoord</span>(<span class="hljs-params">pt: Point</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;The coordinate&#x27;s x value is &quot;</span> + pt.<span class="hljs-property">x</span>);<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;The coordinate&#x27;s y value is &quot;</span> + pt.<span class="hljs-property">y</span>);<br>&#125;<br><span class="hljs-title function_">printCoord</span>(&#123; <span class="hljs-attr">x</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">100</span> &#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="Interfaces"><a href="#Interfaces" class="headerlink" title="Interfaces"></a>Interfaces</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Point</span> &#123;<br>  <span class="hljs-attr">x</span>: <span class="hljs-built_in">number</span>;<br>  <span class="hljs-attr">y</span>: <span class="hljs-built_in">number</span>;<br>&#125;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-title function_">printCoord</span>(<span class="hljs-params">pt: Point</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;The coordinate&#x27;s x value is &quot;</span> + pt.<span class="hljs-property">x</span>);<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;The coordinate&#x27;s y value is &quot;</span> + pt.<span class="hljs-property">y</span>);<br>&#125;<br><span class="hljs-title function_">printCoord</span>(&#123; <span class="hljs-attr">x</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">y</span>: <span class="hljs-number">100</span> &#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="Differences-Between-Type-Aliases-and-Interfaces"><a href="#Differences-Between-Type-Aliases-and-Interfaces" class="headerlink" title="Differences Between Type Aliases and Interfaces"></a>Differences Between Type Aliases and Interfaces</h3><h4 id="Extending"><a href="#Extending" class="headerlink" title="Extending"></a>Extending</h4><p><strong>interface</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Animal</span> &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Bear</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Animal</span> &#123;<br>  <span class="hljs-attr">honey</span>: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> bear = <span class="hljs-title function_">getBear</span>();<br>bear.<span class="hljs-property">name</span>;<br>bear.<span class="hljs-property">honey</span>;<br></code></pre></td></tr></table></figure>
+
+<p><strong>type</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">Animal</span> = &#123;<br>  <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br><br><span class="hljs-keyword">type</span> <span class="hljs-title class_">Bear</span> = <span class="hljs-title class_">Animal</span> &amp; &#123; <br>  <span class="hljs-attr">honey</span>: <span class="hljs-built_in">boolean</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> bear = <span class="hljs-title function_">getBear</span>();<br>bear.<span class="hljs-property">name</span>;<br>bear.<span class="hljs-property">honey</span>;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Adding-new-fields"><a href="#Adding-new-fields" class="headerlink" title="Adding new fields"></a>Adding new fields</h4><p><strong>interface</strong></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Window</span> &#123;<br>  <span class="hljs-attr">title</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Window</span> &#123;<br>  <span class="hljs-attr">ts</span>: <span class="hljs-title class_">TypeScriptAPI</span>;<br>&#125;<br><br><span class="hljs-keyword">const</span> src = <span class="hljs-string">&#x27;const a = &quot;Hello World&quot;&#x27;</span>;<br><span class="hljs-variable language_">window</span>.<span class="hljs-property">ts</span>.<span class="hljs-title function_">transpileModule</span>(src, &#123;&#125;);<br></code></pre></td></tr></table></figure>
+
+<p><strong>type</strong></p>
+<p><strong>A type cannot be changed after being created</strong></p>
+<h3 id="Type-Assertions"><a href="#Type-Assertions" class="headerlink" title="Type Assertions"></a>Type Assertions</h3><p>TypeScript only allows type assertions which convert to a <em>more specific</em> or <em>less specific</em> version of a type. This rule prevents “impossible” coercions like:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> x = <span class="hljs-string">&quot;hello&quot;</span> <span class="hljs-keyword">as</span> <span class="hljs-built_in">number</span>;<br></code></pre></td></tr></table></figure>
+
+<p><em>Conversion of type ‘string’ to type ‘number’ may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to ‘unknown’ first.Conversion of type ‘string’ to type ‘number’ may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to ‘unknown’ first.</em></p>
+<p>Sometimes this rule can be too conservative and will disallow more complex coercions that might be valid. If this happens, you can use two assertions, first to <code>any</code> (or <code>unknown</code>, which we’ll introduce later), then to the desired type:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> a = expr <span class="hljs-keyword">as</span> <span class="hljs-built_in">any</span> <span class="hljs-keyword">as</span> T;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Literal-Types"><a href="#Literal-Types" class="headerlink" title="Literal Types"></a>Literal Types</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> x = <span class="hljs-string">&quot;hello&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>is equivalent to</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">x</span>: <span class="hljs-string">&quot;hello&quot;</span> = <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-comment">// OK</span><br>x = <span class="hljs-string">&quot;hello&quot;</span>;<br><span class="hljs-comment">// ...</span><br>x = <span class="hljs-string">&quot;howdy&quot;</span>;<br></code></pre></td></tr></table></figure>
+
+<p><em>Type ‘“howdy”‘ is not assignable to type ‘“hello”‘.</em></p>
+<p>By combining literal types and union types:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">printText</span>(<span class="hljs-params">s: <span class="hljs-built_in">string</span>, alignment: <span class="hljs-string">&quot;left&quot;</span> | <span class="hljs-string">&quot;right&quot;</span> | <span class="hljs-string">&quot;center&quot;</span></span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;<br><span class="hljs-title function_">printText</span>(<span class="hljs-string">&quot;Hello, world&quot;</span>, <span class="hljs-string">&quot;left&quot;</span>);<br><span class="hljs-title function_">printText</span>(<span class="hljs-string">&quot;G&#x27;day, mate&quot;</span>, <span class="hljs-string">&quot;centre&quot;</span>); <span class="hljs-comment">// typo</span><br></code></pre></td></tr></table></figure>
+
+<p><em>Argument of type ‘“centre”‘ is not assignable to parameter of type ‘“left” | “right” | “center”‘.</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Options</span> &#123;<br>  <span class="hljs-attr">width</span>: <span class="hljs-built_in">number</span>;<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">configure</span>(<span class="hljs-params">x: Options | <span class="hljs-string">&quot;auto&quot;</span></span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;<br><span class="hljs-title function_">configure</span>(&#123; <span class="hljs-attr">width</span>: <span class="hljs-number">100</span> &#125;);<br><span class="hljs-title function_">configure</span>(<span class="hljs-string">&quot;auto&quot;</span>);<br><span class="hljs-title function_">configure</span>(<span class="hljs-string">&quot;automatic&quot;</span>);<br></code></pre></td></tr></table></figure>
+
+<p><em>Argument of type ‘“automatic”‘ is not assignable to parameter of type ‘Options | “auto”‘.</em></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">declare</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">handleRequest</span>(<span class="hljs-params">url: <span class="hljs-built_in">string</span>, method: <span class="hljs-string">&quot;GET&quot;</span> | <span class="hljs-string">&quot;POST&quot;</span></span>): <span class="hljs-built_in">void</span>;<br> <br><span class="hljs-keyword">const</span> req = &#123; <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;https://example.com&quot;</span>, <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;GET&quot;</span> &#125;;<br><span class="hljs-title function_">handleRequest</span>(req.<span class="hljs-property">url</span>, req.<span class="hljs-property">method</span>);<br></code></pre></td></tr></table></figure>
+
+<p><em>Argument of type ‘string’ is not assignable to parameter of type ‘“GET” | “POST”‘.</em></p>
+<p>In the above example <code>req.method</code> is inferred to be <code>string</code>, not <code>&quot;GET&quot;</code>. Because code can be evaluated between the creation of <code>req</code> and the call of <code>handleRequest</code> which could assign a new string like <code>&quot;GUESS&quot;</code> to <code>req.method</code>, TypeScript considers this code to have an error.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">const</span> req = &#123; <span class="hljs-attr">url</span>: <span class="hljs-string">&quot;https://example.com&quot;</span>, <span class="hljs-attr">method</span>: <span class="hljs-string">&quot;GET&quot;</span> &#125; <span class="hljs-keyword">as</span> <span class="hljs-keyword">const</span>;<br><span class="hljs-title function_">handleRequest</span>(req.<span class="hljs-property">url</span>, req.<span class="hljs-property">method</span>);<br></code></pre></td></tr></table></figure>
+
+<p>The <code>as const</code> suffix acts like <code>const</code> but for the type system, ensuring that all properties are assigned the literal type instead of a more general version like <code>string</code> or <code>number</code>.</p>
+<h3 id="null-undefined"><a href="#null-undefined" class="headerlink" title="null&#x2F;undefined"></a>null&#x2F;undefined</h3><h4 id="strictNullChecks-on"><a href="#strictNullChecks-on" class="headerlink" title="strictNullChecks on"></a><code>strictNullChecks</code> on</h4><ol>
+<li><p>With <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/tsconfig#strictNullChecks"><code>strictNullChecks</code></a> <em>on</em>, when a value is <code>null</code> or <code>undefined</code>, you will need to test for those values before using methods or properties on that value.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">doSomething</span>(<span class="hljs-params">x: <span class="hljs-built_in">string</span> | <span class="hljs-literal">null</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (x === <span class="hljs-literal">null</span>) &#123;<br>    <span class="hljs-comment">// do nothing</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello, &quot;</span> + x.<span class="hljs-title function_">toUpperCase</span>());<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>Non-null Assertion Operator (Postfix <code>!</code>): TypeScript also has a special syntax for removing <code>null</code> and <code>undefined</code> from a type without doing any explicit checking. Writing <code>!</code> after any expression is effectively a type assertion that the value isn’t <code>null</code> or <code>undefined</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">liveDangerously</span>(<span class="hljs-params">x?: <span class="hljs-built_in">number</span> | <span class="hljs-literal">null</span></span>) &#123;<br>  <span class="hljs-comment">// No error</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x!.<span class="hljs-title function_">toFixed</span>());<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="Narrowing"><a href="#Narrowing" class="headerlink" title="Narrowing"></a>Narrowing</h2><h3 id="typeof-narrowing"><a href="#typeof-narrowing" class="headerlink" title="typeof narrowing"></a>typeof narrowing</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">padLeft</span>(<span class="hljs-params">padding: <span class="hljs-built_in">number</span> | <span class="hljs-built_in">string</span>, input: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">string</span> &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> padding === <span class="hljs-string">&quot;number&quot;</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot; &quot;</span>.<span class="hljs-title function_">repeat</span>(padding) + input;<br>  &#125;<br>  <span class="hljs-keyword">return</span> padding + input;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Truthiness-narrowing"><a href="#Truthiness-narrowing" class="headerlink" title="Truthiness narrowing"></a>Truthiness narrowing</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">getUsersOnlineMessage</span>(<span class="hljs-params">numUsersOnline: <span class="hljs-built_in">number</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (numUsersOnline) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">`There are <span class="hljs-subst">$&#123;numUsersOnline&#125;</span> online now!`</span>;<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Nobody&#x27;s here. :(&quot;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>In JavaScript, constructs like <code>if</code> first “coerce” their conditions to <code>boolean</code>s to make sense of them, and then choose their branches depending on whether the result is <code>true</code> or <code>false</code>. Values like</p>
+<ul>
+<li><code>0</code></li>
+<li><code>NaN</code></li>
+<li><code>&quot;&quot;</code> (the empty string)</li>
+<li><code>0n</code> (the <code>bigint</code> version of zero)</li>
+<li><code>null</code></li>
+<li><code>undefined</code></li>
+</ul>
+<h3 id="Equality-narrowing"><a href="#Equality-narrowing" class="headerlink" title="Equality narrowing"></a>Equality narrowing</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">example</span>(<span class="hljs-params">x: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">boolean</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (x === y) &#123;<br>    <span class="hljs-comment">// We can now call any &#x27;string&#x27; method on &#x27;x&#x27; or &#x27;y&#x27;.</span><br>    x.<span class="hljs-title function_">toUpperCase</span>();<br>    y.<span class="hljs-title function_">toLowerCase</span>(); <br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);       <br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(y);<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="The-in-operator-narrowing"><a href="#The-in-operator-narrowing" class="headerlink" title="The in operator narrowing"></a>The <code>in</code> operator narrowing</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">Fish</span> = &#123; <span class="hljs-attr">swim</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span> &#125;;<br><span class="hljs-keyword">type</span> <span class="hljs-title class_">Bird</span> = &#123; <span class="hljs-attr">fly</span>: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span> &#125;;<br><span class="hljs-keyword">type</span> <span class="hljs-title class_">Human</span> = &#123; swim?: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span>; fly?: <span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">void</span> &#125;;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-title function_">move</span>(<span class="hljs-params">animal: Fish | Bird | Human</span>) &#123;<br>  <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;swim&quot;</span> <span class="hljs-keyword">in</span> animal) &#123;<br>    animal;     <br><span class="hljs-comment">// (parameter) animal: Fish | Human</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    animal;      <br><span class="hljs-comment">// (parameter) animal: Bird | Human</span><br>  &#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="instanceof-narrowing"><a href="#instanceof-narrowing" class="headerlink" title="instanceof narrowing"></a><code>instanceof</code> narrowing</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">logValue</span>(<span class="hljs-params">x: <span class="hljs-built_in">Date</span> | <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-keyword">if</span> (x <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">Date</span>) &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x.<span class="hljs-title function_">toUTCString</span>());           <br><span class="hljs-comment">// (parameter) x: Date</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x.<span class="hljs-title function_">toUpperCase</span>());              <br><span class="hljs-comment">// (parameter) x: string</span><br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="Assignments"><a href="#Assignments" class="headerlink" title="Assignments"></a>Assignments</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">let</span> x = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() &lt; <span class="hljs-number">0.5</span> ? <span class="hljs-number">10</span> : <span class="hljs-string">&quot;hello world!&quot;</span>;<br><span class="hljs-comment">// let x: string | number</span><br>x = <span class="hljs-number">1</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);         <br><span class="hljs-comment">// let x: number</span><br>x = <span class="hljs-string">&quot;goodbye!&quot;</span>;<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);         <br><span class="hljs-comment">//let x: string</span><br><br><span class="hljs-comment">// Error</span><br>x = <span class="hljs-literal">true</span>;<br></code></pre></td></tr></table></figure>
+
+<p><em>Type ‘boolean’ is not assignable to type ‘string | number’.</em></p>
+<h3 id="Control-flow-analysis"><a href="#Control-flow-analysis" class="headerlink" title="Control flow analysis"></a>Control flow analysis</h3><p>Control flow will narrow down the type</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">example</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-keyword">let</span> <span class="hljs-attr">x</span>: <span class="hljs-built_in">string</span> | <span class="hljs-built_in">number</span> | <span class="hljs-built_in">boolean</span>;<br>  x = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() &lt; <span class="hljs-number">0.5</span>;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);         <br><span class="hljs-comment">// let x: boolean</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() &lt; <span class="hljs-number">0.5</span>) &#123;<br>    x = <span class="hljs-string">&quot;hello&quot;</span>;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);           <br><span class="hljs-comment">// let x: string</span><br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    x = <span class="hljs-number">100</span>;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(x);        <br><span class="hljs-comment">// let x: number</span><br>  &#125;<br>  <span class="hljs-keyword">return</span> x;      <br><span class="hljs-comment">// let x: string | number</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Never-Type"><a href="#Never-Type" class="headerlink" title="Never Type"></a>Never Type</h3><p>When narrowing, you can reduce the options of a union to a point where you have removed all possibilities and have nothing left. In those cases, TypeScript will use a <code>never</code> type to represent a state which shouldn’t exist.</p>
+<h2 id="Functions-1"><a href="#Functions-1" class="headerlink" title="Functions"></a>Functions</h2><h3 id="Function-Type-Expressions"><a href="#Function-Type-Expressions" class="headerlink" title="Function Type Expressions"></a>Function Type Expressions</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greeter</span>(<span class="hljs-params">fn: (a: <span class="hljs-built_in">string</span>) =&gt; <span class="hljs-built_in">void</span></span>) &#123;<br>  <span class="hljs-title function_">fn</span>(<span class="hljs-string">&quot;Hello, World&quot;</span>);<br>&#125;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-title function_">printToConsole</span>(<span class="hljs-params">s: <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(s);<br>&#125;<br> <br><span class="hljs-title function_">greeter</span>(printToConsole);<br></code></pre></td></tr></table></figure>
+
+<p>or like this</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">GreetFunction</span> = <span class="hljs-function">(<span class="hljs-params">a: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-built_in">void</span>;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">greeter</span>(<span class="hljs-params">fn: GreetFunction</span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Call-Signatures"><a href="#Call-Signatures" class="headerlink" title="Call Signatures"></a>Call Signatures</h3><p>If we want to describe something callable with properties, we can write a <em>call signature</em> in an object type:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">DescribableFunction</span> = &#123;<br>  <span class="hljs-attr">description</span>: <span class="hljs-built_in">string</span>;<br>  (<span class="hljs-attr">someArg</span>: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">boolean</span>; <span class="hljs-comment">// function signature</span><br>&#125;;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">doSomething</span>(<span class="hljs-params">fn: DescribableFunction</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(fn.<span class="hljs-property">description</span> + <span class="hljs-string">&quot; returned &quot;</span> + <span class="hljs-title function_">fn</span>(<span class="hljs-number">6</span>));<br>&#125;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-title function_">myFunc</span>(<span class="hljs-params">someArg: <span class="hljs-built_in">number</span></span>) &#123;<br>  <span class="hljs-keyword">return</span> someArg &gt; <span class="hljs-number">3</span>;<br>&#125;<br>myFunc.<span class="hljs-property">description</span> = <span class="hljs-string">&quot;default description&quot;</span>;<br> <br><span class="hljs-title function_">doSomething</span>(myFunc);<br></code></pre></td></tr></table></figure>
+
+<p>This code defines a type alias called <code>DescribableFunction</code>, which describes a function type with specific properties: <code>description</code> as a string and a <strong>function signature</strong> that accepts a <code>number</code> argument and returns a <code>boolean</code>.</p>
+<p>Then, a function named <code>doSomething</code> is defined. It takes a parameter <code>fn</code> of type <code>DescribableFunction</code>. Inside <code>doSomething</code>, it prints the <code>fn.description</code> string, then calls <code>fn(6)</code> and prints its return value.</p>
+<p>Next, a function named <code>myFunc</code> is defined. It accepts a <code>number</code> argument and returns a <code>boolean</code>. This function also has a <code>description</code> property with a value of <code>&quot;default description&quot;</code>.</p>
+<p>Finally, <code>doSomething(myFunc)</code> is called, passing <code>myFunc</code> as an argument. Since <code>myFunc</code> conforms to the <code>DescribableFunction</code> type, it can be passed as an argument to <code>doSomething</code>. Inside <code>doSomething</code>, it prints the value of <code>myFunc.description</code>, then calls <code>myFunc(6)</code> and prints its return value.</p>
+<h3 id="Construct-Signatures"><a href="#Construct-Signatures" class="headerlink" title="Construct Signatures"></a>Construct Signatures</h3><p>JavaScript functions can also be invoked with the <code>new</code> operator. TypeScript refers to these as <em>constructors</em> because they usually create a new object. You can write a <em>construct signature</em> by adding the <code>new</code> keyword in front of a call signature</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">SomeConstructor</span> = &#123;<br>  <span class="hljs-keyword">new</span> (<span class="hljs-attr">s</span>: <span class="hljs-built_in">string</span>): <span class="hljs-title class_">SomeObject</span>;<br>&#125;;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fn</span>(<span class="hljs-params">ctor: SomeConstructor</span>) &#123;<br>  <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title function_">ctor</span>(<span class="hljs-string">&quot;hello&quot;</span>);<br>&#125;<br><br><br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">CallOrConstruct</span> &#123;<br>  (n?: <span class="hljs-built_in">number</span>): <span class="hljs-built_in">string</span>;<br>  <span class="hljs-keyword">new</span> (<span class="hljs-attr">s</span>: <span class="hljs-built_in">string</span>): <span class="hljs-title class_">Date</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Generic-Functions"><a href="#Generic-Functions" class="headerlink" title="Generic Functions"></a>Generic Functions</h3><p>Code below</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">firstElement</span>(<span class="hljs-params">arr: <span class="hljs-built_in">any</span>[]</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>can be implemented as</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> firstElement&lt;<span class="hljs-title class_">Type</span>&gt;(<span class="hljs-attr">arr</span>: <span class="hljs-title class_">Type</span>[]): <span class="hljs-title class_">Type</span> | <span class="hljs-literal">undefined</span> &#123;<br>  <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>];<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>with the use of <code>generic (&lt;Type&gt;)</code>  to avoid the use of <code>any</code></p>
+<p>so to test the function above:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> firstElement&lt;<span class="hljs-title class_">Type</span>&gt;(<span class="hljs-attr">arr</span>: <span class="hljs-title class_">Type</span>[]): <span class="hljs-title class_">Type</span> | <span class="hljs-literal">undefined</span> &#123;<br>  <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>];<br>&#125;<br><br><span class="hljs-comment">// s is of type &#x27;string&#x27;</span><br><span class="hljs-keyword">const</span> s = <span class="hljs-title function_">firstElement</span>([<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>]);<br><span class="hljs-comment">// n is of type &#x27;number&#x27;</span><br><span class="hljs-keyword">const</span> n = <span class="hljs-title function_">firstElement</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);<br><span class="hljs-comment">// u is of type undefined</span><br><span class="hljs-keyword">const</span> u = <span class="hljs-title function_">firstElement</span>([]);<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-types-generic"><a href="#2-types-generic" class="headerlink" title="2 types generic"></a>2 types generic</h4><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> map&lt;<span class="hljs-title class_">Input</span>, <span class="hljs-title class_">Output</span>&gt;(<span class="hljs-attr">arr</span>: <span class="hljs-title class_">Input</span>[], <span class="hljs-attr">func</span>: <span class="hljs-function">(<span class="hljs-params">arg: Input</span>) =&gt;</span> <span class="hljs-title class_">Output</span>): <span class="hljs-title class_">Output</span>[] &#123;<br>    <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">map</span>(func);<br>&#125;<br><br><span class="hljs-comment">// Parameter &#x27;n&#x27; is of type &#x27;string&#x27;</span><br><span class="hljs-comment">// &#x27;parsed&#x27; is of type &#x27;number[]&#x27;</span><br><span class="hljs-keyword">const</span> parsed = <span class="hljs-title function_">map</span>([<span class="hljs-string">&quot;1&quot;</span>, <span class="hljs-string">&quot;2&quot;</span>, <span class="hljs-string">&quot;3&quot;</span>], <span class="hljs-function">(<span class="hljs-params">n</span>) =&gt;</span> <span class="hljs-built_in">parseInt</span>(n));<br></code></pre></td></tr></table></figure>
+
+<h4 id="Constraints"><a href="#Constraints" class="headerlink" title="Constraints"></a>Constraints</h4><p>We need a function that returns the longer of two values. To do this, we need a <code>length</code> property that’s a number. We <em>constrain</em> the type parameter to that type by writing an <code>extends</code> clause</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> longest&lt;<span class="hljs-title class_">Type</span> <span class="hljs-keyword">extends</span> &#123; <span class="hljs-attr">length</span>: <span class="hljs-built_in">number</span> &#125;&gt;(<span class="hljs-attr">a</span>: <span class="hljs-title class_">Type</span>, <span class="hljs-attr">b</span>: <span class="hljs-title class_">Type</span>) &#123;<br>  <span class="hljs-keyword">if</span> (a.<span class="hljs-property">length</span> &gt;= b.<span class="hljs-property">length</span>) &#123;<br>    <span class="hljs-keyword">return</span> a;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> b;<br>  &#125;<br>&#125;<br> <br><span class="hljs-comment">// longerArray is of type &#x27;number[]&#x27;</span><br><span class="hljs-keyword">const</span> longerArray = <span class="hljs-title function_">longest</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>], [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);<br><span class="hljs-comment">// longerString is of type &#x27;alice&#x27; | &#x27;bob&#x27;</span><br><span class="hljs-keyword">const</span> longerString = <span class="hljs-title function_">longest</span>(<span class="hljs-string">&quot;alice&quot;</span>, <span class="hljs-string">&quot;bob&quot;</span>);<br><span class="hljs-comment">// Error! Numbers don&#x27;t have a &#x27;length&#x27; property</span><br><span class="hljs-keyword">const</span> notOK = <span class="hljs-title function_">longest</span>(<span class="hljs-number">10</span>, <span class="hljs-number">100</span>);<br></code></pre></td></tr></table></figure>
+
+<p><em>Argument of type ‘number’ is not assignable to parameter of type ‘{ length: number; }’.</em></p>
+<h4 id="Good-Generic-Function"><a href="#Good-Generic-Function" class="headerlink" title="Good Generic Function"></a>Good Generic Function</h4><p><strong>Rule1</strong>: When possible, use the type parameter itself rather than constraining it</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> firstElement1&lt;<span class="hljs-title class_">Type</span>&gt;(<span class="hljs-attr">arr</span>: <span class="hljs-title class_">Type</span>[]) &#123;<br>  <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>];<br>&#125;<br> <br><span class="hljs-keyword">function</span> firstElement2&lt;<span class="hljs-title class_">Type</span> <span class="hljs-keyword">extends</span> <span class="hljs-built_in">any</span>[]&gt;(<span class="hljs-attr">arr</span>: <span class="hljs-title class_">Type</span>) &#123;<br>  <span class="hljs-keyword">return</span> arr[<span class="hljs-number">0</span>];<br>&#125;<br> <br><span class="hljs-comment">// a: number (good)</span><br><span class="hljs-keyword">const</span> a = <span class="hljs-title function_">firstElement1</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);<br><span class="hljs-comment">// b: any (bad)</span><br><span class="hljs-keyword">const</span> b = <span class="hljs-title function_">firstElement2</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>]);<br></code></pre></td></tr></table></figure>
+
+<p><strong>Rule2</strong>: Always use as few type parameters as possible</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> filter1&lt;<span class="hljs-title class_">Type</span>&gt;(<span class="hljs-attr">arr</span>: <span class="hljs-title class_">Type</span>[], <span class="hljs-attr">func</span>: <span class="hljs-function">(<span class="hljs-params">arg: Type</span>) =&gt;</span> <span class="hljs-built_in">boolean</span>): <span class="hljs-title class_">Type</span>[] &#123;<br>  <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">filter</span>(func);<br>&#125;<br> <br><span class="hljs-keyword">function</span> filter2&lt;<span class="hljs-title class_">Type</span>, <span class="hljs-title class_">Func</span> <span class="hljs-keyword">extends</span> (<span class="hljs-attr">arg</span>: <span class="hljs-title class_">Type</span>) =&gt; <span class="hljs-built_in">boolean</span>&gt;(<br>  <span class="hljs-attr">arr</span>: <span class="hljs-title class_">Type</span>[],<br>  <span class="hljs-attr">func</span>: <span class="hljs-title class_">Func</span><br>): <span class="hljs-title class_">Type</span>[] &#123;<br>  <span class="hljs-keyword">return</span> arr.<span class="hljs-title function_">filter</span>(func);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>Rule3</strong>: If a type parameter only appears in one location, strongly reconsider if you actually need it</p>
+<p>Sometimes we forget that a function might not need to be generic:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> greet&lt;<span class="hljs-title class_">Str</span> <span class="hljs-keyword">extends</span> <span class="hljs-built_in">string</span>&gt;(<span class="hljs-attr">s</span>: <span class="hljs-title class_">Str</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello, &quot;</span> + s);<br>&#125;<br> <br><span class="hljs-title function_">greet</span>(<span class="hljs-string">&quot;world&quot;</span>);<span class="hljs-title class_">Try</span><br></code></pre></td></tr></table></figure>
+
+<p>We could just as easily have written a simpler version:</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">greet</span>(<span class="hljs-params">s: <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;Hello, &quot;</span> + s);<br>&#125;<span class="hljs-title class_">Try</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="Optional-Parameters"><a href="#Optional-Parameters" class="headerlink" title="Optional Parameters"></a>Optional Parameters</h3><p>use <code>?</code></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x?: <span class="hljs-built_in">number</span></span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;<br><span class="hljs-title function_">f</span>(); <span class="hljs-comment">// OK</span><br><span class="hljs-title function_">f</span>(<span class="hljs-number">10</span>); <span class="hljs-comment">// OK</span><br></code></pre></td></tr></table></figure>
+
+<p>use default value</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">f</span>(<span class="hljs-params">x = <span class="hljs-number">10</span></span>) &#123;<br>  <span class="hljs-comment">// ...</span><br>&#125;<br><br><span class="hljs-comment">// All OK</span><br><span class="hljs-title function_">f</span>();<br><span class="hljs-title function_">f</span>(<span class="hljs-number">10</span>);<br><span class="hljs-title function_">f</span>(<span class="hljs-literal">undefined</span>);<br></code></pre></td></tr></table></figure>
+
+<p><strong>Rule4</strong>: When writing a function type for a callback, <em>never</em> write an optional parameter unless you intend to <em>call</em> the function without passing that argument</p>
+<h3 id="Function-Overloads"><a href="#Function-Overloads" class="headerlink" title="Function Overloads"></a>Function Overloads</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-comment">// overload signature</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">makeDate</span>(<span class="hljs-params">timestamp: <span class="hljs-built_in">number</span></span>): <span class="hljs-title class_">Date</span>;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">makeDate</span>(<span class="hljs-params">m: <span class="hljs-built_in">number</span>, d: <span class="hljs-built_in">number</span>, y: <span class="hljs-built_in">number</span></span>): <span class="hljs-title class_">Date</span>;<br><span class="hljs-comment">// implementation signature</span><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">makeDate</span>(<span class="hljs-params">mOrTimestamp: <span class="hljs-built_in">number</span>, d?: <span class="hljs-built_in">number</span>, y?: <span class="hljs-built_in">number</span></span>): <span class="hljs-title class_">Date</span> &#123;<br>  <span class="hljs-keyword">if</span> (d !== <span class="hljs-literal">undefined</span> &amp;&amp; y !== <span class="hljs-literal">undefined</span>) &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(y, mOrTimestamp, d);<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>(mOrTimestamp);<br>  &#125;<br>&#125;<br><span class="hljs-keyword">const</span> d1 = <span class="hljs-title function_">makeDate</span>(<span class="hljs-number">12345678</span>);<br><span class="hljs-keyword">const</span> d2 = <span class="hljs-title function_">makeDate</span>(<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>);<br><br><span class="hljs-comment">// Error</span><br><span class="hljs-keyword">const</span> d3 = <span class="hljs-title function_">makeDate</span>(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>);<br></code></pre></td></tr></table></figure>
+
+<p><em>No overload expects 2 arguments, but overloads do exist that expect either 1 or 3 arguments.</em></p>
+<p>In this example, we wrote two overloads: one accepting one argument, and another accepting three arguments. These first two signatures are called the <em>overload signatures</em>.</p>
+<p>Then, we wrote a function implementation with a compatible signature. Functions have an <em>implementation</em> signature, but this signature can’t be called directly. Even though we wrote a function with two optional parameters after the required one, it can’t be called with two parameters!</p>
+<h4 id="Good-Overloads-Function"><a href="#Good-Overloads-Function" class="headerlink" title="Good Overloads Function"></a>Good Overloads Function</h4><p><strong>Rule1</strong>: Always prefer parameters with union types instead of overloads when possible</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">len</span>(<span class="hljs-params">s: <span class="hljs-built_in">string</span></span>): <span class="hljs-built_in">number</span>;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">len</span>(<span class="hljs-params">arr: <span class="hljs-built_in">any</span>[]</span>): <span class="hljs-built_in">number</span>;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">len</span>(<span class="hljs-params">x: <span class="hljs-built_in">any</span></span>) &#123;<br>  <span class="hljs-keyword">return</span> x.<span class="hljs-property">length</span>;<br>&#125;<br><br><span class="hljs-title function_">len</span>(<span class="hljs-string">&quot;&quot;</span>); <span class="hljs-comment">// OK</span><br><span class="hljs-title function_">len</span>([<span class="hljs-number">0</span>]); <span class="hljs-comment">// OK</span><br><span class="hljs-title function_">len</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() &gt; <span class="hljs-number">0.5</span> ? <span class="hljs-string">&quot;hello&quot;</span> : [<span class="hljs-number">0</span>]);<br><span class="hljs-comment">/**</span><br><span class="hljs-comment">No overload matches this call.</span><br><span class="hljs-comment">  Overload 1 of 2, &#x27;(s: string): number&#x27;, gave the following error.</span><br><span class="hljs-comment">    Argument of type &#x27;number[] | &quot;hello&quot;&#x27; is not assignable to parameter of type &#x27;string&#x27;.</span><br><span class="hljs-comment">      Type &#x27;number[]&#x27; is not assignable to type &#x27;string&#x27;.</span><br><span class="hljs-comment">  Overload 2 of 2, &#x27;(arr: any[]): number&#x27;, gave the following error.</span><br><span class="hljs-comment">    Argument of type &#x27;number[] | &quot;hello&quot;&#x27; is not assignable to parameter of type &#x27;any[]&#x27;.</span><br><span class="hljs-comment">      Type &#x27;string&#x27; is not assignable to type &#x27;any[]&#x27;.</span><br><span class="hljs-comment">*/</span><br></code></pre></td></tr></table></figure>
+
+<p>so the implementation signature should be</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">len</span>(<span class="hljs-params">x: <span class="hljs-built_in">any</span>[] | <span class="hljs-built_in">string</span></span>) &#123;<br>  <span class="hljs-keyword">return</span> x.<span class="hljs-property">length</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Rest-Parameters-and-Arguments"><a href="#Rest-Parameters-and-Arguments" class="headerlink" title="Rest Parameters and Arguments"></a>Rest Parameters and Arguments</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">multiply</span>(<span class="hljs-params">n: <span class="hljs-built_in">number</span>, ...m: <span class="hljs-built_in">number</span>[]</span>) &#123;<br>  <span class="hljs-keyword">return</span> m.<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">x</span>) =&gt;</span> n * x);<br>&#125;<br><span class="hljs-comment">// &#x27;a&#x27; gets value [10, 20, 30, 40]</span><br><span class="hljs-keyword">const</span> a = <span class="hljs-title function_">multiply</span>(<span class="hljs-number">10</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>);<br></code></pre></td></tr></table></figure>
+
+<h3 id="Parameter-Destructuring"><a href="#Parameter-Destructuring" class="headerlink" title="Parameter Destructuring"></a>Parameter Destructuring</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">&#123; a, b, c &#125;: &#123; a: <span class="hljs-built_in">number</span>; b: <span class="hljs-built_in">number</span>; c: <span class="hljs-built_in">number</span> &#125;</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a + b + c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>or</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-variable constant_">ABC</span> = &#123; <span class="hljs-attr">a</span>: <span class="hljs-built_in">number</span>; <span class="hljs-attr">b</span>: <span class="hljs-built_in">number</span>; <span class="hljs-attr">c</span>: <span class="hljs-built_in">number</span> &#125;;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">sum</span>(<span class="hljs-params">&#123; a, b, c &#125;: ABC</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(a + b + c);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="Objects"><a href="#Objects" class="headerlink" title="Objects"></a>Objects</h2><h3 id="Optional-Properties"><a href="#Optional-Properties" class="headerlink" title="Optional Properties"></a>Optional Properties</h3><p>To handle <code>undefined</code> situation, we can use <code>xPos=0 yPos=0</code> to destruct props</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">PaintOptions</span> &#123;<br>  <span class="hljs-attr">shape</span>: <span class="hljs-title class_">Shape</span>;<br>  xPos?: <span class="hljs-built_in">number</span>;<br>  yPos?: <span class="hljs-built_in">number</span>;<br>&#125;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-title function_">paintShape</span>(<span class="hljs-params">&#123; shape, xPos = <span class="hljs-number">0</span>, yPos = <span class="hljs-number">0</span> &#125;: PaintOptions</span>) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;x coordinate at&quot;</span>, xPos);<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;y coordinate at&quot;</span>, yPos);<br>&#125;<br> <br><span class="hljs-keyword">const</span> shape = <span class="hljs-title function_">getShape</span>();<br><span class="hljs-title function_">paintShape</span>(&#123; shape &#125;);<br><span class="hljs-title function_">paintShape</span>(&#123; shape, <span class="hljs-attr">xPos</span>: <span class="hljs-number">100</span> &#125;);<br><span class="hljs-title function_">paintShape</span>(&#123; shape, <span class="hljs-attr">yPos</span>: <span class="hljs-number">100</span> &#125;);<br><span class="hljs-title function_">paintShape</span>(&#123; shape, <span class="hljs-attr">xPos</span>: <span class="hljs-number">100</span>, <span class="hljs-attr">yPos</span>: <span class="hljs-number">100</span> &#125;);<br></code></pre></td></tr></table></figure>
+
+<h3 id="readonly"><a href="#readonly" class="headerlink" title="readonly"></a>readonly</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">SomeType</span> &#123;<br>  <span class="hljs-keyword">readonly</span> <span class="hljs-attr">prop</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>Using the <code>readonly</code> modifier doesn’t necessarily imply that a value is totally immutable - or in other words, that its internal contents can’t be changed. It just means the property itself can’t be re-written to.</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Home</span> &#123;<br>  <span class="hljs-keyword">readonly</span> <span class="hljs-attr">resident</span>: &#123; <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>; <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span> &#125;;<br>&#125;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-title function_">visitForBirthday</span>(<span class="hljs-params">home: Home</span>) &#123;<br>  <span class="hljs-comment">// We can read and update properties from &#x27;home.resident&#x27;.</span><br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">`Happy birthday <span class="hljs-subst">$&#123;home.resident.name&#125;</span>!`</span>);<br>  home.<span class="hljs-property">resident</span>.<span class="hljs-property">age</span>++;<br>&#125;<br> <br><span class="hljs-keyword">function</span> <span class="hljs-title function_">evict</span>(<span class="hljs-params">home: Home</span>) &#123;<br>  <span class="hljs-comment">// But we can&#x27;t write to the &#x27;resident&#x27; property itself on a &#x27;Home&#x27;.</span><br>  home.<span class="hljs-property">resident</span> = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Victor the Evictor&quot;</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-number">42</span>,<br>  &#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><em>Cannot assign to ‘resident’ because it is a read-only property.</em></p>
+<h3 id="Extending-Types"><a href="#Extending-Types" class="headerlink" title="Extending Types"></a>Extending Types</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">BasicAddress</span> &#123;<br>  name?: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">street</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">city</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">country</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">postalCode</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">AddressWithUnit</span> &#123;<br>  name?: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">unit</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">street</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">city</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">country</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">postalCode</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>as</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">BasicAddress</span> &#123;<br>  name?: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">street</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">city</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">country</span>: <span class="hljs-built_in">string</span>;<br>  <span class="hljs-attr">postalCode</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br> <br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">AddressWithUnit</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">BasicAddress</span> &#123;<br>  <span class="hljs-attr">unit</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Colorful</span> &#123;<br>  <span class="hljs-attr">color</span>: <span class="hljs-built_in">string</span>;<br>&#125;<br> <br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Circle</span> &#123;<br>  <span class="hljs-attr">radius</span>: <span class="hljs-built_in">number</span>;<br>&#125;<br> <br><span class="hljs-keyword">interface</span> <span class="hljs-title class_">ColorfulCircle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_">Colorful</span>, <span class="hljs-title class_">Circle</span> &#123;&#125;<br> <br><span class="hljs-keyword">const</span> <span class="hljs-attr">cc</span>: <span class="hljs-title class_">ColorfulCircle</span> = &#123;<br>  <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;red&quot;</span>,<br>  <span class="hljs-attr">radius</span>: <span class="hljs-number">42</span>,<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Generic-Object-Types"><a href="#Generic-Object-Types" class="headerlink" title="Generic Object Types"></a>Generic Object Types</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Box</span>&lt;<span class="hljs-title class_">Type</span>&gt; &#123;<br>  <span class="hljs-attr">contents</span>: <span class="hljs-title class_">Type</span>;<br>&#125;<br><span class="hljs-keyword">let</span> <span class="hljs-attr">box</span>: <span class="hljs-title class_">Box</span>&lt;<span class="hljs-built_in">string</span>&gt;;<br></code></pre></td></tr></table></figure>
+
+<h2 id="React-TS"><a href="#React-TS" class="headerlink" title="React &amp; TS"></a>React &amp; TS</h2><h3 id="A-button-with-props"><a href="#A-button-with-props" class="headerlink" title="A button with props"></a>A button with props</h3><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">import</span> <span class="hljs-title class_">React</span>, &#123; <span class="hljs-title class_">JSXElementConstructor</span>, useState &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;react&#x27;</span><br><br><span class="hljs-keyword">interface</span> buttonProps &#123;<br>    <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">&quot;red&quot;</span> | <span class="hljs-string">&quot;green&quot;</span> | <span class="hljs-string">&quot;blue&quot;</span>,<br>    <span class="hljs-attr">fontSize</span>: <span class="hljs-built_in">number</span>,<br>    <span class="hljs-attr">radius</span>: <span class="hljs-built_in">boolean</span>,<br>    <span class="hljs-attr">padding</span>: [<span class="hljs-built_in">number</span>, <span class="hljs-built_in">number</span>, <span class="hljs-built_in">number</span>, <span class="hljs-built_in">number</span>]<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">Button</span>(<span class="hljs-params">&#123; backgroundColor = <span class="hljs-string">&#x27;blue&#x27;</span>, fontSize = <span class="hljs-number">5</span>, radius = <span class="hljs-literal">true</span>, padding = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>] &#125;: buttonProps</span>) &#123;<br>    <span class="hljs-keyword">const</span> [count, setCount] = <span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>)<br>    <span class="hljs-keyword">return</span> (<br>        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">&#123;</span>`<span class="hljs-attr">bg-</span>$&#123;<span class="hljs-attr">backgroundColor</span>&#125;<span class="hljs-attr">-500</span> <span class="hljs-attr">text-white</span> $&#123;<span class="hljs-attr">radius</span> ? &quot;<span class="hljs-attr">rounded</span>&quot; <span class="hljs-attr">:</span> &quot;<span class="hljs-attr">rounded-none</span>&quot;&#125; <span class="hljs-attr">pt-</span>$&#123;<span class="hljs-attr">padding</span>[<span class="hljs-attr">0</span>]&#125; <span class="hljs-attr">pb-</span>$&#123;<span class="hljs-attr">padding</span>[<span class="hljs-attr">1</span>]&#125; <span class="hljs-attr">pl-</span>$&#123;<span class="hljs-attr">padding</span>[<span class="hljs-attr">2</span>]&#125; <span class="hljs-attr">pr-</span>$&#123;<span class="hljs-attr">padding</span>[<span class="hljs-attr">3</span>]&#125;`&#125; <span class="hljs-attr">onClick</span>=<span class="hljs-string">&#123;()</span> =&gt;</span> &#123; setCount(count + 1) &#125;&#125;&gt;</span><br><span class="language-xml">            Clicked &#123;count&#125; times!</span><br><span class="language-xml">        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span><br>    )<br>&#125;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-title class_">Button</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="interface-can’t-do-everything"><a href="#interface-can’t-do-everything" class="headerlink" title="interface can’t do everything"></a>interface can’t do everything</h3><p>interface can only specify a object</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">interface</span> <span class="hljs-title class_">Color</span> &#123;<br>    <span class="hljs-attr">color</span>: <span class="hljs-string">&quot;red&quot;</span> | <span class="hljs-string">&quot;green&quot;</span> | <span class="hljs-string">&quot;blue&quot;</span><br>&#125;<br><span class="hljs-keyword">const</span> <span class="hljs-attr">color</span>: <span class="hljs-title class_">Color</span>[<span class="hljs-string">&quot;color&quot;</span>] = <span class="hljs-string">&quot;red&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>while type allies can do this</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> color = <span class="hljs-string">&quot;red&quot;</span> | <span class="hljs-string">&quot;green&quot;</span> | <span class="hljs-string">&quot;blue&quot;</span><br><span class="hljs-keyword">const</span> <span class="hljs-attr">color</span>: color = <span class="hljs-string">&quot;red&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>So make <code>type allies</code> default</p>
+<h3 id="Hooks-with-genetic"><a href="#Hooks-with-genetic" class="headerlink" title="Hooks with genetic"></a>Hooks with genetic</h3><figure class="highlight tsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs tsx"><span class="hljs-keyword">const</span> [user, setUser] = useState&lt;<span class="hljs-title class_">User</span> | <span class="hljs-literal">null</span>&gt;(<span class="hljs-literal">null</span>)<br><span class="hljs-keyword">if</span> (user) &#123;<br>    <span class="hljs-keyword">const</span> &#123; name, age, gender &#125; = user<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(name)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(age)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(gender)<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="intersection-omit"><a href="#intersection-omit" class="headerlink" title="intersection &amp; omit"></a>intersection &amp; omit</h3><figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs ts"><span class="hljs-keyword">type</span> <span class="hljs-title class_">User</span> = &#123;<br>    <span class="hljs-attr">name</span>: <span class="hljs-built_in">string</span>,<br>    <span class="hljs-attr">age</span>: <span class="hljs-built_in">number</span>,<br>    <span class="hljs-attr">gender</span>: <span class="hljs-built_in">boolean</span><br>&#125;<br><br><span class="hljs-keyword">type</span> <span class="hljs-title class_">Guest</span> = <span class="hljs-title class_">Omit</span>&lt;<span class="hljs-title class_">User</span>, <span class="hljs-string">&quot;name&quot;</span>&gt;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/Typescript/" class="print-no-link">#Typescript</a>
+      
+        <a href="/tags/Web-dev/" class="print-no-link">#Web dev</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>TypeScript</div>
+      <div>http://example.com/2024/04/18/TS/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>John Doe</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>April 18, 2024</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/04/01/IBSLover1-0/" title="IBSLover1.0">
+                        <span class="hidden-mobile">IBSLover1.0</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+  </noscript>
+</body>
+</html>
